@@ -1,0 +1,1 @@
+# write Python code for a simpleemulation of collecting user information from the console. Yourapplication should be able to ask the user to input username, passwordemail and postcode and save the information into a collection type.
