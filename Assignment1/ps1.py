@@ -44,24 +44,24 @@ def check_input_requirements(requirement, user_input):
 
     # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
     if requirement == 'password':
-        L = 0
-        D = 0
-        S = 0
-        Le = 0
+        l = 0
+        d = 0
+        s = 0
+        le = 0
         if 16 >= len(user_input) >= 8:
-            Le += 1
+            le += 1
             for char in user_input:
                 if char.isalpha():
-                    L += 1
-                    return L 
+                    l += 1
+                    return l 
                 if char.isdigit():
-                    D += 1
-                    return D
+                    d += 1
+                    return d
                 if char in r'[^a-zA-Z0-9\s]':
-                    S += 1
-                    return S
-            return Le, L, D, S
-        if L != 0 and D != 0 and S != 0 and Le != 0:
+                    s += 1
+                    return s
+            return le, l, d, s
+        if l != 0 and d != 0 and s != 0 and le != 0:
             print('valid password')
             return True
         else:
