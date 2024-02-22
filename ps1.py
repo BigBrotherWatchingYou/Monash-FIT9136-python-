@@ -12,11 +12,18 @@ class Create_info:
         self.name = name
         self.phone = phone
         self.email = email
-
-
-
-
+    def print_info(self):
+        print('yourname:' + self.name)
+        print('yourphone:' + self.phone)
+        print('youremail:' + self.email)
+def Input_info():
+    inputname = input('yourname')
+    inputphone = input('yourphone')
+    inputemail = input('youremail')
+    file = Create_info(inputname, inputphone, inputemail)
+    file.print_info()
+    return inputname, inputphone, inputemail
     
-    
+Input_info()    
 
 
