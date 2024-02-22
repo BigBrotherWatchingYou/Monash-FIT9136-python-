@@ -48,7 +48,7 @@ def check_input_requirements(requirement, user_input):
                     S += 1
                     return S
             return Le, L, D, S
-        if L == 1 and D == 1 and S == 1 and Le == 1:
+        if L != 0 and D != 0 and S != 0 and Le != 0:
             return True
         else:
             print("password should include:\nletter(Upper or lower) + digit + @#$@#$  and 16 >=length >= 8") 
