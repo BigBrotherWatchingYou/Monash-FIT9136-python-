@@ -1,13 +1,24 @@
+import string
 #. Get user input function
 '''ask the user to input a corresponding value and return its input
 1. the input must match"requirements" or will be asked to input again, until 
 a valid one is inputted
 2. only valid result will return'''
-def input_requirements(requirement, user_input):
-    # requirement of alphabet
-    # requirement of number
+def check_input_requirements(requirement, user_input):
+    # requirement : letter only
+    if requirement == 'letter':
+        if user_input.isalpha():
+            return user_input
+        else:
+            print("invalid, letters only")
+            user_input = input('only be letters from a-z(or A-Z)\ntype again')
+    if requirement == 'digit':
+        if user_input.isdigit():
+            return user_input
+        else:
+            print("invalid, numbers only")
+            user_input == input('only numbers form 0-9\ntype again')
     # requirement of email
-
 #. Encryption function
 
 #. Generate user id function
