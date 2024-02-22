@@ -5,10 +5,14 @@ import string
 a valid one is inputted
 2. only valid result will return'''
 def check_input_requirements(requirement, user_input):
-    # requirement : letter only
+    '''# requirement type: 
+    1.letter only
+    2.digits only
+    3.email only
+    4. complex_password 
     # tips: type and press'Enter' can pass the section
     user_input = str(user_input)
-    # deal with space input in Feb.23.2024
+    # deal with space input in Feb.23.2024'''
     if user_input == '':
         return False
     if requirement == 'letter':
