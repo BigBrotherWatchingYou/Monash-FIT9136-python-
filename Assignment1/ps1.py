@@ -29,13 +29,37 @@ def check_input_requirements(requirement, user_input):
             print('email should include @ or .com')
             user_input = input('enter email')
 
-    # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and length >= 8'
+    # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
     if requirement == 'password':
-        if user_input
+        L = 0
+        D = 0
+        S = 0
+        Le = 0
+        if 16 >= len(user_input) >= 8:
+            Le += 1
+            for char in user_input:
+                if char.isalpha():
+                    L += 1
+                    return L 
+                if char.isdigit():
+                    D += 1
+                    return D
+                if char in r'[^a-zA-Z0-9\s]':
+                    S += 1
+                    return S
+            return Le, L, D, S
+        if L == 1 and D == 1 and S == 1 and Le == 1:
+            return True
+        else:
+            print("password should include:\nletter(Upper or lower) + digit + @#$@#$  and 16 >=length >= 8") 
+            return False
+
+                
+
         else:
             print('too simple password')
             
-            user_input = input('letter(Upper + lower) + digit + @#$@#$  and length >= 8')
+            user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
 
 #. Encryption function
 
