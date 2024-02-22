@@ -28,12 +28,13 @@ def check_input_requirements(requirement, user_input):
     # requirement of email
     if requirement == 'email':
         if '@' and '.com' in user_input:
+            print('valid email:'+ user_input)
             return user_input
         else:
             print('email should include @ or .com')
             user_input = input('enter email')
             user_input = str(user_input)
-            return user_input
+            return check_input_requirements('email', user_input)
 
     # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
     if requirement == 'password':
