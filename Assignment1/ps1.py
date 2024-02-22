@@ -52,7 +52,12 @@ def check_input_requirements(requirement, user_input):
         d = 0
         s = 0
         le = 0
-        if 16 >= len(user_input) >= 8:
+        if len(user_input) >= 16:
+            print('too long, should be less than 16')
+            user_input = input('input a new password')
+            return check_input_requirements("password", user_input)
+        
+        if len(user_input) >= 8 and len(user_input) <= 16:
             le += 1
             for char in user_input:
                 if char.isalpha():
@@ -64,15 +69,15 @@ def check_input_requirements(requirement, user_input):
                 if char in r'[^a-zA-Z0-9\s]':
                     s += 1
                     return s
-            return le, l, d, s
-        if l != 0 and d != 0 and s != 0 and le != 0:
-            print('valid password')
-            return True
+            
+            if l != 0 and d != 0 and s != 0 and le != 0:
+                print('valid password')
+                return user_input
         else:
             print('too simple password')
             user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
-            return False
-check_input_requirements("letter", "AAwefwef@#$123")
+            return check_input_requirements("password", user_input)
+check_input_requirements("password", "aaaaaaaaaaaaaaa@#$123")
 #. Encryption function
 
 #. Generate user id function
