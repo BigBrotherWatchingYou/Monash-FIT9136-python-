@@ -17,19 +17,22 @@ class Create_info:
         print('yourphone:' + self.phone)
         print('youremail:' + self.email)
 
-class Input_info:
+def Input_info():
     inputname = input('yourname')
     inputphone = input('yourphone')
     inputemail = input('youremail')
-    def check_data(self):
-        if inputname.isalpha():
-        if inputphone.isdigit():
-            # if inputemail.isemial()
-    
     file = Create_info(inputname, inputphone, inputemail)
-    file.print_info()
     return inputname, inputphone, inputemail
     
-Input_info   
-
-
+def check_name(inputname):
+    if inputname.isalpha():
+        return inputname 
+    else: 
+        inputname = input("your name should be letters only, enter a new name")
+        return inputname
+def check_phone(inputphone):
+    if inputphone.isdigit():
+        return inputphone
+    else:
+        inputphone = input("your phone should be digit only, enter a new phone")
+        return inputphone
