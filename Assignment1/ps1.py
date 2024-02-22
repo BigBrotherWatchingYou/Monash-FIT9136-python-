@@ -12,7 +12,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print("invalid, letters only")
             user_input = input('only be letters from a-z(or A-Z)\ntype again')
-            return False
+            user_input = str(user_input)
+            return user_input
 
     # requirement : numbers only        
     if requirement == 'digit':
@@ -21,7 +22,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print("invalid, numbers only")
             user_input == input('only numbers form 0-9\ntype again')
-            return False
+            user_input = str(user_input)
+            return user_input
 
     # requirement of email
     if requirement == 'email':
@@ -30,7 +32,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print('email should include @ or .com')
             user_input = input('enter email')
-            return False
+            user_input = str(user_input)
+            return user_input
 
     # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
     if requirement == 'password':
@@ -52,13 +55,14 @@ def check_input_requirements(requirement, user_input):
                     return S
             return Le, L, D, S
         if L != 0 and D != 0 and S != 0 and Le != 0:
+            print('valid password')
             return True
 
         else:
             print('too simple password')
             user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
             return False
-
+check_input_requirements("email", "AAwefwef@#$123")
 #. Encryption function
 
 #. Generate user id function
