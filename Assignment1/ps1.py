@@ -3,7 +3,10 @@
 1. the input must match"requirements" or will be asked to input again, until 
 a valid one is inputted
 2. only valid result will return'''
-
+def input_requirements(requirement, user_input):
+    # requirement of alphabet
+    # requirement of number
+    # requirement of email
 
 #. Encryption function
 
