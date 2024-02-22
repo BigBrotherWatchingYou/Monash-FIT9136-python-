@@ -64,7 +64,6 @@ def check_input_requirements(requirement, user_input):
         if L != 0 and D != 0 and S != 0 and Le != 0:
             print('valid password')
             return True
-
         else:
             print('too simple password')
             user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
