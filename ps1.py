@@ -16,14 +16,20 @@ class Create_info:
         print('yourname:' + self.name)
         print('yourphone:' + self.phone)
         print('youremail:' + self.email)
-def Input_info():
+
+class Input_info:
     inputname = input('yourname')
     inputphone = input('yourphone')
     inputemail = input('youremail')
+    def check_data(self):
+        if inputname.isalpha():
+        if inputphone.isdigit():
+            # if inputemail.isemial()
+    
     file = Create_info(inputname, inputphone, inputemail)
     file.print_info()
     return inputname, inputphone, inputemail
     
-Input_info()    
+Input_info   
 
 
