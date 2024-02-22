@@ -6,14 +6,20 @@ a valid one is inputted
 2. only valid result will return'''
 def check_input_requirements(requirement, user_input):
     # requirement : letter only
+    # tips: type and press'Enter' can pass the section
+    user_input = str(user_input)
+    # deal with space input in Feb.23.2024
+    if user_input == '':
+        return False
     if requirement == 'letter':
         if user_input.isalpha():
+            print('valid letter')
             return user_input
         else:
             print("invalid, letters only")
             user_input = input('only be letters from a-z(or A-Z)\ntype again')
             user_input = str(user_input)
-            return user_input
+            return check_input_requirements('letter', user_input)
 
     # requirement : numbers only        
     if requirement == 'digit':
@@ -23,7 +29,7 @@ def check_input_requirements(requirement, user_input):
             print("invalid, numbers only")
             user_input == input('only numbers form 0-9\ntype again')
             user_input = str(user_input)
-            return user_input
+            return check_input_requirements('digit', user_input)
 
     # requirement of email
     if requirement == 'email':
@@ -63,7 +69,7 @@ def check_input_requirements(requirement, user_input):
             print('too simple password')
             user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
             return False
-check_input_requirements("email", "AAwefwef@#$123")
+check_input_requirements("letter", "AAwefwef@#$123")
 #. Encryption function
 
 #. Generate user id function
