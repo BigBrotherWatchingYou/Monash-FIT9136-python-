@@ -91,8 +91,8 @@ def get_input(requirement, user_input):
 #. Add user to list function
 
 #. Test function
-req = input('req:')
-m = input('input:')
+req = input('what do you want to input:')
+m = input('please type here:')
 
 get_input(req, m)
 #. Code encapsulation
