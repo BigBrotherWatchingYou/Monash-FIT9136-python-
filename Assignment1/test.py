@@ -14,7 +14,7 @@ inputemail = input('youremail')
 file = Create_info(inputname, inputphone, inputemail)
 file.print_info()'''
 
-# Define a simple XOR encryption function
+'''# Define a simple XOR encryption function
 def xor_encrypt_decrypt(message, key):
     # Initialize an empty string to store the result
     result = ""
@@ -38,4 +38,5 @@ print("Encrypted message:", encrypted_message)
 
 # Decrypt the message using the same key
 decrypted_message = xor_encrypt_decrypt(encrypted_message, key)
-print("Decrypted message:", decrypted_message)
+print("Decrypted message:", decrypted_message)'''
+print(ord('b'))
