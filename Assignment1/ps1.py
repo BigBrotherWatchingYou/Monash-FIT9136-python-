@@ -4,15 +4,17 @@ import string
 1. the input must match"requirements" or will be asked to input again, until 
 a valid one is inputted
 2. only valid result will return'''
-def check_input_requirements(requirement, user_input):
+def get_input(requirement, user_input):
     '''# requirement type: 
     1.letter only
     2.digits only
     3.email only
     4. complex_password 
     # tips: type and press'Enter' can pass the section
-    user_input = str(user_input)
+    
     # deal with space input in Feb.23.2024'''
+    user_input = str(user_input)
+    requirement = str(requirement)
     if user_input == '':
         return False
     if requirement == 'letter':
@@ -22,8 +24,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print("invalid, letters only")
             user_input = input('only be letters from a-z(or A-Z)\ntype again')
-            user_input = str(user_input)
-            return check_input_requirements('letter', user_input)
+            
+            return get_input('letter', user_input)
 
     # requirement : numbers only        
     if requirement == 'digit':
@@ -32,8 +34,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print("invalid, numbers only")
             user_input == input('only numbers form 0-9\ntype again')
-            user_input = str(user_input)
-            return check_input_requirements('digit', user_input)
+            
+            return get_input('digit', user_input)
 
     # requirement of email
     if requirement == 'email':
@@ -43,8 +45,8 @@ def check_input_requirements(requirement, user_input):
         else:
             print('email should include @ or .com')
             user_input = input('enter email')
-            user_input = str(user_input)
-            return check_input_requirements('email', user_input)
+            
+            return get_input('email', user_input)
 
     # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
     if requirement == 'password':
@@ -55,20 +57,19 @@ def check_input_requirements(requirement, user_input):
         if len(user_input) >= 16:
             print('too long, should be less than 16')
             user_input = input('input a new password')
-            return check_input_requirements("password", user_input)
+            return get_input("password", user_input)
         
         if len(user_input) >= 8 and len(user_input) <= 16:
             le += 1
             for char in user_input:
                 if char.isalpha():
                     l += 1
-                    return l 
+ 
                 if char.isdigit():
                     d += 1
-                    return d
+
                 if char in r'[^a-zA-Z0-9\s]':
                     s += 1
-                    return s
             
             if l != 0 and d != 0 and s != 0 and le != 0:
                 print('valid password')
@@ -76,8 +77,9 @@ def check_input_requirements(requirement, user_input):
         else:
             print('too simple password')
             user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
-            return check_input_requirements("password", user_input)
-check_input_requirements("password", "aaaaaaaaaaaaaaa@#$123")
+            return get_input("password", user_input)
+
+          
 #. Encryption function
 
 #. Generate user id function
@@ -89,5 +91,8 @@ check_input_requirements("password", "aaaaaaaaaaaaaaa@#$123")
 #. Add user to list function
 
 #. Test function
+req = input('req:')
+m = input('input:')
 
+get_input(req, m)
 #. Code encapsulation
