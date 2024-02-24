@@ -1,5 +1,5 @@
 import string
-#. Get user input function
+#.1. Get user input function
 '''ask the user to input a corresponding value and return its input
 1. the input must match"requirements" or will be asked to input again, until 
 a valid one is inputted
@@ -80,8 +80,10 @@ def get_input(requirement, user_input):
             return get_input("password", user_input)
 
           
-#. Encryption function
-'''copied from chatgpt'''
+#.2. Encryption function
+'''copied from chatgpt
+input a message and return a decrypted message
+able to decrypt'''
 def xor_encrypt_decrypt(message, key):
     # Initialize an empty string to store the result
     result = ""
@@ -102,12 +104,27 @@ key = "k"
 # Encrypt the message
 encrypted_message = xor_encrypt_decrypt(message, key)
 print("Encrypted message:", encrypted_message)
+req = input('what do you want to input:')
+m = input('please type here:')
+
+get_input(req, m)
 
 # Decrypt the message using the same key
 decrypted_message = xor_encrypt_decrypt(encrypted_message, key)
 print("Decrypted message:", decrypted_message)
-#. Generate user id function
 
+
+#.3. Generate user id function
+'''came out with a random number, with specific number_of_digits'''
+import random
+
+def generate_user_id(digitsnumber):
+    ge_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
+    print('your user name:' + ge_name)
+    return ge_name
+
+user_name = generate_user_id(8)  
+user_name
 #. Check username exist function
 
 #. Authenticate username and password function
@@ -115,8 +132,5 @@ print("Decrypted message:", decrypted_message)
 #. Add user to list function
 
 #. Test function
-req = input('what do you want to input:')
-m = input('please type here:')
 
-get_input(req, m)
 #. Code encapsulation

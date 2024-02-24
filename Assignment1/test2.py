@@ -1,3 +1,4 @@
+# Define a simple XOR encryption function
 def xor_encrypt_decrypt(message, key):
     # Initialize an empty string to store the result
     result = ""
@@ -11,7 +12,7 @@ def xor_encrypt_decrypt(message, key):
     return result
 
 # Message to be encrypted
-message = "Fuck123@#"
+message = "Hello, this is a secret message45634!"
 # Key for encryption
 key = "k"
 
