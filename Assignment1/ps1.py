@@ -126,7 +126,7 @@ def generate_user_id(digitsnumber):
 user_name = generate_user_id(8)  
 user_name
 #. Check username exist function
-
+'''input a user name, check in dic if it has any matches'''
 #. Authenticate username and password function
 
 #. Add user to list function
