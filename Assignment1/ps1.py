@@ -125,18 +125,31 @@ def generate_user_id(digitsnumber):
 
 user_name = generate_user_id(8)  
 user_name
-#. Check username exist function
+
+#.4. Check username exist function
 def check_username(n, old_list):
     n = str(n)
+    i = 0
     for k in old_list:
         if n == k[0]: 
             print('yes')
-            return True
-    
+            i = 1
+    if i != 0:
+        return True
+    else:
+        print("not in list")
+        return False
 check_username(name, old_list)
 
-#. Authenticate username and password function
+old_list = [["aa123", 2, 3, 4], ["b", 5, 6, 8], ["c", 5, 6, 8], ["d", 67, 6, 8]]    
+check_username(name, old_list)
 
+#.5. Authenticate username and password function
+'''1.please type your username
+2. check if username exist
+3. please enter your password
+4. check if password match
+5. give access and provide the information list  '''
 #. Add user to list function
 
 #. Test function
