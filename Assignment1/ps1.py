@@ -175,6 +175,8 @@ def add_user(username, password, userid, old_list):
         return True
     
 #.7. Test function
+'''1.add a management function
+2. add a "update function'''
 username = input("input your name")
 if check_username(username, old_list) == True:
     authen_username_password(username, old_list)
