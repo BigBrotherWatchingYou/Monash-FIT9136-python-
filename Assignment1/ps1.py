@@ -168,12 +168,13 @@ def authen_username_password(user_name, password):
     
 
 authen_username_password(username, password)
-#. Add user to list function
+#.6. Add user to list function
+# stilll operating
 def add_user(username, password, userid, old_list):
     if check_username(username, old_list) == False:
         return True
     
-#. Test function
+#.7. Test function
 username = input("input your name")
 if check_username(username, old_list) == True:
     authen_username_password(username, old_list)
@@ -182,9 +183,15 @@ else:
     choice = input("do you want to create a new account? enter y/n ")
     if choice == "y":
         # need to add a encryttion
-        add_user(get_input('letter', 0), 
-                 get_input('password', 0), 
-                 generate_user_id(5), old_list)
+        username = ""
+        password = ""
+        email = ""
+        userid = 0
+        get_input('letter', username), 
+        get_input('password', password), 
+        get_input('email', email)
+        generate_user_id(5, old_list)
+        add_user()
     else:
         print("press'esc' to quit\n to continue, press any other key")
 
