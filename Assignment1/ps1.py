@@ -18,6 +18,7 @@ def get_input(requirement, user_input):
     if user_input == '':
         return False
     if requirement == 'letter':
+        user_input = input("enter your letter")
         if user_input.isalpha():
             print('valid letter')
             return user_input
@@ -29,6 +30,7 @@ def get_input(requirement, user_input):
 
     # requirement : numbers only        
     if requirement == 'digit':
+        user_input = input("type your number")
         if user_input.isdigit():
             return user_input
         else:
@@ -39,6 +41,7 @@ def get_input(requirement, user_input):
 
     # requirement of email
     if requirement == 'email':
+        user_input = input("enter your email")
         if '@' and '.com' in user_input:
             print('valid email:'+ user_input)
             return user_input
@@ -54,6 +57,7 @@ def get_input(requirement, user_input):
         d = 0
         s = 0
         le = 0
+        user_input = input("enter password")
         if len(user_input) >= 16:
             print('too long, should be less than 16')
             user_input = input('input a new password')
@@ -84,10 +88,10 @@ def get_input(requirement, user_input):
 '''copied from chatgpt
 input a message and return a decrypted message
 able to decrypt'''
-def xor_encrypt_decrypt(message, key):
+def xor_encrypt_decrypt(message):
     # Initialize an empty string to store the result
     result = ""
-
+    key = "k"
     # Iterate over each character in the message
     for char in message:
         # Perform XOR operation between the character and the key character
@@ -97,21 +101,15 @@ def xor_encrypt_decrypt(message, key):
     return result
 
 # Message to be encrypted
-message = "Hello, this is a secret message!"
+
 # Key for encryption
-key = "k"
+
 
 # Encrypt the message
-encrypted_message = xor_encrypt_decrypt(message, key)
-print("Encrypted message:", encrypted_message)
-req = input('what do you want to input:')
-m = input('please type here:')
 
-get_input(req, m)
 
 # Decrypt the message using the same key
-decrypted_message = xor_encrypt_decrypt(encrypted_message, key)
-print("Decrypted message:", decrypted_message)
+
 
 
 #.3. Generate user id function
@@ -183,10 +181,12 @@ else:
     print("user do not exist")
     choice = input("do you want to create a new account? enter y/n ")
     if choice == "y":
-        
-        add_user(get_input('letter', username), get_input('password', username), generate_user_id(5), old_list)
+        # need to add a encryttion
+        add_user(get_input('letter', 0), 
+                 get_input('password', 0), 
+                 generate_user_id(5), old_list)
     else:
-        print("press'esc' to close\n to continue, enter 'c'")
+        print("press'esc' to quit\n to continue, press any other key")
 
 
 #. Code encapsulation
