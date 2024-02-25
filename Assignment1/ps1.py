@@ -179,14 +179,13 @@ username = input("input your name")
 if check_username(username, old_list) == True:
     authen_username_password(username, old_list)
 else:
-    print("user do not exist, create a new account?")
-    
+    print("user do not exist")
     choice = input("do you want to create a new account? enter y/n ")
     if choice == "y":
         
-        add_user(username, password, generate_user_id(5), old_list)
+        add_user(get_input('letter', username), get_input('password', username), generate_user_id(5), old_list)
     else:
-        
+        print("press'esc' to close\n to continue, enter 'c'")
 
-get_input('letter', username)
+
 #. Code encapsulation
