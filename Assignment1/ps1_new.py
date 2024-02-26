@@ -28,6 +28,7 @@ class User_Management_System(self, user_id_list):
                 self.list[userid]["password"] = new_password
             if new_email:
                 self.list[userid]["email"] = new_email
+                
     def get_input(requirement, user_input):
         '''# requirement type: 
         1.letter only
