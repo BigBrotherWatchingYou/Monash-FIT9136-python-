@@ -41,7 +41,7 @@ class User_Management_System(self, user_id_list):
             if new_email:
                 self.list[userid]["email"] = new_email
 
-    def get_input(requirement, user_input):
+    def check_req(requirement, user_input):
         '''# requirement type: 
         1.letter only
         2.digits only
@@ -63,7 +63,7 @@ class User_Management_System(self, user_id_list):
             else:
                 print("invalid, letters only")
                 user_input = input('only be letters from a-z(or A-Z)\ntype again')
-                return get_input('letter', user_input)
+                return check_req('letter', user_input)
 
         # requirement : numbers only        
         if requirement == 'digit':
@@ -74,7 +74,7 @@ class User_Management_System(self, user_id_list):
             print("invalid, numbers only")
             user_input == input('only numbers form 0-9\ntype again')
             
-            return get_input('digit', user_input)
+            return check_req('digit', user_input)
 
         # requirement of email
         if requirement == 'email':
@@ -86,7 +86,7 @@ class User_Management_System(self, user_id_list):
                 print('email should include @ or .com')
                 user_input = input('enter email')
             
-                return get_input('email', user_input)
+                return check_req('email', user_input)
 
         # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
         if requirement == 'password':
@@ -117,14 +117,18 @@ class User_Management_System(self, user_id_list):
                 return False
 
 
-def run(self):
-    choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
-    if choice == "1":
-        userid = input("input your id")
-        if check_user(userid) == True:
+    def run(self):
+        choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
+        if choice == "1":
+            userid = input("input your id")
+            if check_user(userid) == True:
 
-    if choice == "2":
+        if choice == "2":
+            userid = input("type your id")
+            if check_user(userid) == True：
 
-    if choice == "3":
+        if choice == "3":
+            username = input("type your name")
+            if check_req("letter", username) == True
 
 
