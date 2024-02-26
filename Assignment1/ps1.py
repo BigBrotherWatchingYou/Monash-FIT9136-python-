@@ -173,10 +173,19 @@ authen_username_password(username, password)
 def add_user(username, password, userid, old_list):
     if check_username(username, old_list) == False:
         return True
+'''1.create a list for each user (for example  user_23434 = {name:xxx , password :sss})
+create a list of all users_name_only'''
+
+
+def account_management(usera_id_list, usera_list, usera_dict):
+
+
     
+
+
+
+
 #.7. Test function
-'''1.add a management function
-2. add a "update function'''
 username = input("input your name")
 if check_username(username, old_list) == True:
     authen_username_password(username, old_list)
