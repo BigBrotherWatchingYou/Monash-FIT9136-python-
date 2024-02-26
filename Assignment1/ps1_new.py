@@ -120,14 +120,21 @@ class User_Management_System(self, user_id_list):
     def run(self):
         choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
         if choice == "1":
+            # login
             userid = input("input your id")
             if check_user(userid) == True:
+                password = input("type your password")
+                if authenticate_user(userid, password) == True:
+                    print(f"----------------------\nloginsuccess, here are your info:")
+                    print(user_id_list[userid])
 
         if choice == "2":
+            # update info
             userid = input("type your id")
             if check_user(userid) == True：
 
         if choice == "3":
+            # register
             username = input("type your name")
             if check_req("letter", username) == True
 
