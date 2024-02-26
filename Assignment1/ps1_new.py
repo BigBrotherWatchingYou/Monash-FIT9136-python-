@@ -31,7 +31,11 @@ class User_Management_System(self, user_id_list):
             print(f"user{userid}does not exists")
             return False
     def authenticate_user(userid, password):
-        if user_id_list
+        if user_id_list[userid]["password"] == password:
+            return True
+        else:
+            print("password incorrect")
+            
     def update_user(self, userid, new_id = None, new_password = None, new_email = None):
         if userid in user_id_list:
             if new_id:
@@ -127,6 +131,9 @@ class User_Management_System(self, user_id_list):
                 if authenticate_user(userid, password) == True:
                     print(f"----------------------\nloginsuccess, here are your info:")
                     print(user_id_list[userid])
+                else:
+                    password = ("type your passwor again")
+                    return authenticate_user(userid, password)
 
         if choice == "2":
             # update info
