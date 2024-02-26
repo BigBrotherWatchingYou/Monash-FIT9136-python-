@@ -8,7 +8,7 @@ class User_Management_System(self, user_id_list):
         
     def add_user_to_user_id_list(userid, user_id_list):
         user_id_list.append(userid)
-        
+
     def xor_encrypt_decrypt(message):
         # Initialize an empty string to store the result
         result = ""
@@ -30,7 +30,8 @@ class User_Management_System(self, user_id_list):
         else:
             print(f"user{userid}does not exists")
             return False
-        
+    def authenticate_user(userid, password):
+        if user_id_list
     def update_user(self, userid, new_id = None, new_password = None, new_email = None):
         if userid in user_id_list:
             if new_id:
@@ -118,4 +119,12 @@ class User_Management_System(self, user_id_list):
 
 def run(self):
     choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
+    if choice == "1":
+        userid = input("input your id")
+        if check_user(userid) == True:
+
+    if choice == "2":
+
+    if choice == "3":
+
 
