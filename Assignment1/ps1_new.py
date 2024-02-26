@@ -80,12 +80,9 @@ class User_Management_System(self, user_id_list):
             l = 0
             d = 0
             s = 0
-            le = 0
-            user_input = input("enter password")
+
             if len(user_input) >= 16:
                 print('too long, should be less than 16')
-                user_input = input('input a new password')
-                return get_input("password", user_input)
         
             if len(user_input) >= 8 and len(user_input) <= 16:
                 le += 1
@@ -102,10 +99,9 @@ class User_Management_System(self, user_id_list):
             if l != 0 and d != 0 and s != 0 and le != 0:
                 print('valid password')
                 return user_input
-        else:
-            print('too simple password')
-            user_input = input('letter(Upper + lower) + digit + @#$@#$  and 16 >=length >= 8')
-            return get_input("password", user_input)
+            else:
+                print('password should be : letter+ digit + symbols and length between 8-16')
+                return False
 
 
 def run(self):
