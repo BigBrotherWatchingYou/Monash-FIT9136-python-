@@ -8,7 +8,18 @@ class User_Management_System(self, user_id_list):
         
     def add_user_to_user_id_list(userid, user_id_list):
         user_id_list.append(userid)
+        
+    def xor_encrypt_decrypt(message):
+        # Initialize an empty string to store the result
+        result = ""
+        key = "k"
+        # Iterate over each character in the message
+        for char in message:
+            # Perform XOR operation between the character and the key character
+            # Use modulo operator to cycle through the key if it's shorter than the message
+            result += chr(ord(char) ^ ord(key))
 
+        return result
     def add_user(self, username, userid, password, email):
         self.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
 
@@ -28,7 +39,7 @@ class User_Management_System(self, user_id_list):
                 self.list[userid]["password"] = new_password
             if new_email:
                 self.list[userid]["email"] = new_email
-                
+
     def get_input(requirement, user_input):
         '''# requirement type: 
         1.letter only
