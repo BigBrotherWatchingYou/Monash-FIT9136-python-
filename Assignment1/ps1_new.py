@@ -19,4 +19,5 @@ class User_Management_System(self, user_id_list):
 
 
 def run(self):
+    choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
 
