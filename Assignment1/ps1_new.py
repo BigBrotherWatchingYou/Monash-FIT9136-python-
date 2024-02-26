@@ -12,9 +12,18 @@ class User_Management_System(self, user_id_list):
     def check_user(userid):
         if userid in user_id_list:
             print(f"user{userid}exists")
+            return True
         else:
             print(f"user{userid}does not exists")
-    def update_user(self, userid):
+            return False
+    def update_user(self, userid, new_id = None, new_password = None, new_email = None):
+        if userid in user_id_list:
+            if new_id:
+                self.list[userid]["userid"] = new_id
+            if new_password:
+                self.list[userid]["password"] = new_password
+            if new_email:
+                self.list[userid]["email"] = new_email
 
 
 
