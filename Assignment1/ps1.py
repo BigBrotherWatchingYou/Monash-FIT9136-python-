@@ -167,13 +167,17 @@ def authen_username_password(user_name, password):
         return False
     
 
-authen_username_password(username, password)
-#.6. Add user to list function
+
+#.6. User management system
 # stilll operating
-def add_user(username, password, userid, old_list):
-    if check_username(username, old_list) == False:
-        return True
-'''1.create a list for each user (for example  user_23434 = {name:xxx , password :sss})
+class User_Management_System(self):
+    def __init__(self):
+        self.users_list ={}
+    def add_user(self, username, password, userid, email):
+        self.user_list[username] = {"username": username, "password": password, "userid": userid, "email": email}
+
+'''1.create a list for each user 
+(for example  user_23434 = {name:xxx , password :sss})
 create a list of all users_name_only'''
 
 
