@@ -126,19 +126,23 @@ class User_Management_System(self, user_id_list):
         if choice == "1":
             # login
             userid = input("input your id")
-            if check_user(userid) == True:
+            if self.check_user(userid) == True:
                 password = input("type your password")
-                if authenticate_user(userid, password) == True:
+                if self.authenticate_user(userid, password) == True:
                     print(f"----------------------\nloginsuccess, here are your info:")
                     print(user_id_list[userid])
                 else:
                     password = ("type your passwor again")
-                    return authenticate_user(userid, password)
+                    return self.authenticate_user(userid, password)
 
         if choice == "2":
             # update info
             userid = input("type your id")
-            if check_user(userid) == True：
+            if self.check_user(userid) == True:
+                password = input("type your password")
+                if self.authenticate_user(userid, password) == True:
+
+
 
         if choice == "3":
             # register
