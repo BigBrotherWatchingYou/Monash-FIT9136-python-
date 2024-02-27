@@ -22,7 +22,7 @@ class User_Management_System(self, user_id_list):
         return result
     def add_user(self, username, userid, password, email):
         self.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
-
+        user_id_list.append(userid)
     def check_user(userid):
         if userid in user_id_list:
             print(f"user{userid}exists")
@@ -35,6 +35,7 @@ class User_Management_System(self, user_id_list):
             return True
         else:
             print("password incorrect")
+            return False
             
     def update_user(self, userid, new_id = None, new_password = None, new_email = None):
         if userid in user_id_list:
@@ -136,11 +137,27 @@ class User_Management_System(self, user_id_list):
                     return self.authenticate_user(userid, password)
 
         if choice == "2":
-            # update info
+            # update infos
             userid = input("type your id")
             if self.check_user(userid) == True:
                 password = input("type your password")
                 if self.authenticate_user(userid, password) == True:
+                    print("--------------\n here's your info\n whatdo you want to update?" + user_id_list[userid])
+                    t = input("1/for username \n 2/for password 3/for email")
+                    if t == 1:
+                        m = input("type your new username")
+                        self.update_user(self, userid, newid= m)
+
+                    if t == 2:
+                        m = input("type your new password")
+                        self.update_user(self, userid, new_password= m)
+
+                    if t == 3:
+                        m = input("type your new email")
+                        self.update_user(self, userid, new_email= m)
+            else:
+                # userid not exist
+                        
 
 
 
