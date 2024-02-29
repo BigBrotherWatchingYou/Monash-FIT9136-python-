@@ -86,6 +86,54 @@ class data_function(object):
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False      
 
+'''class user_management(self):
+    print("self")'''
 
+class User_management(self):
+    def user__init__(self, username, userid, password, email):
+        self.list = {}
+        self.username = username
+        self.userid = userid
+        self.password = password
+        self.email = email
+        self.list[userid] = {self.username, self.userid, self.password, self.email}
+        
+    def add_user_to_user_id_list(userid, user_id_list):
+        user_id_list.append(userid)
+        
+    def check_user(userid):
+        if userid in user_id_list:
+            print(f"user{userid}exists")
+            return True
+        else:
+            print(f"user{userid}does not exists")
+            return False
+        
+    
+    def add_user(self, username, userid, password, email):
+        self.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
+        user_id_list.append(userid)
+    
+    def authenticate_user(userid, password):
+        if user_id_list[userid]["password"] == password:
+            return True
+        else:
+            print("password incorrect")
+            return False
+            
+    def update_user(self, userid, new_id = None, new_password = None, new_email = None):
+        if userid in user_id_list:
+            if new_id:
+                self.list[userid]["userid"] = new_id
+            if new_password:
+                self.list[userid]["password"] = new_password
+            if new_email:
+                self.list[userid]["email"] = new_email
+
+    
+    def generate_user_id(digitsnumber):
+        ge_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
+        print('your user name:' + ge_name)
+        return ge_name
 
 data_function.check_req("letter","fuckyou")

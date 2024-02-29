@@ -1,9 +1,15 @@
-import random
-
-def generate_user_id(digitsnumber):
-    user_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
-    
-    return user_name
-
-f = generate_user_id(8)  
-print(f)
+class A(object):
+    def __init__(self, something):
+        print("A init called")
+        self.something = something
+ 
+ 
+class B(A):
+    def __init__(self, something):
+        print("B init called")
+        self.something = something
+        # Calling init of parent class
+        A.__init__(self, something)
+ 
+ 
+obj = B("Something")

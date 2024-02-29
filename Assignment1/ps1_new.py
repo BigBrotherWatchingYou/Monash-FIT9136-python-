@@ -88,7 +88,7 @@ def check_req(requirement, user_input):
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False      
 
-def __init__(self, username, userid, password, email):
+def user__init__(self, username, userid, password, email):
         self.list = {}
         self.username = username
         self.userid = userid
@@ -176,3 +176,5 @@ def run(self):
                 user_id_list.append(username)
             else'''
 
+user__init__("fuckyou", "a","a","b","c")
+print(fuckyou.username)
