@@ -1,4 +1,5 @@
 class data_function(object):
+    # for 1.encrypt\decrypt and 2.check input requirements
     input0 = str(object)
     def xor_encrypt_decrypt(input0):
         # Initialize an empty string to store the result
@@ -86,7 +87,5 @@ class data_function(object):
                 return False      
 
 
-'''class Usermanagement(data_function):
-    data_function.xor_encrypt_decrypt(object)
-'''
+
 data_function.check_req("letter","fuckyou")
