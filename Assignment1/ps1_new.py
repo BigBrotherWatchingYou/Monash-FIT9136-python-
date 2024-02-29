@@ -1,4 +1,5 @@
 import string
+import random
 user_id_list = []
 class User_Management_System(self, user_id_list):
 
@@ -120,6 +121,10 @@ class User_Management_System(self, user_id_list):
             else:
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False
+    def generate_user_id(digitsnumber):
+        ge_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
+        print('your user name:' + ge_name)
+        return ge_name
 
 
     def run(self):
