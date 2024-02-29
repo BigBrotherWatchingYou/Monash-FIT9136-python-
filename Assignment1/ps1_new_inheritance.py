@@ -86,8 +86,6 @@ class data_function(object):
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False      
 
-'''class user_management(self):
-    print("self")'''
 
 class User_management(self):
     def user__init__(self, username, userid, password, email):
@@ -100,7 +98,7 @@ class User_management(self):
         
     def add_user_to_user_id_list(userid, user_id_list):
         user_id_list.append(userid)
-        
+
     def check_user(userid):
         if userid in user_id_list:
             print(f"user{userid}exists")
