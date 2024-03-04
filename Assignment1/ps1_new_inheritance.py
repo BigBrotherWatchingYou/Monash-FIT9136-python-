@@ -87,14 +87,14 @@ class data_function(object):
                 return False      
 
 
-class User_management(self):
-    def user__init__(self, username, userid, password, email):
-        self.list = {}
-        self.username = username
-        self.userid = userid
-        self.password = password
-        self.email = email
-        self.list[userid] = {self.username, self.userid, self.password, self.email}
+class User_management(object):
+    def user__init__(object, username, userid, password, email):
+        object.list = {}
+        object.username = username
+        object.userid = userid
+        object.password = password
+        object.email = email
+        object.list[userid] = {object.username, object.userid, object.password, object.email}
         
     def add_user_to_user_id_list(userid, user_id_list):
         user_id_list.append(userid)
@@ -108,8 +108,8 @@ class User_management(self):
             return False
         
     
-    def add_user(self, username, userid, password, email):
-        self.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
+    def add_user(object, username, userid, password, email):
+        object.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
         user_id_list.append(userid)
     
     def authenticate_user(userid, password):
@@ -119,14 +119,14 @@ class User_management(self):
             print("password incorrect")
             return False
             
-    def update_user(self, userid, new_id = None, new_password = None, new_email = None):
+    def update_user(object, userid, new_id = None, new_password = None, new_email = None):
         if userid in user_id_list:
             if new_id:
-                self.list[userid]["userid"] = new_id
+                object.list[userid]["userid"] = new_id
             if new_password:
-                self.list[userid]["password"] = new_password
+                object.list[userid]["password"] = new_password
             if new_email:
-                self.list[userid]["email"] = new_email
+                object.list[userid]["email"] = new_email
 
     
     def generate_user_id(digitsnumber):
@@ -134,4 +134,6 @@ class User_management(self):
         print('your user name:' + ge_name)
         return ge_name
 
+class Run(data_function(object),User_management(object)):
+    
 data_function.check_req("letter","fuckyou")
