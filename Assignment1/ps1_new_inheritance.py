@@ -1,5 +1,5 @@
 import random
-class data_function(object):
+class UserDataManager(object):
     user_id_list = {}
     # for 1.encrypt\decrypt and 2.check input requirements
     
@@ -13,6 +13,7 @@ class data_function(object):
             # Use modulo operator to cycle through the key if it's shorter than the message
             result += chr(ord(char) ^ ord(key))
         return(result) 
+    
     def check_req(requirement, user_input):
         '''# requirement type: 
         1.letter only
@@ -24,29 +25,28 @@ class data_function(object):
         # deal with space input in Feb.23.2024'''
         user_input = str(user_input)
         requirement = str(requirement)
+
+
         if user_input == '':
             return False
         
         if requirement == 'letter':
-            
             if user_input.isalpha():
                 print('valid letter')
                 return user_input
             else:
-                print("invalid, letters only")
-                user_input = input('only be letters from a-z(or A-Z)\ntype again')
-                return check_req('letter', user_input)
+                print("invalid input, letters only")
+                user_input = input('Please enter letters only from a-z(or A-Z):')
+                return UserDataManager.check_req('letter', user_input)
 
         # requirement : numbers only        
         if requirement == 'digit':
-            
             if user_input.isdigit():
                 return user_input
         else:
-            print("invalid, numbers only")
-            user_input == input('only numbers form 0-9\ntype again')
-            
-            return check_req('digit', user_input)
+            print("invalid input, numbers only")
+            user_input == input('Please enter numbers only from 0-9: ')
+            return UserDataManager.check_req('digit', user_input)
 
         # requirement of email
         if requirement == 'email':
@@ -55,10 +55,10 @@ class data_function(object):
                 print('valid email:'+ user_input)
                 return user_input
             else:
-                print('email should include @ or .com')
-                user_input = input('enter email')
+                print("Email should include @ and .com")
+                user_input = input('Please enter a valid email: ')
             
-                return check_req('email', user_input)
+                return UserDataManager.check_req('email', user_input)
 
         # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
         if requirement == 'password':
@@ -88,19 +88,20 @@ class data_function(object):
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False      
 
-    def user__init__(object, username, userid, password, email):
+    def user_init(object, username, userid, password, email):
         object.list = {}
         object.username = username
         object.userid = userid
         object.password = password
         object.email = email
         object.list[userid] = {object.username, object.userid, object.password, object.email}
+        return object.list, object.username ,object.userid,object.password,object.email,object.list[userid]
         
-    def add_user_to_user_id_list(userid, user_id_list):
-        data_function.user_id_list.append(userid)
+    def add_user_to_user_id_list(userid, UserDataManager.user_id_list):
+        UserDataManager.UserDataManager.user_id_list.append(userid)
 
     def check_user(userid):
-        if userid in data_function.user_id_list:
+        if userid in UserDataManager.user_id_list:
             print(f"user{userid}exists")
             return True
         else:
@@ -110,19 +111,19 @@ class data_function(object):
     
     def add_user(object, username, userid, password, email):
         object.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
-        data_function.user_id_list.append(userid)
+        UserDataManager.user_id_list.append(userid)
     
     def authenticate_user(userid, password):
-        if data_function.user_id_list[userid]["password"] == password:
+        if UserDataManager.user_id_list[userid]["password"] == password:
             return True
         else:
             print("password incorrect")
             return False
             
     def update_user(object, userid, new_id = None, new_password = None, new_email = None):
-        if userid in data_function.user_id_list:
+        if userid in UserDataManager.user_id_list:
             if new_id:
-                object.list[userid]["userid"] = new_id
+                object.list.userid= new_id
             if new_password:
                 object.list[userid]["password"] = new_password
             if new_email:
@@ -154,7 +155,7 @@ class data_function(object):
             if self.check_user(userid) == True:
                 password = input("type your password")
             if self.authenticate_user(userid, password) == True:
-                print("--------------\n here's your info\n whatdo you want to update?" + data_function.user_id_list[userid])
+                print("--------------\n here's your info\n whatdo you want to update?" + UserDataManager.user_id_list[userid])
                 t = input("1/for username \n 2/for password 3/for email")
                 if t == 1:
                     m = input("type your new username")
@@ -169,16 +170,18 @@ class data_function(object):
                         self.update_user(self, userid, new_email= m)
             else:
                 # userid not exist
+
         if choice == "3":
         #register
             username = input("type your name")
-            if data_function.check_req("letter", username) == True:
-                userpassword = input("type your password")
-                if data_function.check_req("password", userpassword) == True:
-                    userid = data_function.generate_user_id(5)
+            if UserDataManager.check_req("letter", username) == True:
+                password = input("type your password")
+                if UserDataManager.check_req("password", password) == True:
+                    userid = UserDataManager.generate_user_id(5)
+                    UserDataManager.user_init(object, username, userid, password, email=None)
                     print("-------------\nrole create successfully")
                     
             
 
     
-data_function.check_req("letter","fuckyou")
+
