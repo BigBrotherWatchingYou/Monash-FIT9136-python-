@@ -131,7 +131,52 @@ class data_function(object):
         ge_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
         print('your user name:' + ge_name)
         return ge_name
+    def run(self):
+        user_id_list = {}
+        choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
+        if choice == "1":
+            # login
+            userid = input("input your id")
+        if self.check_user(userid) == True:
+            password = input("type your password")
+            if self.authenticate_user(userid, password) == True:
+                print(f"----------------------\nloginsuccess, here are your info:")
+                print(user_id_list[userid])
+            else:
+                password = ("type your passwor again")
+                return self.authenticate_user(userid, password)
 
-class Run(data_function(object),User_management(object)):
+        if choice == "2":
+        # update infos
+            userid = input("type your id")
+            if self.check_user(userid) == True:
+                password = input("type your password")
+            if self.authenticate_user(userid, password) == True:
+                print("--------------\n here's your info\n whatdo you want to update?" + user_id_list[userid])
+                t = input("1/for username \n 2/for password 3/for email")
+                if t == 1:
+                    m = input("type your new username")
+                    self.update_user(self, userid, newid= m)
+
+                if t == 2:
+                    m = input("type your new password")
+                    self.update_user(self, userid, new_password= m)
+
+                    if t == 3:
+                        m = input("type your new email")
+                        self.update_user(self, userid, new_email= m)
+            else:
+                # userid not exist
+        if choice == "3":
+        #register
+            username = input("type your name")
+            if check_req("letter", username) == True:
+                userpassword = input("type your password")
+                if check_req("password", userpassword) == True:
+                    userid = generate_user_id(5)
+                    print("-------------\nrole create successfully")
+                    
+            
+
     
 data_function.check_req("letter","fuckyou")
