@@ -1,6 +1,6 @@
 class data_function(object):
     # for 1.encrypt\decrypt and 2.check input requirements
-    input0 = str(object)
+    
     def xor_encrypt_decrypt(input0):
         # Initialize an empty string to store the result
         result = ""
@@ -86,8 +86,6 @@ class data_function(object):
                 print('password should be : letter+ digit + symbols and length between 8-16')
                 return False      
 
-
-class User_management(object):
     def user__init__(object, username, userid, password, email):
         object.list = {}
         object.username = username
