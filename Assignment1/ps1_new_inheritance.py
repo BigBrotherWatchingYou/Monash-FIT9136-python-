@@ -73,7 +73,7 @@ class UserDataManager(object):
         if not any(char.isupper() for char in user_input):
             print(" password should include at least one upper class letter")
             return False
-        
+
         if not any(char.isdigit() for char in user_input):
             print("password should include at least a number")
             return False
@@ -86,36 +86,37 @@ class UserDataManager(object):
         return user_input
 
 
-    def user_init(object, username, userid, password, email):
+    def __init__(object, username, userid, password, email):
         object.list = {}
         object.username = username
         object.userid = userid
         object.password = password
         object.email = email
         object.list[userid] = {object.username, object.userid, object.password, object.email}
+        UserDataManager.add_user_to_user_id_list
         return object.list, object.username ,object.userid,object.password,object.email,object.list[userid]
         
-    def add_user_to_user_id_list(userid, UserDataManager.user_id_list):
-        UserDataManager.UserDataManager.user_id_list.append(userid)
+    def add_user_to_user_id_list(userid):
+        UserDataManager.user_id_list.append(userid)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
-            print(f"user{userid}exists")
+            print(f"user{userid}exists.")
             return True
         else:
-            print(f"user{userid}does not exists")
+            print(f"user{userid}does not exist.")
             return False
         
-    
-    def add_user(object, username, userid, password, email):
-        object.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
-        UserDataManager.user_id_list.append(userid)
+    def generate_user_id(digitsnumber):
+        generated_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
+        print('your user name:' + generated_name)
+        return generated_name
     
     def authenticate_user(userid, password):
         if UserDataManager.user_id_list[userid]["password"] == password:
             return True
         else:
-            print("password incorrect")
+            print("Incorrect password")
             return False
             
     def update_user(object, userid, new_id = None, new_password = None, new_email = None):
@@ -128,10 +129,8 @@ class UserDataManager(object):
                 object.list[userid]["email"] = new_email
 
     
-    def generate_user_id(digitsnumber):
-        ge_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
-        print('your user name:' + ge_name)
-        return ge_name
+    
+    
     def run(self):
         
         choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
@@ -176,7 +175,7 @@ class UserDataManager(object):
                 password = input("type your password")
                 if UserDataManager.check_req("password", password) == True:
                     userid = UserDataManager.generate_user_id(5)
-                    UserDataManager.user_init(object, username, userid, password, email=None)
+                    UserDataManager.__init__(object, username, userid, password, email=None)
                     print("-------------\nrole create successfully")
                     
             
