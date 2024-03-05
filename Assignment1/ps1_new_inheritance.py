@@ -62,31 +62,29 @@ class UserDataManager(object):
 
         # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
         if requirement == 'password':
-            l = 0
-            d = 0
-            s = 0
+            if len(user_input) < 8 or len(user_input) > 16:
+                print("Password should be between 8 and 16 characters long")
+            return False
 
-            if len(user_input) >= 16:
-                print('too long, should be less than 16')
+        if not any(char.islower() for char in user_input):
+            print("password should include at leat one lower class letter")
+            return False
         
-            if len(user_input) >= 8 and len(user_input) <= 16:
-                le += 1
-            for char in user_input:
-                    if char.isalpha():
-                        l += 1
- 
-                    if char.isdigit():
-                        d += 1
+        if not any(char.isupper() for char in user_input):
+            print(" password should include at least one upper class letter")
+            return False
+        
+        if not any(char.isdigit() for char in user_input):
+            print("password should include at least a number")
+            return False
+        
+        if not any(char in r'[^a-zA-z0-9\s]' for char in user_input):
+            print("password should include at least one special character.")
+            return False
+        
+        print("Valid Password\n-----------------")
+        return user_input
 
-                    if char in r'[^a-zA-Z0-9\s]':
-                        s += 1
-            
-            if l != 0 and d != 0 and s != 0 and le != 0:
-                print('valid password')
-                return user_input
-            else:
-                print('password should be : letter+ digit + symbols and length between 8-16')
-                return False      
 
     def user_init(object, username, userid, password, email):
         object.list = {}
