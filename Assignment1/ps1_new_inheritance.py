@@ -1,4 +1,6 @@
+import random
 class data_function(object):
+    user_id_list = {}
     # for 1.encrypt\decrypt and 2.check input requirements
     
     def xor_encrypt_decrypt(input0):
@@ -95,10 +97,10 @@ class data_function(object):
         object.list[userid] = {object.username, object.userid, object.password, object.email}
         
     def add_user_to_user_id_list(userid, user_id_list):
-        user_id_list.append(userid)
+        data_function.user_id_list.append(userid)
 
     def check_user(userid):
-        if userid in user_id_list:
+        if userid in data_function.user_id_list:
             print(f"user{userid}exists")
             return True
         else:
@@ -108,17 +110,17 @@ class data_function(object):
     
     def add_user(object, username, userid, password, email):
         object.list[userid] = {"username": username, "userid": userid, "userpassword": password, "useremail": email}
-        user_id_list.append(userid)
+        data_function.user_id_list.append(userid)
     
     def authenticate_user(userid, password):
-        if user_id_list[userid]["password"] == password:
+        if data_function.user_id_list[userid]["password"] == password:
             return True
         else:
             print("password incorrect")
             return False
             
     def update_user(object, userid, new_id = None, new_password = None, new_email = None):
-        if userid in user_id_list:
+        if userid in data_function.user_id_list:
             if new_id:
                 object.list[userid]["userid"] = new_id
             if new_password:
@@ -132,7 +134,7 @@ class data_function(object):
         print('your user name:' + ge_name)
         return ge_name
     def run(self):
-        user_id_list = {}
+        
         choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
         if choice == "1":
             # login
@@ -152,7 +154,7 @@ class data_function(object):
             if self.check_user(userid) == True:
                 password = input("type your password")
             if self.authenticate_user(userid, password) == True:
-                print("--------------\n here's your info\n whatdo you want to update?" + user_id_list[userid])
+                print("--------------\n here's your info\n whatdo you want to update?" + data_function.user_id_list[userid])
                 t = input("1/for username \n 2/for password 3/for email")
                 if t == 1:
                     m = input("type your new username")
@@ -170,10 +172,10 @@ class data_function(object):
         if choice == "3":
         #register
             username = input("type your name")
-            if check_req("letter", username) == True:
+            if data_function.check_req("letter", username) == True:
                 userpassword = input("type your password")
-                if check_req("password", userpassword) == True:
-                    userid = generate_user_id(5)
+                if data_function.check_req("password", userpassword) == True:
+                    userid = data_function.generate_user_id(5)
                     print("-------------\nrole create successfully")
                     
             
