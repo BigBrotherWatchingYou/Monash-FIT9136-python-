@@ -1,7 +1,7 @@
 import random
 '''what is unchangeable: userid'''
 
-class UserDataManager(object):
+class UserDataManager:
     user_id_list = []
     # for 1.encrypt\decrypt and 2.check input requirements
     
@@ -44,9 +44,9 @@ class UserDataManager(object):
         if requirement == 'digit':
             if user_input.isdigit():
                 return user_input
-        else:
-            print("invalid input, numbers only")
-            return False
+            else:
+                print("invalid input, numbers only")
+                return False
 
         # requirement of email
         if requirement == 'email':
@@ -63,26 +63,26 @@ class UserDataManager(object):
         if requirement == 'password':
             if len(user_input) < 8 or len(user_input) > 16:
                 print("Password should be between 8 and 16 characters long")
-            return False
+                return False
 
-        if not any(char.islower() for char in user_input):
-            print("password should include at leat one lower class letter")
-            return False
+            if not any(char.islower() for char in user_input):
+                print("password should include at leat one lower class letter")
+                return False
         
-        if not any(char.isupper() for char in user_input):
-            print(" password should include at least one upper class letter")
-            return False
+            if not any(char.isupper() for char in user_input):
+                print(" password should include at least one upper class letter")
+                return False
 
-        if not any(char.isdigit() for char in user_input):
-            print("password should include at least a number")
-            return False
+            if not any(char.isdigit() for char in user_input):
+                print("password should include at least a number")
+                return False
         
-        if not any(char in r'[^a-zA-z0-9\s]' for char in user_input):
-            print("password should include at least one special character.")
-            return False
+            if not any(char in r'[^a-zA-z0-9\s]' for char in user_input):
+                print("password should include at least one special character.")
+                return False
         
-        print("Valid Password\n-----------------")
-        return user_input
+            print("Valid Password\n-----------------")
+            return user_input
 
 
     def __init__(userid, username, password, email):
@@ -94,13 +94,13 @@ class UserDataManager(object):
                                "username": username, 
                                "password":password, 
                                "email":email}
-        UserDataManager.add_user_to_user_id_list
-        print("user create successfully")
+        print("user init successfully")
         return userid.list[userid]
         
     def add_user_to_user_id_list(userid):
         UserDataManager.user_id_list.append(userid)
         print("created successfully: userid:"+ userid)
+        print("userlist:"+ UserDataManager.user_id_list)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
@@ -112,7 +112,7 @@ class UserDataManager(object):
         
     def generate_user_id(digitsnumber):
         generated_id = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
-        print('your user name:' + generated_id)
+        print('your user id:' + generated_id)
         return generated_id
     
     def authenticate_user(userid, password):
@@ -151,7 +151,7 @@ class UserDataManager(object):
         password = input("Enter your Password")
         if UserDataManager.authenticate_user(userid, password):
             print("------------Login Successful")
-            return True
+            return userid
         else:
             print("-------------\Login failed, Incorrect password")
             return False
@@ -182,38 +182,35 @@ class UserDataManager(object):
             return UserDataManager.register(password=1)
         if password:
             # check password format
-            password = input("Enter your name (Enter q to quit registration)")
+            password = input("Enter your password (Enter q to quit registration)")
             if not UserDataManager.check_req("password",password):
                 return UserDataManager.register(password=1)
             else:
                 # create a user
                 userid = UserDataManager.generate_user_id(5)
-                UserDataManager.__init__(userid, username, password, email = None)
                 UserDataManager.add_user_to_user_id_list(userid)
+                UserDataManager.__init__(userid, username, password, email = None)
                 
-
-                
-                
-        
-        
-
-
-
-    def run(self):
+ 
+    def run():
 
         choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
         if choice == "1":
             # login
-            if UserDataManager.login():
-                # User Page
-                UserDataManager.user_page(userid)
+            UserDataManager.user_page(UserDataManager.login())
+                
             
 
         if choice == "2":
         #register
             UserDataManager.register(username=1)
+        elif choice == '3':
+            print("Feature not implemented yet.")
+        else:
+            print("Invalid choice. Please try again.")
             
             
-
+if __name__ == "__main__":
+    UserDataManager.run()
     
 
