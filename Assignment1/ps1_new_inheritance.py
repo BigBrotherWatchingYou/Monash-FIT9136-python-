@@ -90,8 +90,10 @@ class UserDataManager(object):
         userid.username = username
         userid.password = password
         userid.email = email
-        userid.list[userid] = { "userid":userid,"username": username, 
-                               "password":password, "email":email}
+        userid.list[userid] = { "userid":userid,
+                               "username": username, 
+                               "password":password, 
+                               "email":email}
         UserDataManager.add_user_to_user_id_list
         print("user create successfully")
         return userid.list[userid]
@@ -120,21 +122,23 @@ class UserDataManager(object):
             print("Incorrect password")
             return False
 
-    def user_page():
+    def user_page(userid):
         print("--------------\n here's your info\n whatdo you want to update?")
         print(UserDataManager.userid.list[userid])
-            t = input(f"1/for username \n 2/for password 3/for email")
-            if t == 1:
-                m = input("type your new username")
-                self.update_user(self, userid, newid= m)
+        t = input(f"1/ change your name \n 2/change password 3/change email")
+        if t == 1:
+            m = input("Enter your new user_name")
+            UserDataManager.update_user(userid, new_username= m)
+            
+        if t == 2:
+            m = input("Enter your new password")
+            UserDataManager.update_user(userid, new_password= m)
 
-            if t == 2:
-                m = input("type your new password")
-                self.update_user(self, userid, new_password= m)
+        if t == 3:
+            m = input("Enter your new email")
+            UserDataManager.update_user(userid, new_email= m)
 
-                if t == 3:
-                    m = input("type your new email")
-                    self.update_user(self, userid, new_email= m)
+        return userid.list[userid]
 
 
     def login():
@@ -152,31 +156,34 @@ class UserDataManager(object):
             print("-------------\Login failed, Incorrect password")
             return False
         
-    def update_user(userid, new_id = None, new_password = None, new_email = None):
+
+    def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
         if userid in UserDataManager.user_id_list:
             if new_id:
-                userid.list.userid= new_id
+                userid.list[userid]["userid"]= new_id
+                print("-------------\n userid updated successful")
+            if new_username:
+                userid.list[userid]["username"]= new_username
+                print("-------------\n user_name updated successful")
             if new_password:
                 userid.list[userid]["password"] = new_password
+                print("-------------\n password updated successful")
             if new_email:
                 userid.list[userid]["email"] = new_email
+                print("-------------\n email updated successful")
 
-    
-    
     
     def run(self):
         
         choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
         if choice == "1":
             # login
-            UserDataManager.login()
-            # User Page
+            if UserDataManager.login():
+                # User Page
+                UserDataManager.user_page(userid)
             
-                
 
-
-        
-        if choice == "3":
+        if choice == "2":
         #register
             username = input("type your name")
             if UserDataManager.check_req("letter", username) == True:
