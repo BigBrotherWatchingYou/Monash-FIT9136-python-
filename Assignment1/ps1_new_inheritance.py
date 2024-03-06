@@ -116,7 +116,18 @@ class UserDataManager(object):
         else:
             print("Incorrect password")
             return False
-            
+    def Login(userid, password):
+        userid = input("Enter your user ID")
+        if not UserDataManager.check_user(userid):
+            print("User did not exist")
+            return False
+        
+        password = input("Enter your Password")
+        if UserDataManager.authenticate_user(userid, password):
+            print("------------Login Successful")
+        else:
+            return False
+
     def update_user(object, userid, new_id = None, new_password = None, new_email = None):
         if userid in UserDataManager.user_id_list:
             if new_id:
