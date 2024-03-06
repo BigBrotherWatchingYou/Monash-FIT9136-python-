@@ -1,6 +1,7 @@
 import random
+
 class UserDataManager(object):
-    user_id_list = {}
+    user_id_list = []
     # for 1.encrypt\decrypt and 2.check input requirements
     
     def xor_encrypt_decrypt(input0):
@@ -36,8 +37,7 @@ class UserDataManager(object):
                 return user_input
             else:
                 print("invalid input, letters only")
-                user_input = input('Please enter letters only from a-z(or A-Z):')
-                return UserDataManager.check_req('letter', user_input)
+                return False
 
         # requirement : numbers only        
         if requirement == 'digit':
@@ -45,8 +45,7 @@ class UserDataManager(object):
                 return user_input
         else:
             print("invalid input, numbers only")
-            user_input == input('Please enter numbers only from 0-9: ')
-            return UserDataManager.check_req('digit', user_input)
+            return False
 
         # requirement of email
         if requirement == 'email':
@@ -56,9 +55,8 @@ class UserDataManager(object):
                 return user_input
             else:
                 print("Email should include @ and .com")
-                user_input = input('Please enter a valid email: ')
-            
-                return UserDataManager.check_req('email', user_input)
+                return False
+
 
         # requirement of 'password = letter(Upper+lower) + digit + @#$@#$  and 16 >=length >= 8'
         if requirement == 'password':
@@ -136,36 +134,36 @@ class UserDataManager(object):
         choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
         if choice == "1":
             # login
-            userid = input("input your id")
-        if self.check_user(userid) == True:
-            password = input("type your password")
-            if self.authenticate_user(userid, password) == True:
-                print(f"----------------------\nloginsuccess, here are your info:")
-                print(user_id_list[userid])
-            else:
-                password = ("type your passwor again")
-                return self.authenticate_user(userid, password)
+            userid = input("Enter your id")
+            if self.check_user(userid) == True:
+                password = input("Enter your password")
+                if self.authenticate_user(userid, password) == True:
+                    print(f"----------------------\nloginsuccess, here are your info:")
+                    print(user_id_list[userid])
+                else:
+                    password = ("type your passwor again")
+                    return self.authenticate_user(userid, password)
 
         if choice == "2":
         # update infos
-            userid = input("type your id")
+            userid = input("enter your id")
             if self.check_user(userid) == True:
-                password = input("type your password")
-            if self.authenticate_user(userid, password) == True:
-                print("--------------\n here's your info\n whatdo you want to update?" + UserDataManager.user_id_list[userid])
-                t = input("1/for username \n 2/for password 3/for email")
-                if t == 1:
-                    m = input("type your new username")
-                    self.update_user(self, userid, newid= m)
+                password = input("enter your password")
+                if self.authenticate_user(userid, password) == True:
+                    print("--------------\n here's your info\n whatdo you want to update?" + UserDataManager.user_id_list[userid])
+                    t = input(f"1/for username \n 2/for password 3/for email")
+                    if t == 1:
+                        m = input("type your new username")
+                        self.update_user(self, userid, newid= m)
 
-                if t == 2:
-                    m = input("type your new password")
-                    self.update_user(self, userid, new_password= m)
+                    if t == 2:
+                        m = input("type your new password")
+                        self.update_user(self, userid, new_password= m)
 
-                    if t == 3:
-                        m = input("type your new email")
-                        self.update_user(self, userid, new_email= m)
-            else:
+                        if t == 3:
+                            m = input("type your new email")
+                            self.update_user(self, userid, new_email= m)
+                else:
                 # userid not exist
 
         if choice == "3":
