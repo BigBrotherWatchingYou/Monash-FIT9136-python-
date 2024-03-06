@@ -3,6 +3,7 @@ import random
 
 class UserDataManager:
     user_id_list = []
+    user_data = {}
     # for 1.encrypt\decrypt and 2.check input requirements
     
     def xor_encrypt_decrypt(input0):
@@ -85,22 +86,17 @@ class UserDataManager:
             return user_input
 
 
-    def __init__(userid, username, password, email):
-        userid.list = {}
-        userid.username = username
-        userid.password = password
-        userid.email = email
-        userid.list[userid] = { "userid":userid,
-                               "username": username, 
-                               "password":password, 
-                               "email":email}
-        print("user init successfully")
-        return userid.list[userid]
-        
-    def add_user_to_user_id_list(userid):
+    def add_user_to_user_id_list(userid,username, password, email):
         UserDataManager.user_id_list.append(userid)
-        print("created successfully: userid:"+ userid)
-        print("userlist:"+ UserDataManager.user_id_list)
+        print("created successfully: userid:"+ userid + "\n-------------")
+        user_info = {"userid": userid,
+                     "username": username,
+                     "password": password,
+                     "email": email}
+        UserDataManager.user_data[userid] = user_info
+        print("User created successfully: userid:", userid)
+        UserDataManager.user_id_list.append(userid)
+        print("here is all_user_id_list:"+ UserDataManager.user_id_list)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
@@ -172,25 +168,23 @@ class UserDataManager:
                 userid.list[userid]["email"] = new_email
                 print("-------------\n email updated successful")
 
-    def register(username=None, password=None):
-        
-        if username == "q" or password == "q":
-            pass
-        if username:
-            username = input("Enter your name (Enter q to quit registration)")
-            # username can contain anything
-            return UserDataManager.register(password=1)
-        if password:
-            # check password format
-            password = input("Enter your password (Enter q to quit registration)")
-            if not UserDataManager.check_req("password",password):
-                return UserDataManager.register(password=1)
-            else:
-                # create a user
-                userid = UserDataManager.generate_user_id(5)
-                UserDataManager.add_user_to_user_id_list(userid)
-                UserDataManager.__init__(userid, username, password, email = None)
-                
+    def register():
+        if username == "q":
+            return
+        # username can contain anything
+        username = input("Enter your name (Enter q to quit registration)")
+            
+        # check password format
+        password = input("Enter your password (Enter q to quit registration)")
+        password = UserDataManager.check_req("password", password)
+        if not password:
+                return
+        email = input("Please Enter your email")
+        email = UnboundLocalError.check_req("email", email)
+        if not email:
+                return
+        userid = UserDataManager.generate_user_id(5)
+        UserDataManager.add_user_to_user_id_list(userid,username, password, email)
  
     def run():
 
