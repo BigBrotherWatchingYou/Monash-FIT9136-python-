@@ -111,9 +111,9 @@ class UserDataManager(object):
             return False
         
     def generate_user_id(digitsnumber):
-        generated_name = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
-        print('your user name:' + generated_name)
-        return generated_name
+        generated_id = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
+        print('your user name:' + generated_id)
+        return generated_id
     
     def authenticate_user(userid, password):
         if UserDataManager.user_id_list[userid]["password"] == password:
@@ -172,7 +172,31 @@ class UserDataManager(object):
                 userid.list[userid]["email"] = new_email
                 print("-------------\n email updated successful")
 
-    def register():
+    def register(username=None, password=None):
+        
+        if username == "q" or password == "q":
+            pass
+        if username:
+            username = input("Enter your name (Enter q to quit registration)")
+            # username can contain anything
+            return UserDataManager.register(password=1)
+        if password:
+            # check password format
+            password = input("Enter your name (Enter q to quit registration)")
+            if not UserDataManager.check_req("password",password):
+                return UserDataManager.register(password=1)
+            else:
+                # create a user
+                userid = UserDataManager.generate_user_id(5)
+                UserDataManager.__init__(userid, username, password, email = None)
+                UserDataManager.add_user_to_user_id_list(userid)
+                
+
+                
+                
+        
+        
+
 
 
     def run(self):
@@ -187,16 +211,8 @@ class UserDataManager(object):
 
         if choice == "2":
         #register
-            username = input("type your name")
-            if not UserDataManager.check_req("letter", username):
-                
-                password = input("type your password")
+            UserDataManager.register(username=1)
             
-                if UserDataManager.check_req("password", password) == True:
-                    userid = UserDataManager.generate_user_id(5)
-                    UserDataManager.__init__(username, userid, password, email=None)
-                    print("-------------\nrole create successfully")
-                    
             
 
     
