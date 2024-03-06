@@ -1,4 +1,5 @@
 import random
+'''what is unchangeable: userid'''
 
 class UserDataManager(object):
     user_id_list = []
@@ -84,18 +85,20 @@ class UserDataManager(object):
         return user_input
 
 
-    def __init__(object, username, userid, password, email):
-        object.list = {}
-        object.username = username
-        object.userid = userid
-        object.password = password
-        object.email = email
-        object.list[userid] = {object.username, object.userid, object.password, object.email}
+    def __init__(userid, username, password, email):
+        userid.list = {}
+        userid.username = username
+        userid.password = password
+        userid.email = email
+        userid.list[userid] = { "userid":userid,"username": username, 
+                               "password":password, "email":email}
         UserDataManager.add_user_to_user_id_list
-        return object.list, object.username ,object.userid,object.password,object.email,object.list[userid]
+        print("user create successfully")
+        return userid.list[userid]
         
     def add_user_to_user_id_list(userid):
         UserDataManager.user_id_list.append(userid)
+        print("created successfully: userid:"+ userid)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
@@ -116,67 +119,63 @@ class UserDataManager(object):
         else:
             print("Incorrect password")
             return False
-    def Login(userid, password):
+
+    def user_page():
+        print("--------------\n here's your info\n whatdo you want to update?")
+        print(UserDataManager.userid.list[userid])
+            t = input(f"1/for username \n 2/for password 3/for email")
+            if t == 1:
+                m = input("type your new username")
+                self.update_user(self, userid, newid= m)
+
+            if t == 2:
+                m = input("type your new password")
+                self.update_user(self, userid, new_password= m)
+
+                if t == 3:
+                    m = input("type your new email")
+                    self.update_user(self, userid, new_email= m)
+
+
+    def login():
         userid = input("Enter your user ID")
+        # 1. check user exists 
         if not UserDataManager.check_user(userid):
             print("User did not exist")
             return False
-        
+        # 2. check password
         password = input("Enter your Password")
         if UserDataManager.authenticate_user(userid, password):
             print("------------Login Successful")
+            return True
         else:
+            print("-------------\Login failed, Incorrect password")
             return False
-
-    def update_user(object, userid, new_id = None, new_password = None, new_email = None):
+        
+    def update_user(userid, new_id = None, new_password = None, new_email = None):
         if userid in UserDataManager.user_id_list:
             if new_id:
-                object.list.userid= new_id
+                userid.list.userid= new_id
             if new_password:
-                object.list[userid]["password"] = new_password
+                userid.list[userid]["password"] = new_password
             if new_email:
-                object.list[userid]["email"] = new_email
+                userid.list[userid]["email"] = new_email
 
     
     
     
     def run(self):
         
-        choice = input(" 1\ for login \n 2\ for update info \n 3 for register")
+        choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
         if choice == "1":
             # login
-            userid = input("Enter your id")
-            if self.check_user(userid) == True:
-                password = input("Enter your password")
-                if self.authenticate_user(userid, password) == True:
-                    print(f"----------------------\nloginsuccess, here are your info:")
-                    print(user_id_list[userid])
-                else:
-                    password = ("type your passwor again")
-                    return self.authenticate_user(userid, password)
+            UserDataManager.login()
+            # User Page
+            
+                
 
-        if choice == "2":
-        # update infos
-            userid = input("enter your id")
-            if self.check_user(userid) == True:
-                password = input("enter your password")
-                if self.authenticate_user(userid, password) == True:
-                    print("--------------\n here's your info\n whatdo you want to update?" + UserDataManager.user_id_list[userid])
-                    t = input(f"1/for username \n 2/for password 3/for email")
-                    if t == 1:
-                        m = input("type your new username")
-                        self.update_user(self, userid, newid= m)
 
-                    if t == 2:
-                        m = input("type your new password")
-                        self.update_user(self, userid, new_password= m)
-
-                        if t == 3:
-                            m = input("type your new email")
-                            self.update_user(self, userid, new_email= m)
-                else:
-                # userid not exist
-
+        
         if choice == "3":
         #register
             username = input("type your name")
@@ -184,7 +183,7 @@ class UserDataManager(object):
                 password = input("type your password")
                 if UserDataManager.check_req("password", password) == True:
                     userid = UserDataManager.generate_user_id(5)
-                    UserDataManager.__init__(object, username, userid, password, email=None)
+                    UserDataManager.__init__(username, userid, password, email=None)
                     print("-------------\nrole create successfully")
                     
             
