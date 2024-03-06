@@ -172,9 +172,11 @@ class UserDataManager(object):
                 userid.list[userid]["email"] = new_email
                 print("-------------\n email updated successful")
 
-    
+    def register():
+
+
     def run(self):
-        
+
         choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
         if choice == "1":
             # login
@@ -186,8 +188,10 @@ class UserDataManager(object):
         if choice == "2":
         #register
             username = input("type your name")
-            if UserDataManager.check_req("letter", username) == True:
+            if not UserDataManager.check_req("letter", username):
+                
                 password = input("type your password")
+            
                 if UserDataManager.check_req("password", password) == True:
                     userid = UserDataManager.generate_user_id(5)
                     UserDataManager.__init__(username, userid, password, email=None)
