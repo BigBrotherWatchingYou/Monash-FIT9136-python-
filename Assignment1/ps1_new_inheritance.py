@@ -157,16 +157,16 @@ class UserDataManager:
     def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
         if userid in UserDataManager.user_id_list:
             if new_id:
-                user_data[userid]["userid"]= new_id
+                UserDataManager.user_data[userid]["userid"]= new_id
                 print("-------------\n userid updated successful")
             if new_username:
-                user_data[userid]["username"]= new_username
+                UserDataManager.user_data[userid]["username"]= new_username
                 print("-------------\n user_name updated successful")
             if new_password:
-                user_data[userid]["password"] = new_password
+                UserDataManager.user_data[userid]["password"] = new_password
                 print("-------------\n password updated successful")
             if new_email:
-                user_data[userid]["email"] = new_email
+                UserDataManager.user_data[userid]["email"] = new_email
                 print("-------------\n email updated successful")
 
     def register():
