@@ -112,7 +112,7 @@ class UserDataManager:
         return generated_id
     
     def authenticate_user(userid, password):
-        if UserDataManager.user_id_list[userid]["password"] == password:
+        if UserDataManager.user_data[userid]["password"] == password:
             return True
         else:
             print("Incorrect password")
@@ -120,7 +120,7 @@ class UserDataManager:
 
     def user_page(userid):
         print("--------------\n here's your info\n whatdo you want to update?")
-        print(UserDataManager.userid.list[userid])
+        print(UserDataManager.user_data[userid])
         t = input(f"1/ change your name \n 2/change password 3/change email")
         if t == 1:
             m = input("Enter your new user_name")
@@ -134,7 +134,8 @@ class UserDataManager:
             m = input("Enter your new email")
             UserDataManager.update_user(userid, new_email= m)
 
-        return userid.list[userid]
+        else:
+            print("Invalid input")
 
 
     def login():
@@ -156,16 +157,16 @@ class UserDataManager:
     def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
         if userid in UserDataManager.user_id_list:
             if new_id:
-                userid.list[userid]["userid"]= new_id
+                user_data[userid]["userid"]= new_id
                 print("-------------\n userid updated successful")
             if new_username:
-                userid.list[userid]["username"]= new_username
+                user_data[userid]["username"]= new_username
                 print("-------------\n user_name updated successful")
             if new_password:
-                userid.list[userid]["password"] = new_password
+                user_data[userid]["password"] = new_password
                 print("-------------\n password updated successful")
             if new_email:
-                userid.list[userid]["email"] = new_email
+                user_data[userid]["email"] = new_email
                 print("-------------\n email updated successful")
 
     def register():
