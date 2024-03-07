@@ -170,22 +170,27 @@ class UserDataManager:
                 print("-------------\n email updated successful")
 
     def register():
+        username = input("Enter your name (Enter q to quit registration)")
         if username == "q":
             return
+        
         # username can contain anything
-        username = input("Enter your name (Enter q to quit registration)")
+        
             
         # check password format
-        password = input("Enter your password (Enter q to quit registration)")
-        password = UserDataManager.check_req("password", password)
-        if not password:
-                return
-        email = input("Please Enter your email")
-        email = UnboundLocalError.check_req("email", email)
-        if not email:
-                return
+        def input_password():
+            password = input("Enter your password (Enter q to quit registration)")
+            if password == "q":
+                return UserDataManager.run()
+            # check password requirements
+            if UserDataManager.check_req("password", password):
+                return password
+            else:
+                return input_password()
+        
+        
         userid = UserDataManager.generate_user_id(5)
-        UserDataManager.add_user_to_user_id_list(userid,username, password, email)
+        UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email)
  
     def run():
 
@@ -198,7 +203,7 @@ class UserDataManager:
 
         if choice == "2":
         #register
-            UserDataManager.register(username=1)
+            UserDataManager.register()
         elif choice == '3':
             print("Feature not implemented yet.")
         else:
