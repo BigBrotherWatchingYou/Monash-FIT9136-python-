@@ -96,7 +96,7 @@ class UserDataManager:
         UserDataManager.user_data[userid] = user_info
         print("User created successfully: userid:", userid)
         UserDataManager.user_id_list.append(userid)
-        print("here is all_user_id_list:"+ UserDataManager.user_id_list)
+        print("here is all_user_id_list:", UserDataManager.user_id_list)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
@@ -190,7 +190,7 @@ class UserDataManager:
         
         
         userid = UserDataManager.generate_user_id(5)
-        UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email)
+        UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email=1)
  
     def run():
 
