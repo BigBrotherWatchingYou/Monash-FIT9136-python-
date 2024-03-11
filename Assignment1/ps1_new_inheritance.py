@@ -129,21 +129,24 @@ class UserDataManager:
         # the page after login successfully
         print("--------------\n here's your info\n whatdo you want to update?")
         print(UserDataManager.user_data[userid])
-        t = input(f"1/ change your name \n 2/change password 3/change email")
-        if t == 1:
+        t = input("1/ change your name \n 2/change password 3/change email")
+        if t == "1":
             m = input("Enter your new user_name")
             UserDataManager.update_user(userid, new_username= m)
+            return UserDataManager.user_page(userid)
             
-        if t == 2:
+        if t == "2":
             m = input("Enter your new password")
             UserDataManager.update_user(userid, new_password= m)
+            return UserDataManager.user_page(userid)
 
-        if t == 3:
+        if t == "3":
             m = input("Enter your new email")
             UserDataManager.update_user(userid, new_email= m)
+            return UserDataManager.user_page(userid)
 
         else:
-            print("Invalid input")
+            print("Invalid input(user_page)")
 
 
     def login():
