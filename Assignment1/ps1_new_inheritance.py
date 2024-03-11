@@ -89,14 +89,17 @@ class UserDataManager:
     def add_user_to_user_id_list(userid,username, password, email):
         UserDataManager.user_id_list.append(userid)
         print("created successfully: userid:"+ userid + "\n-------------")
+        # create user
         user_info = {"userid": userid,
                      "username": username,
                      "password": password,
                      "email": email}
         UserDataManager.user_data[userid] = user_info
         print("User created successfully: userid:", userid)
+        # add user to the user list
         UserDataManager.user_id_list.append(userid)
         print("here is all_user_id_list:", UserDataManager.user_id_list)
+        UserDataManager.user_page(userid)
 
     def check_user(userid):
         if userid in UserDataManager.user_id_list:
