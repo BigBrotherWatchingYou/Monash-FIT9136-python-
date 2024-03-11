@@ -87,6 +87,7 @@ class UserDataManager:
 
 
     def add_user_to_user_id_list(userid,username, password, email):
+        # add the userid to the list
         UserDataManager.user_id_list.append(userid)
         print("created successfully: userid:"+ userid + "\n-------------")
         # create user
@@ -102,6 +103,7 @@ class UserDataManager:
         UserDataManager.user_page(userid)
 
     def check_user(userid):
+        # check does the user exists
         if userid in UserDataManager.user_id_list:
             print(f"user{userid}exists.")
             return True
@@ -110,11 +112,13 @@ class UserDataManager:
             return False
         
     def generate_user_id(digitsnumber):
+        # create a userid
         generated_id = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
         print('your user id:' + generated_id)
         return generated_id
     
     def authenticate_user(userid, password):
+        # check password and userid 
         if UserDataManager.user_data[userid]["password"] == password:
             return True
         else:
@@ -122,6 +126,7 @@ class UserDataManager:
             return False
 
     def user_page(userid):
+        # the page after login successfully
         print("--------------\n here's your info\n whatdo you want to update?")
         print(UserDataManager.user_data[userid])
         t = input(f"1/ change your name \n 2/change password 3/change email")
@@ -158,6 +163,7 @@ class UserDataManager:
         
 
     def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
+        # for user update their information
         if userid in UserDataManager.user_id_list:
             if new_id:
                 UserDataManager.user_data[userid]["userid"]= new_id
@@ -176,8 +182,7 @@ class UserDataManager:
         username = input("Enter your name (Enter q to quit registration)")
         if username == "q":
             return
-        
-        # username can contain anything
+        # username could be  anything
         
             
         # check password format
@@ -196,7 +201,7 @@ class UserDataManager:
         UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email=1)
  
     def run():
-
+        # Main programm
         choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
         if choice == "1":
             # login
