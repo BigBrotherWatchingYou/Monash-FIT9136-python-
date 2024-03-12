@@ -78,9 +78,9 @@ class UserDataManager:
                 print("password should include at least a number")
                 return False
         
-            if not any(char in r'[^a-zA-z0-9\s]' for char in user_input):
+            '''if not any(char in r'[^a-zA-z0-9\s]' for char in user_input):
                 print("password should include at least one special character.")
-                return False
+                return False'''
         
             print("Valid Password\n-----------------")
             return user_input
@@ -89,17 +89,16 @@ class UserDataManager:
     def add_user_to_user_id_list(userid,username, password, email):
         # add the userid to the list
         UserDataManager.user_id_list.append(userid)
-        print("created successfully: userid:"+ userid + "\n-------------")
+        
         # create user
         user_info = {"userid": userid,
                      "username": username,
                      "password": password,
                      "email": email}
         UserDataManager.user_data[userid] = user_info
-        print("User created successfully: userid:", userid)
-        # add user to the user list
-        UserDataManager.user_id_list.append(userid)
-        print("here is all_user_id_list:", UserDataManager.user_id_list)
+        print("User created successfully, your id:", userid, "\n ----------Welcome -----------------------")
+        
+       # turn to user_page
         UserDataManager.user_page(userid)
 
     def check_user(userid):
@@ -114,7 +113,6 @@ class UserDataManager:
     def generate_user_id(digitsnumber):
         # create a userid
         generated_id = ''.join(str(random.randint(0,9)) for i in range(digitsnumber))
-        print('your user id:' + generated_id)
         return generated_id
     
     def authenticate_user(userid, password):
@@ -127,9 +125,11 @@ class UserDataManager:
 
     def user_page(userid):
         # the page after login successfully
-        print("--------------\n here's your info\n whatdo you want to update?")
-        print(UserDataManager.user_data[userid])
-        t = input("1/ change your name \n 2/change password 3/change email")
+        print("--------------\n User Page\n whatdo you want to do?")
+        for key, value in ((UserDataManager.user_data[userid]).items()):
+            print (key,":", value)
+        print("1/ change name  \n 2/change password \n 3/change email")
+        t = input(" \n (Enter q to quit )")
         if t == "1":
             m = input("Enter your new user_name")
             UserDataManager.update_user(userid, new_username= m)
@@ -142,27 +142,37 @@ class UserDataManager:
 
         if t == "3":
             m = input("Enter your new email")
+            if not UserDataManager.check_req("email",m):
+                return
             UserDataManager.update_user(userid, new_email= m)
-            return UserDataManager.user_page(userid)
-
+            return UserDataManager.user_page(userid, t="3")
+        
+        if t == "q":
+            return UserDataManager.run()
         else:
             print("Invalid input(user_page)")
 
 
     def login():
-        userid = input("Enter your user ID")
-        # 1. check user exists 
+        print("Login Page\n--------------------------\nplease Enter your user userID\n(Enter 'q' to quit")
+        userid = input("type here")
+        # 1. check user exists
+        if userid == "q":
+            return UserDataManager.run() 
+        
         if not UserDataManager.check_user(userid):
             print("User did not exist")
-            return False
+            return UserDataManager.login()
         # 2. check password
-        password = input("Enter your Password")
-        if UserDataManager.authenticate_user(userid, password):
-            print("------------Login Successful")
-            return userid
+        print("please Enter your Password")
+        password = input("type here")
+        if not UserDataManager.authenticate_user(userid, password):
+            print("------------Login Failed")
+            return UserDataManager.run()
+        
         else:
-            print("-------------\Login failed, Incorrect password")
-            return False
+            print("login successfully")
+            return UserDataManager.user_page(userid)
         
 
     def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
@@ -170,27 +180,29 @@ class UserDataManager:
         if userid in UserDataManager.user_id_list:
             if new_id:
                 UserDataManager.user_data[userid]["userid"]= new_id
-                print("-------------\n userid updated successful")
+                print("-------------\n userid updated successful ------------------\n")
             if new_username:
                 UserDataManager.user_data[userid]["username"]= new_username
-                print("-------------\n user_name updated successful")
+                print("-------------\n user_name updated successful ------------------\n")
             if new_password:
                 UserDataManager.user_data[userid]["password"] = new_password
-                print("-------------\n password updated successful")
+                print("-------------\n password updated successful -------------------\n")
             if new_email:
                 UserDataManager.user_data[userid]["email"] = new_email
-                print("-------------\n email updated successful")
+                print("-------------\n email updated successful -----------------\n")
 
     def register():
-        username = input("Enter your name (Enter q to quit registration)")
+        print("Enter your name")
+        username = input("type here (Enter q to quit )")
         if username == "q":
-            return
+            return UserDataManager.run()
         # username could be  anything
         
             
         # check password format
         def input_password():
-            password = input("Enter your password (Enter q to quit registration)")
+            print("enter your password")
+            password = input("type here(Enter q to quit registration)")
             if password == "q":
                 return UserDataManager.run()
             # check password requirements
@@ -201,11 +213,13 @@ class UserDataManager:
         
         
         userid = UserDataManager.generate_user_id(5)
-        UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email=1)
+        UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email="No email")
  
     def run():
         # Main programm
-        choice = input(" 1\ for login  \n 2 for register \n 3 for I forgot my password or account")
+        print("----------------------")
+        print(" 1\ for login  \n 2\ for register \n 3\ for I forgot my password or account")
+        choice = input("type here")
         if choice == "1":
             # login
             UserDataManager.user_page(UserDataManager.login())
