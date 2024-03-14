@@ -95,15 +95,16 @@ class UserDataManager:
                      "password": password,
                      "email": email}
         UserDataManager.user_data[userid] = user_info
-        print("User created successfully, your id:", userid, "\n ----------Welcome -----------------------")
+        # for encrytion
+        UserDataManager.user_data[userid]["password"] = UserDataManager.xor_encrypt_decrypt(password)
+        print("User created successfully, \n[        your id:", userid, "       ]\n ----------Welcome -----------------------")
         
-       # turn to user_page
-        UserDataManager.user_page(userid)
+
 
     def check_user(userid):
         # check does the user exists
         if userid in UserDataManager.user_id_list:
-            print(f"user{userid}exists.")
+            print(f"user: {userid}   exists.")
             return True
         else:
             print(f"user{userid}does not exist.")
@@ -116,10 +117,9 @@ class UserDataManager:
     
     def authenticate_user(userid, password):
         # check password and userid 
-        if UserDataManager.user_data[userid]["password"] == password:
+        if UserDataManager.user_data[userid]["password"] == UserDataManager.xor_encrypt_decrypt(password):
             return True
         else:
-            print("Incorrect password")
             return False
 
     def user_page(userid):
@@ -129,49 +129,57 @@ class UserDataManager:
         for key, value in ((UserDataManager.user_data[userid]).items()):
             print (key,":", value)
         print("1/ change name  \n 2/change password \n 3/change email")
-        t = input(" \n (Enter q to quit )")
+        t = input(" \n Enter 1 or 2 or 3(Enter q to quit )")
         if t == "1":
-            m = input("Enter your new user_name")
-            UserDataManager.update_user(userid, new_username= m)
+            new_username = input("Enter your new user_name")
+            UserDataManager.update_user(userid, new_username)
             return UserDataManager.user_page(userid)
             
         if t == "2":
-            m = input("Enter your new password")
-            UserDataManager.update_user(userid, new_password= m)
+            print("Enter your new password")
+            new_password = input("Enter your new password")
+            UserDataManager.update_user(userid, new_password = "1")
             return UserDataManager.user_page(userid)
 
         if t == "3":
-            m = input("Enter your new email")
-            UserDataManager.update_user(userid, new_email= m)
+            new_email = input("Enter your new email")
+            UserDataManager.update_user(userid, new_email)
  
         
         if t == "q":
             return UserDataManager.run()
-        print("--------------------")
+        
         return UserDataManager.user_page(userid)
 
 
-    def login():
-        print("Login Page\n--------------------------\nplease Enter your user userID\n(Enter 'q' to quit")
-        userid = input("type here")
-        # 1. check user exists
-        if userid == "q":
-            return UserDataManager.run() 
+    def login(userid = None, password = None):
+        if userid == None:
+            print("Login Page\n--------------------------\nplease Enter your user userID\n(Enter 'q' to quit")
+            userid = input("type your user id")
+            # 1. check user exists
+            if userid == "q":
+                return UserDataManager.run() 
         
-        if not UserDataManager.check_user(userid):
-            print("User did not exist")
-            return UserDataManager.login()
+            if not UserDataManager.check_user(userid):
+                print("User did not exist")
+                return UserDataManager.login()
         # 2. check password
-        print("please Enter your Password")
-        password = input("type here")
-        if not UserDataManager.authenticate_user(userid, password):
-            print("------------Login Failed")
-            return UserDataManager.run()
+        if password == None:
+            print(f"user: {userid}  \nplease Enter your Password(Enter q to quit)")
+            password = input("type your password")
+            # quit
+            if password == "q":
+                return UserDataManager.run()
+            
+            if UserDataManager.authenticate_user(userid, password):
+                print("login successfully")
+                return UserDataManager.user_page(userid)
         
-        else:
-            print("login successfully")
-            return UserDataManager.user_page(userid)
-        
+            # login failed
+            if not UserDataManager.authenticate_user(userid, password):
+                print("------------\nLogin failed, invalid Password")
+                return UserDataManager.login(userid, password=None)
+            
 
     def update_user(userid, new_username = None, new_id = None, new_password = None, new_email = None):
         # for user update their information
@@ -184,6 +192,9 @@ class UserDataManager:
                 print("-------------\n user_name updated successful ------------------\n")
             if new_password:
                 UserDataManager.user_data[userid]["password"] = new_password
+                
+                # for encryption
+                UserDataManager.user_data[userid]["password"] = UserDataManager.xor_encrypt_decrypt(new_password)
                 print("-------------\n password updated successful -------------------\n")
             if new_email:
                 if UserDataManager.check_req("email", new_email):
@@ -196,7 +207,8 @@ class UserDataManager:
 
     def register():
         print("Enter your name")
-        username = input("type here (Enter q to quit )")
+        username = input("type your name(Enter q to quit )")
+        # return Main Page
         if username == "q":
             return UserDataManager.run()
         # username could be  anything
@@ -206,23 +218,39 @@ class UserDataManager:
         def input_password():
             print("enter your password")
             password = input("type here(Enter q to quit registration)")
+            
+            #quit
             if password == "q":
                 return UserDataManager.run()
             # check password requirements
             if UserDataManager.check_req("password", password):
-                return password
+                # let the user input the password again
+                print(" please enter your password again")
+                password_2 = input("enter your password")
+                if password_2 == password:
+                    return password
+                else:
+                    print("both password should be the same")
+                    return input_password()
             else:
+                # password invalid
                 return input_password()
         
         
         userid = UserDataManager.generate_user_id(5)
         UserDataManager.add_user_to_user_id_list(userid,username,input_password() , email="No email")
+        
+        # turn to Login page
+        print("-----------------\nnow Use your userid to Login!")
+        UserDataManager.login()
+ 
+ 
  
     def run():
         # Main programm
-        print("----------------------")
+        print("-------Main Page-------------------")
         print(" 1\ for login  \n 2\ for register \n 3\ for I forgot my password or account")
-        choice = input("type here")
+        choice = input("enter 1 or 2 or 3")
         if choice == "1":
             # login
             UserDataManager.user_page(UserDataManager.login())
@@ -232,10 +260,12 @@ class UserDataManager:
         if choice == "2":
         #register
             UserDataManager.register()
-        elif choice == '3':
+        if choice == '3':
             print("Feature not implemented yet.")
+            
         else:
             print("Invalid choice. Please try again.")
+            return UserDataManager.run()
             
             
 if __name__ == "__main__":
