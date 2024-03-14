@@ -51,10 +51,9 @@ class UserDataManager:
 
         # requirement of email
         if requirement == 'email':
-            
             if '@' and '.com' in user_input:
                 print('valid email:'+ user_input)
-                return user_input
+                return True
             else:
                 print("Email should include @ and .com")
                 return False
@@ -125,7 +124,8 @@ class UserDataManager:
 
     def user_page(userid):
         # the page after login successfully
-        print("--------------\n User Page\n whatdo you want to do?")
+        print("----------------------\n User Page\n whatdo you want to do?")
+        #print user info
         for key, value in ((UserDataManager.user_data[userid]).items()):
             print (key,":", value)
         print("1/ change name  \n 2/change password \n 3/change email")
@@ -142,15 +142,13 @@ class UserDataManager:
 
         if t == "3":
             m = input("Enter your new email")
-            if not UserDataManager.check_req("email",m):
-                return
             UserDataManager.update_user(userid, new_email= m)
-            return UserDataManager.user_page(userid, t="3")
+ 
         
         if t == "q":
             return UserDataManager.run()
-        else:
-            print("Invalid input(user_page)")
+        print("--------------------")
+        return UserDataManager.user_page(userid)
 
 
     def login():
@@ -188,8 +186,13 @@ class UserDataManager:
                 UserDataManager.user_data[userid]["password"] = new_password
                 print("-------------\n password updated successful -------------------\n")
             if new_email:
-                UserDataManager.user_data[userid]["email"] = new_email
-                print("-------------\n email updated successful -----------------\n")
+                if UserDataManager.check_req("email", new_email):
+                    print("-------------\n email updated successful -----------------\n")
+                    UserDataManager.user_data[userid]["email"] = new_email
+                else:
+                    print("Enter email")
+                    new_email = input("Enter email")
+                    return UserDataManager.update_user(userid, new_email = new_email)
 
     def register():
         print("Enter your name")
