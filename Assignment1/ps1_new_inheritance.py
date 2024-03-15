@@ -131,6 +131,7 @@ class UserDataManager:
         print("1/ change name  \n 2/change password \n 3/change email")
         t = input(" \n Enter 1 or 2 or 3(Enter q to quit )")
         if t == "1":
+            print("Enter your new username")
             new_username = input("Enter your new user_name")
             UserDataManager.update_user(userid, new_username)
             return UserDataManager.user_page(userid)
@@ -142,6 +143,7 @@ class UserDataManager:
             return UserDataManager.user_page(userid)
 
         if t == "3":
+            print("Enter your new email")
             new_email = input("Enter your new email")
             UserDataManager.update_user(userid, new_email)
  
