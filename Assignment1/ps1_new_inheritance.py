@@ -8,6 +8,8 @@ class UserDataManager:
     
     def xor_encrypt_decrypt(input0):
         # Initialize an empty string to store the result
+        '''need to be changed:
+        '''
         result = ""
         key = "k"
         # Iterate over each character in the message
