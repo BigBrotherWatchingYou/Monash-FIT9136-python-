@@ -1,5 +1,6 @@
 class Admin(User):
     def constructor():
+        print
 #Admin only have attributes id(int, default value -1), username(str, default value “”)
 #and password(str, default value “”) which can be inherited from the parent class.
     def register_admin():
