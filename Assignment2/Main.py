@@ -2,36 +2,39 @@ import re
 import os
 import random
 # from User import User
-useridlist = ["admin","user","student"]
-userdata["admin"] = {"userid":"admin", "password":"admin","right": "all"}
+username_list = ["admin","user","student"]
+userdata = {}
+userdata["admin"] = {"username":"admin", "password":"admin","right": "all"}
 class Main:
     def show_menu():
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
+        # the page after login successful, shows what user can do 
+        pass
         
-        # turn to login 
-        if Main.login() == "admin":
-            Admin.constructor
-        if Main.login() == "User":
-            User.constructor
-        else:
-        
+       
     
     def login():    
         # Fig1 show menu example
-        print("Welcome to our system\nPlease input username and password to login:(format username password)")
+        print("Welcome to our system\nPlease input username and password to login:")
         # return admin or user
-        userid = input("please input your userid")
-        password = input("please input your password")
+        userinput = input("format:username password")
+        # wrong input
+        if len(userinput).split() != 2:
+            print("format(there should be a 'space'between name and password):username password")
+            return Main.login()
+        username = userinput.split()[0]
+        password = userinput.split()[1]
         def authenticate_user():
-            if userid not in useridlist:
+            if username not in username_list:
                 #user do not exist
                 print("user id do not exist")
                 return Main.login()
             else:
-                
+                return False
             
     def process_operations(user_object):
+        pass
 '''This method has one positional argument user_object.
 Admin can take commands “1”, “2”, “3”, “4”, “5”. For command “2” and “4”, the end
 user needs to enter “TITLE_KEYWORD/ID/INSTRUCTOR_ID” and
@@ -49,18 +52,15 @@ In this method, it is not allowed to create an object of Admin/Instructor/Studen
 class. It is assumed that a User class object user_object is passed into this method
 and you are not sure about the exact type.'''
 #  Menu looks like: 
-Assignment2/Mainmenu.example.png
+# Assignment2/Mainmenu.example.png
 
 # !!!   the programm should be like Assignment_2_Specification (1).pdf. page 17-20
-
-
-
-
+        
 
 
 
     def main():
-'''This method handles the main logic of your system. No positional arguments here. It
+        '''This method handles the main logic of your system. No positional arguments here. It
 should keep running until the user input “exit”. At the beginning, this method asks
 the user to enter username and password in format “username password”. Next,
 
@@ -72,6 +72,24 @@ process all the logics. If the logged user is “Admin”, 1) create an Admin ob
 show_menu() method, 3) call process_operations() method. If the login fails, print
 out an error message. If the username password format is incorrect, print out a
 different error message.'''
+        # let the user enter username and password
+        username = input
+        choice = input("enter 1 or 2 or 3")
+        if choice == "1":
+            # login
+            if Main.login() == "admin":
+                Admin.constructor()
+            if Main.login() == "User":
+                User.constructor()
+
+        if choice == "2":
+        #register
+            Main.register()
+        if choice == '3':
+            print("Feature not implemented yet.")
+        
+        
+        
 if __name__ == “__main__”:
     Main.main()
     
