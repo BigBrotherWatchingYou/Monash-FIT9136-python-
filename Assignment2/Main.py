@@ -1,16 +1,16 @@
 import re
 import os
 import random
-from User import User
+# from User import User
 
 class Main:
     def show_menu():
-'''This method prints out the available options that the user can choose. You can add
-positional arguments if you need. Fig1 shows an example of the menu output.'''
-        print("Welcome to our system")
+        '''This method prints out the available options that the user can choose. You can add
+        positional arguments if you need. Fig1 shows an example of the menu output.'''
+        print("Welcome to our system\nPlease input username and password to login:(format username password)")
         
     
-    def login    
+    def login():    
 # Fig1 show menu example
     def process_operations(user_object):
 '''This method has one positional argument user_object.
