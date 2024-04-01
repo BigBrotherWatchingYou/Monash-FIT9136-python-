@@ -8,10 +8,12 @@ class Main:
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         print("Welcome to our system\nPlease input username and password to login:(format username password)")
-        
+        # turn to login 
+        if login()
     
     def login():    
 # Fig1 show menu example
+# return admin or user 
     def process_operations(user_object):
 '''This method has one positional argument user_object.
 Admin can take commands “1”, “2”, “3”, “4”, “5”. For command “2” and “4”, the end
