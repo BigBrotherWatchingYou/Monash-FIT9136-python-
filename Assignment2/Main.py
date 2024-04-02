@@ -4,19 +4,22 @@ import random
 # from User import User
 username_list = ["admin","user","student"]
 userdata = {}
-userdata["admin"] = {"username":"admin", "password":"admin","right": "all"}
+userdata["admin"] = {"username":"admin", "password":"admin","role": "admin"}
 class Main:
     def show_menu():
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
-        print("Please enter Admin command for further service:\n\
+        if Main.login() == "Admin login":
+            #Admin login
+            print("Please enter Admin command for further service:\n\
             1.EXTRACT_DATA\n\
             2.VIEW_COURSES\n\
             3.VIEW_USERS\n\
             4.VIEW_REVIEWS\n\
             5.REMOVE_DATA")
-        
+        if Main.login() == "User login":
+            pass
        
     
     def login():    
@@ -28,15 +31,25 @@ class Main:
         if len(userinput).split() != 2:
             print("format(there should be a 'space'between name and password):username password")
             return Main.login()
-        username = userinput.split()[0]
-        password = userinput.split()[1]
+        else:
+            username = userinput.split()[0]
+            password = userinput.split()[1]
         def authenticate_user():
+            #check do the user exist
             if username not in username_list:
                 #user do not exist
                 print("user id do not exist")
                 return Main.login()
-            else:
-                return False
+            if userdata[username]["password"] == password:
+                # login successful
+                if userdata[username]["role"] == "admin":
+                    #Admin login
+                    return "Admin login"
+                else:
+                    # normal user login
+                    return "User login"
+                
+                
             
     def process_operations(user_object):
         pass
@@ -214,16 +227,20 @@ class, you can use the parent class’s __str__ method directly.'''
 class User:
 # User class handles the fundamental methods of all users. The User class is the parent class of Admin, Instructor and Student classes.
     def constructor():
+        pass
 #A user must have id(int, default value -1), username(str, default value “”),
 #password(str, default value “”).
     def generate_unique_user_id():
+        pass
 #This method checks the files user_admin.txt, user_instructor.txt and user_student.txt
 #to generate an unique user id. The return result is a 10 digits integer.
     def encryption(input_password):
+        pass
 #This method encrypts the input_password to a string that is difficult to read by
 #humans. Reuse the encryption algorithm that was in A1 to encode the input
 #password. The encrypted password will be returned and the type is string.
     def login():
+        pass
 '''Each user can call the login method to perform authentication. In this login() method,
 it is required to call the encryption() method defined before to encode the password.
 The encoded password can be used to compare with the password extracted from
@@ -234,16 +251,22 @@ only be “Admin”, “Instructor”, “Student”), login_user_info(any type 
 or str, this value can be used to create different types of user object (Admin, Student
 or Instructor)).'''
     def extract_info():
+        pass
 #This method prints out a message “You have no permission to extract information”.
     def view_courses(args=[]):
+        pass
 #This method prints out a message “You have no permission to view courses”.
     def view_users():
+        pass
 #This method prints out a message “You have no permission to view users”.
     def view_reviews(args=[]):
+        pass
 #This method prints out a message “You have no permission to view reviews”.
     def remove_data():
+        pass
 #This method prints out a message “You have no permission to remove data”.
     def __str__():
+        pass
 #This method returns a formatted user string: “user_id;;;username;;;password”. All the
 #attributes are concatenated using “;;;”'''
 
