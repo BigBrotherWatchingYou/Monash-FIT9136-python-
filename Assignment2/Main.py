@@ -6,11 +6,11 @@ username_list = ["admin","user","student"]
 userdata = {}
 userdata["admin"] = {"username":"admin", "password":"admin","role": "admin"}
 class Main:
-    def show_menu():
+    def show_menu(user_role):
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
-        if Main.login() == "Admin login":
+        if user_role == "Admin":
             #Admin login
             print("Please enter Admin command for further service:\n\
             1.EXTRACT_DATA\n\
@@ -18,16 +18,22 @@ class Main:
             3.VIEW_USERS\n\
             4.VIEW_REVIEWS\n\
             5.REMOVE_DATA")
-        if Main.login() == "User login":
+            
+            # invalid command
+            
+            
+        if user_role == "User":
+            # user login
             pass
-       
+        
+        return user_role    
     
     def login():    
         # Fig1 show menu example
         # return "Admin login" or "User login"
-        print("Welcome to our system\nPlease input username and password to login:")
+        
         # let user input
-        userinput = input("format:username password")
+        userinput = input("format: username password(enter 'exit' to quit)")
         
         #quit
         if userinput == "exit":
@@ -36,7 +42,7 @@ class Main:
             
         # incorrect input
         if len(userinput).split() != 2:
-            print("format(there should be a 'space'between name and password):username password")
+            print("format(there should be a space between name and password): username password")
             return Main.login()
         else:
             # legal input
@@ -55,10 +61,10 @@ class Main:
                 # login successful
                 if userdata[username]["role"] == "admin":
                     #Admin login
-                    return "Admin login"
+                    return "Admin"
                 else:
                     # normal user login
-                    return "User login"
+                    return "User"
             else:
                 # login failed
                 print("incorrect username and password\n\
@@ -67,12 +73,37 @@ class Main:
                 
                 
             
-    def process_operations(user_object):
-        pass
-'''This method has one positional argument user_object.
+    def process_operations(user_object,user_role):
+        
+        if user_role == "Admin":
+            if user_object == "1":
+                pass
+            if user_object == "2":
+                pass
+            if user_object == "3":
+                pass
+            if user_object == "4":
+                pass
+            if user_object == "5":                
+                pass
+        if user_role == "User":
+            if user_object == "1":
+                pass
+            if user_object == "2":
+                pass
+            if user_object == "3":
+                pass
+            if user_object == "4":
+                pass
+            if user_object == "5":                
+                pass
+        
+      
+    '''This method has one positional argument user_object.
 Admin can take commands “1”, “2”, “3”, “4”, “5”. For command “2” and “4”, the end
 user needs to enter “TITLE_KEYWORD/ID/INSTRUCTOR_ID” and
-“ID/KEYWORD/COURSE_ID” as a second command, followed by a value. For example,
+“ID/KEYWORD/COURSE_ID” as a second command, followed by a value. 
+For example,
 if the login user is admin, he can input “2 TITLE_KEYWORD web”(the value after the
 second command can only be one word). The system will call corresponding view
 course methods and print out all the courses whose title contains “web” (case
@@ -90,9 +121,6 @@ and you are not sure about the exact type.'''
 
 # !!!   the programm should be like Assignment_2_Specification (1).pdf. page 17-20
         
-
-
-
     def main():
         '''This method handles the main logic of your system. No positional arguments here. It
 should keep running until the user input “exit”. At the beginning, this method asks
@@ -107,7 +135,24 @@ show_menu() method, 3) call process_operations() method. If the login fails, pri
 out an error message. If the username password format is incorrect, print out a
 different error message.'''
         # let the user enter username and password
-        username = input
+        print("Welcome to our system\nPlease input username and password to login:")
+        user_role = Main.login()
+        Main.show_menu(user_role)
+        
+        # let the user take commands
+        def take_commamds():
+            user_object = input("take commands (enter Logout to quit)")
+            command = ["1","2","3","4","5"]
+            if command == "Logout":
+                return Main.main
+            if user_object not in command:
+                print("invalid command")
+                return take_commamds
+            else:
+                return user_object
+        user_object = take_commamds()   
+        Main.process_operations(user_object, user_role)
+        '''username = input
         choice = input("enter 1 or 2 or 3")
         if choice == "1":
             # login
@@ -120,7 +165,7 @@ different error message.'''
         #register
             Main.register()
         if choice == '3':
-            print("Feature not implemented yet.")
+            print("Feature not implemented yet.")'''
         
         
         
