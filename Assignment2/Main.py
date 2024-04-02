@@ -27,6 +27,9 @@ class Main:
         print("Welcome to our system\nPlease input username and password to login:")
         # return admin or user
         userinput = input("format:username password")
+        if userinput == "exit":
+            print("Thanks for using, programm quit")
+            quit
         # wrong input
         if len(userinput).split() != 2:
             print("format(there should be a 'space'between name and password):username password")
@@ -48,6 +51,11 @@ class Main:
                 else:
                     # normal user login
                     return "User login"
+            else:
+                # login failed
+                print("incorrect username and password\n\
+                    input format:username password")
+                return Main.login()
                 
                 
             
