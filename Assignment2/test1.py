@@ -1,3 +1,3 @@
-class Test:
-    def printing():
-        print("Test1 imported")
+a = "adolf hitler a"
+print(a.split()[0])
+print(len(a.split( )))

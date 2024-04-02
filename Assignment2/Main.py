@@ -10,7 +10,12 @@ class Main:
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
-        pass
+        print("Please enter Admin command for further service:\n\
+            1.EXTRACT_DATA\n\
+            2.VIEW_COURSES\n\
+            3.VIEW_USERS\n\
+            4.VIEW_REVIEWS\n\
+            5.REMOVE_DATA")
         
        
     
