@@ -24,20 +24,28 @@ class Main:
     
     def login():    
         # Fig1 show menu example
+        # return "Admin login" or "User login"
         print("Welcome to our system\nPlease input username and password to login:")
-        # return admin or user
+        # let user input
         userinput = input("format:username password")
+        
+        #quit
         if userinput == "exit":
             print("Thanks for using, programm quit")
             quit
-        # wrong input
+            
+        # incorrect input
         if len(userinput).split() != 2:
             print("format(there should be a 'space'between name and password):username password")
             return Main.login()
         else:
+            # legal input
             username = userinput.split()[0]
             password = userinput.split()[1]
-        def authenticate_user():
+            
+        # start authenticating username and password    
+        authenticate_user(username, password)    
+        def authenticate_user(username, password):
             #check do the user exist
             if username not in username_list:
                 #user do not exist
