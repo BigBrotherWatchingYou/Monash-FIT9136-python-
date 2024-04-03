@@ -114,7 +114,7 @@ class Main:
             if user_object in ["1","3","5"]:
                 # invalid operation
                 print("This option is for admin only")
-                return Main.show_menu(username)
+                
             
             if user_object == "2":
                 pass
@@ -122,7 +122,7 @@ class Main:
             if user_object == "4":
                 pass
 
-        
+        return Main.show_menu(username)
       
     '''This method has one positional argument user_object.
 Admin can take commands “1”, “2”, “3”, “4”, “5”. For command “2” and “4”, the end
