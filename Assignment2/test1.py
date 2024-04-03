@@ -1,3 +1,2 @@
-a = "adolf hitler a"
-print(a.split()[0])
-print(len(a.split( )))
+username_list = ["admin","user","student"]
+print(len(username_list))

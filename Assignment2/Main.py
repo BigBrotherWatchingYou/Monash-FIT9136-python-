@@ -2,7 +2,9 @@ import re
 import os
 import random
 # from User import User
-username_list = ["admin","user","student"]
+admin_list = ["admin","admin2","admin3"]
+student_list = ["student", "student2", "student3" , "student4"]
+instructor_list = ["instructor", "instructor2", "instructor3" , "instructor4", "instructor5"]
 userdata = {}
 userdata["admin"] = {"username":"admin", "password":"admin","role": "admin"}
 class Main:
@@ -68,7 +70,7 @@ class Main:
         authenticate_user(username, password)    
         def authenticate_user(username, password):
             #check do the user exist
-            if username not in username_list:
+            if username not in admin_list:
                 #user do not exist
                 print("user id do not exist")
                 return Main.login()
@@ -90,17 +92,27 @@ class Main:
             
     def process_operations(user_object,user_role):
         
+
         if user_role == "Admin":
             if user_object == "1":
+                # 1.EXTRACT DATA
                 pass
             if user_object == "2":
+                #2.VIEW COURSES
                 pass
             if user_object == "3":
-                pass
+                # 3.VIEW USERS
+                print("total number of admin: " + len(admin_list))
+                print("total number of instructor: " + len(instructor_list))
+                print("total number of student: " + len(student_list))
+
             if user_object == "4":
+                #4.VIEW REVIEWS
                 pass
             if user_object == "5":                
+                #5.REMOVE DATA
                 pass
+            
         if user_role == "User":
             if user_object == "1":
                 pass
