@@ -229,7 +229,7 @@ class Admin(User):
         password = input_password()
         
         # create admin
-        userdata[username] = {"username":username , "password":password,"role": "admin"}           
+        userdata[username] = {"username":username , "password":password, "role": "admin"}           
                 
             #quit
             
