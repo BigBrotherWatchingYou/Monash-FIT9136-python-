@@ -7,6 +7,7 @@ userdata = {}
 userdata["admin"] = {"username":"admin", "password":"admin","role": "admin"}
 class Main:
     def show_menu(user_role):
+        # return the command on Menu
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
@@ -18,8 +19,22 @@ class Main:
             3.VIEW_USERS\n\
             4.VIEW_REVIEWS\n\
             5.REMOVE_DATA")
+            # let user take commands
+            return take_commamds()
             
-            # invalid command
+        def take_commamds():
+            # get command from user
+            user_object = input("take commands (enter 'Logout' to quit)")
+            command = ["1","2","3","4","5"]
+            if command == "Logout":
+                return Main.main
+            if user_object not in command:
+                print("invalid command")
+                return Main.show_menu(user_role)
+            else:
+                return user_object
+            
+         
             
             
         if user_role == "User":
@@ -137,21 +152,10 @@ different error message.'''
         # let the user enter username and password
         print("Welcome to our system\nPlease input username and password to login:")
         user_role = Main.login()
-        Main.show_menu(user_role)
-        
         # let the user take commands
-        def take_commamds():
-            user_object = input("take commands (enter Logout to quit)")
-            command = ["1","2","3","4","5"]
-            if command == "Logout":
-                return Main.main
-            if user_object not in command:
-                print("invalid command")
-                return take_commamds
-            else:
-                return user_object
-        user_object = take_commamds()   
-        Main.process_operations(user_object, user_role)
+           
+        Main.process_operations(Main.show_menu(user_role), user_role)
+        
         '''username = input
         choice = input("enter 1 or 2 or 3")
         if choice == "1":
