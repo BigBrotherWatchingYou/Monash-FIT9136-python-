@@ -8,13 +8,14 @@ instructor_list = ["instructor", "instructor2", "instructor3" , "instructor4", "
 userdata = {}
 userdata["admin"] = {"username":"admin", "password":"admin","role": "admin"}
 class Main:
-    def show_menu(user_role):
+    def show_menu(username):
         # return the command on Menu
         '''This method prints out the available options that the user can choose. You can add
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
-        if user_role == "Admin":
+        if userdata[username]["role"] == "admin":
             #Admin login
+            print(f"Welcome ",[username],". Your role is ", userdata[username]["role"] )
             print("Please enter Admin command for further service:\n\
             1.EXTRACT_DATA\n\
             2.VIEW_COURSES\n\
@@ -32,14 +33,14 @@ class Main:
                 return Main.main
             if user_object not in command:
                 print("invalid command")
-                return Main.show_menu(user_role)
+                return Main.show_menu()
             else:
                 return user_object
             
          
             
             
-        if user_role == "User":
+        if userdata[username]["role"] == "User":
             # user login
             pass
         
@@ -67,21 +68,17 @@ class Main:
             password = userinput.split()[1]
             
         # start authenticating username and password    
-        authenticate_user(username, password)    
+        authenticate_user(username, password)
+            
         def authenticate_user(username, password):
             #check do the user exist
-            if username not in admin_list:
+            if username not in (admin_list and  instructor_list and  student_list):
                 #user do not exist
                 print("user id do not exist")
                 return Main.login()
             if userdata[username]["password"] == password:
                 # login successful
-                if userdata[username]["role"] == "admin":
-                    #Admin login
-                    return "Admin"
-                else:
-                    # normal user login
-                    return "User"
+                return username
             else:
                 # login failed
                 print("incorrect username and password\n\
@@ -90,10 +87,10 @@ class Main:
                 
                 
             
-    def process_operations(user_object,user_role):
+    def process_operations(user_object,user_role,username):
         
 
-        if user_role == "Admin":
+        if user_role == "admin":
             if user_object == "1":
                 # 1.EXTRACT DATA
                 pass
@@ -113,17 +110,18 @@ class Main:
                 #5.REMOVE DATA
                 pass
             
-        if user_role == "User":
-            if user_object == "1":
-                pass
+        if user_role != "admin":
+            if user_object in ["1","3","5"]:
+                # invalid operation
+                print("This option is for admin only")
+                return Main.show_menu(username)
+            
             if user_object == "2":
                 pass
-            if user_object == "3":
-                pass
+                
             if user_object == "4":
                 pass
-            if user_object == "5":                
-                pass
+
         
       
     '''This method has one positional argument user_object.
@@ -163,10 +161,10 @@ out an error message. If the username password format is incorrect, print out a
 different error message.'''
         # let the user enter username and password
         print("Welcome to our system\nPlease input username and password to login:")
-        user_role = Main.login()
+        username = Main.login()
         # let the user take commands
-           
-        Main.process_operations(Main.show_menu(user_role), user_role)
+        userrole = userdata[username]["role"]   
+        Main.process_operations(Main.show_menu(username), userrole, username)
         
         '''username = input
         choice = input("enter 1 or 2 or 3")
