@@ -96,7 +96,7 @@ class Main:
                 pass
             if user_object == "2":
                 #2.VIEW COURSES
-                print("The total number of courses is: "+ 3200)
+                print("The total number of courses is: "+ len(course))
             if user_object == "3":
                 # 3.VIEW USERS
                 Admin.view_users()
@@ -241,7 +241,7 @@ class Admin(User):
     #This method checks the user_admin.txt file to find out whether the username already
         #exists or not. If not, register this admin. If it exists, do nothing.
     def extract_course_info():
-        pass
+        print(course)
         '''This method can get course information from the raw_data.txt. The extracted course
 info should be saved into file following the format below:
 
@@ -432,8 +432,7 @@ looks like [Course(), Course(), Course()….]. If not found, return an empty lis
 
 
 
-def raw_data_txt():
-    course = "course_id;;;course_title;;;image_100x100;;;headline;;;num_of_\
+course = "course_id;;;course_title;;;image_100x100;;;headline;;;num_of_\
 subscribers;;;avg_rating;;;course_content_length”.\
 For each line in the raw_data.txt file, you can copy and paste it to Json Parser Online\
 to check the format. Each line contains more than one course. All the corresponding\
