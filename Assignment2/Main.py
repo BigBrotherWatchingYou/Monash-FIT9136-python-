@@ -432,7 +432,7 @@ looks like [Course(), Course(), Course()….]. If not found, return an empty lis
 
 
 
-course = "course_id;;;course_title;;;image_100x100;;;headline;;;num_of_\
+course = "course_id;;;course_title;;;image_100x100;;;   ;;;num_of_\
 subscribers;;;avg_rating;;;course_content_length”.\
 For each line in the raw_data.txt file, you can copy and paste it to Json Parser Online\
 to check the format. Each line contains more than one course. All the corresponding\
