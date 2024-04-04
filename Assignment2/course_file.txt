@@ -1,0 +1,37 @@
+Course ID: ABC123;;;Title: Introduction to Psychology;;;Headline: Explore the Fundamentals of Psychology;;;Num_of_Subscribers: 500;;;Avg_Rating: 4.5;;;Course_Content_Length: 10 weeks
+
+Course ID: DEF456;;;Title: Principles of Economics;;;Headline: Master Economic Principles;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.2;;;Course_Content_Length: 12 weeks
+
+Course ID: GHI789;;;Title: Introduction to Computer Science;;;Headline: Dive into the World of Coding;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.8;;;Course_Content_Length: 14 weeks
+
+Course ID: MNO345;;;Title: Fundamentals of Marketing;;;Headline: Learn Marketing Essentials;;;Num_of_Subscribers: 450;;;Avg_Rating: 4.6;;;Course_Content_Length: 10 weeks
+
+Course ID: PQR678;;;Title: Introduction to Statistics;;;Headline: Grasp Statistical Concepts;;;Num_of_Subscribers: 550;;;Avg_Rating: 4.4;;;Course_Content_Length: 12 weeks
+
+Course ID: STU901;;;Title: Introduction to Philosophy;;;Headline: Explore Philosophical Inquiry;;;Num_of_Subscribers: 350;;;Avg_Rating: 4.3;;;Course_Content_Length: 10 weeks
+
+Course ID: VWX234;;;Title: Introduction to Business;;;Headline: Navigate the Business Landscape;;;Num_of_Subscribers: 700;;;Avg_Rating: 4.7;;;Course_Content_Length: 14 weeks
+
+Course ID: YZA567;;;Title: Introduction to Biology;;;Headline: Dive into the World of Biology;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.5;;;Course_Content_Length: 12 weeks
+
+Course ID: BCD890;;;Title: Introduction to Data Science;;;Headline: Master Data Science Fundamentals;;;Num_of_Subscribers: 800;;;Avg_Rating: 4.9;;;Course_Content_Length: 16 weeks
+
+Course ID: EFG123;;;Title: Introduction to Literature;;;Headline: Explore Literary Analysis;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.1;;;Course_Content_Length: 10 weeks
+
+Course ID: HIJ456;;;Title: Introduction to Finance;;;Headline: Understand Financial Principles;;;Num_of_Subscribers: 650;;;Avg_Rating: 4.6;;;Course_Content_Length: 14 weeks
+
+Course ID: KLM789;;;Title: Introduction to Chemistry;;;Headline: Discover the Wonders of Chemistry;;;Num_of_Subscribers: 500;;;Avg_Rating: 4.2;;;Course_Content_Length: 12 weeks
+
+Course ID: NOP012;;;Title: Introduction to History;;;Headline: Explore Historical Events;;;Num_of_Subscribers: 450;;;Avg_Rating: 4.4;;;Course_Content_Length: 10 weeks
+
+Course ID: QRS345;;;Title: Introduction to Public Speaking;;;Headline: Master the Art of Effective Communication;;;Num_of_Subscribers: 700;;;Avg_Rating: 4.8;;;Course_Content_Length: 12 weeks
+
+Course ID: TUV678;;;Title: Introduction to Sociology;;;Headline: Understand Social Structures;;;Num_of_Subscribers: 550;;;Avg_Rating: 4.3;;;Course_Content_Length: 10 weeks
+
+Course ID: WXY901;;;Title: Introduction to Environmental Science;;;Headline: Dive into Environmental Studies;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.5;;;Course_Content_Length: 14 weeks
+
+Course ID: ZAB234;;;Title: Introduction to Political Science;;;Headline: Explore Political Systems;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.0;;;Course_Content_Length: 12 weeks
+
+Course ID: BCD567;;;Title: Introduction to Linguistics;;;Headline: Discover the Study of Language;;;Num_of_Subscribers: 750;;;Avg_Rating: 4.7;;;Course_Content_Length: 10 weeks
+
+Course ID: EFG890;;;Title: Introduction to Astrophysics;;;Headline: Explore the Universe;;;Num_of_Subscribers: 900;;;Avg_Rating: 4.9;;;Course_Content_Length: 16 weeks
