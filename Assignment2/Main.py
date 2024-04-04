@@ -2,7 +2,7 @@ import re
 import os
 import random
 # from User import User
-print("")
+print("1")
 admin_list = ["admin","admin2","admin3"]
 student_list = ["student", "student2", "student3" , "student4"]
 instructor_list = ["instructor", "instructor2", "instructor3" , "instructor4", "instructor5"]
