@@ -254,14 +254,14 @@ extract the data. The course content length in the text is like “40.5 hours”
 need to be retrieved. The course data will be saved into the course.txt file.
 '''
     def extract_review_info():
-        pass
+        print(review)
         '''This method can get review information from the review_data folder. The extracted
 review info saving format is
 “review_id;;;review_content;;;review_rating;;;course_id”
 The course id can be obtained from each file's name in the review_data folder.
 '''
     def extract_students_info():
-        pass
+        print(student_list)
         '''This method can get student information from the review_data folder. Each review
 string contains one user information. Assume each user only has one review. The
 attributes of each student are id, username, password, user_title, user_image_50x50,
@@ -278,7 +278,7 @@ user_student.txt and the format example is:
 er_initials;;;review_id”.
 '''
     def extract_instructor_info():
-        pass
+        print(instructor_list)
     '''This method extracts information from the raw_data.txt file in the course_data folder.
 Each course item contains several instructor information. The username is generated
 by converting the instructor_display_name to lowercase and replacing all the
@@ -440,7 +440,9 @@ attributes can be found in the text. You can use the library re or str methods t
 extract the data. The course content length in the text is like “40.5 hours”. Only 40.5\
 need to be retrieved. The course data will be saved into the course.txt file."
 
-
+review = "“review_id;;;review_content;;;review_rating;;;course_id”\
+The course id can be obtained from each file's name in the review_data folder.\
+'''"
 
 
 
