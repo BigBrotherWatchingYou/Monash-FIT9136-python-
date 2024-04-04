@@ -46,44 +46,7 @@ class Main:
         
         return user_role    
     
-    def login():    
-        # Fig1 show menu example
-        # return "Admin login" or "User login"
-        
-        # let user input
-        userinput = input("format: username password(enter 'exit' to quit)")
-        
-        #quit
-        if userinput == "exit":
-            print("Thanks for using, programm quit")
-            quit
-            
-        # incorrect input
-        if len(userinput).split() != 2:
-            print("format(there should be a space between name and password): username password")
-            return Main.login()
-        else:
-            # legal input
-            username = userinput.split()[0]
-            password = userinput.split()[1]
-            
-        # start authenticating username and password    
-        authenticate_user(username, password)
-            
-        def authenticate_user(username, password):
-            #check do the user exist
-            if username not in (admin_list and  instructor_list and  student_list):
-                #user do not exist
-                print("user id do not exist")
-                return Main.login()
-            if userdata[username]["password"] == password:
-                # login successful
-                return username
-            else:
-                # login failed
-                print("incorrect username and password\n\
-                    input format:username password")
-                return Main.login()
+    
                 
                 
             
@@ -160,7 +123,7 @@ out an error message. If the username password format is incorrect, print out a
 different error message.'''
         # let the user enter username and password
         print("Welcome to our system\nPlease input username and password to login:")
-        username = Main.login()
+        username = User.login()
         # let the user take commands
         userrole = userdata[username]["role"]   
         Main.process_operations(Main.show_menu(username), userrole, username)
@@ -331,7 +294,7 @@ with proper description messages.'''
 
     
     def view_reviews(args=[]):
-        pass
+        print(review)
     '''This method will call the methods implemented in Review class to perform various
 view review methods. The args list can be empty or must contain two elements. The
 first element is the command(can only be “ID/KEYWORD/COURSE_ID”) and the
@@ -363,8 +326,45 @@ class User:
 #This method encrypts the input_password to a string that is difficult to read by
 #humans. Reuse the encryption algorithm that was in A1 to encode the input
 #password. The encrypted password will be returned and the type is string.
-    def login():
-        pass
+    def login():   
+        # Fig1 show menu example
+        # return "Admin login" or "User login"
+        
+        # let user input
+        userinput = input("format: username password(enter 'exit' to quit)")
+        
+        #quit
+        if userinput == "exit":
+            print("Thanks for using, programm quit")
+            quit
+            
+        # incorrect input
+        if len(userinput).split() != 2:
+            print("format(there should be a space between name and password): username password")
+            return Main.login()
+        else:
+            # legal input
+            username = userinput.split()[0]
+            password = userinput.split()[1]
+            
+        # start authenticating username and password    
+        authenticate_user(username, password)
+            
+        def authenticate_user(username, password):
+            #check do the user exist
+            if username not in (admin_list and  instructor_list and  student_list):
+                #user do not exist
+                print("user id do not exist")
+                return Main.login()
+            if userdata[username]["password"] == password:
+                # login successful
+                return username
+            else:
+                # login failed
+                print("incorrect username and password\n\
+                    input format:username password")
+                return User.login()
+            
     '''Each user can call the login method to perform authentication. In this login() method,
 it is required to call the encryption() method defined before to encode the password.
 The encoded password can be used to compare with the password extracted from
