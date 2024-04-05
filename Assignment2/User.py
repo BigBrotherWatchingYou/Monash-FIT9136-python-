@@ -1,19 +1,21 @@
 import random
+
 class User:
-# User class handles the fundamental methods of all users. The User class is the parent class of Admin, Instructor and Student classes.
+    # User class handles the fundamental methods of all users. The User class is the parent class of Admin, Instructor and Student classes.
     def constructor():
         pass
-#A user must have id(int, default value -1), username(str, default value “”),
-#password(str, default value “”).
+        #   A user must have id(int, default value -1), username(str, default value “”),
+        #password(str, default value “”).
     def generate_unique_user_id():
-        pass
-#This method checks the files user_admin.txt, user_instructor.txt and user_student.txt
-#to generate an unique user id. The return result is a 10 digits integer.
+        # rule: the user id should not be the same of all users
+        all_admin = open("Assignment2/course_file.txt", r)
+    #This method checks the files user_admin.txt, user_instructor.txt and user_student.txt
+    #to generate an unique user id. The return result is a 10 digits integer.
     def encryption(input_password):
         pass
-#This method encrypts the input_password to a string that is difficult to read by
-#humans. Reuse the encryption algorithm that was in A1 to encode the input
-#password. The encrypted password will be returned and the type is string.
+    #  This method encrypts the input_password to a string that is difficult to read by
+    #humans. Reuse the encryption algorithm that was in A1 to encode the input
+    #password. The encrypted password will be returned and the type is string.
     def login():   
         # Fig1 show menu example
         # return "Admin login" or "User login"

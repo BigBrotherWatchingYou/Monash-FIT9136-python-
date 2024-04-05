@@ -30,9 +30,9 @@ class Main:
             4.VIEW_REVIEWS\n\
             5.REMOVE_DATA")
             # let user take commands
-            return take_commamds()
+            return take_commands()
             
-        def take_commamds():
+        def take_commands():
             # get command from user
             user_object = input("take commands (enter 'Logout' to quit)")
             command = ["1","2","3","4","5"]
