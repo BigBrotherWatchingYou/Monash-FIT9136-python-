@@ -33,9 +33,11 @@ def register():
         
     username = input_username()
     password = input_password()
+    
     print("user create successfully")    
     print("username: ", username)
-    print("password: ", password)   
+    print("password: ", password)
+    
     
     
 register()        
