@@ -3,40 +3,15 @@ import os
 from User import User
 from Course import Course
 from Review import Review
+
 class Admin(User):
     def constructor():
-        print("")
+        print("1")
     #Admin only have attributes id(int, default value -1), username(str, default value “”)
     #and password(str, default value “”) which can be inherited from the parent class.
+    
     def register_admin():
-        print("welcome to register, your role is: admin")
-         
-        # create username and password
-        def input_username():
-            if username == None:
-                print("Enter your name")
-                username = input("Enter 'quit' to quit")
-                if username == "quit":
-                    quit
-                if username in admin_list:
-                    print("username already exits")
-                    return Admin.register_admin
-                else:
-                    return username
-            
-        def input_password():
-            print("enter your password")
-            password = input("enter password")
-            check_password = input("enter password again")
-            # double check password
-            if password != check_password:
-                print("both password should be the same")
-                return input_password()
-            else:
-                return password
         
-        username = input_username()
-        password = input_password()
         
         # create admin
         userdata[username] = {"username":username , "password":password, "role": "admin"}           
