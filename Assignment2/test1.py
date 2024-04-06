@@ -12,7 +12,7 @@ def register_admin():
         def input_username():
             print("Enter your name")
             get_username = input("\nEnter 'quit' to quit")
-            if get_username == "quit":
+            if get_username.lower() == "quit":
                 quit
             elif get_username in admin_list:
                 print("username already exits")

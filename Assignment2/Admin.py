@@ -22,7 +22,7 @@ class Admin(User):
         def input_username():
             print("Enter your name")
             get_username = input("Enter 'quit' to quit")
-            if get_username == "quit":
+            if get_username.lower() == "quit":
                 quit
             elif get_username in admin_list:
                 print("username already exits")
