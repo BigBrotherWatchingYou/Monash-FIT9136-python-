@@ -1,9 +1,0 @@
-
-{'a', 'admin', 'aa'}
-{'admin', 'aa', 'a'}
-{'a', 'aa', 'admin'}
-{'a', 'aa', 'admin'}
-{'awef', 'a', 'admin'}
-{'password', 'admin', 'name'}
-{'username': 'name', 'password': 'pas', 'role': 'admin'}
-{'username': 'a', 'password': 'aa', 'role': 'admin'}
