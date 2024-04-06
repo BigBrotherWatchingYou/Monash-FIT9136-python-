@@ -48,23 +48,23 @@ class Admin(User):
         role = "admin"
         # create admin
         admin ={}
-        admin[username] = {"username":username , "password":password, "role": "admin"}
-        
+        admin[username] = {username , password, role}
         def create_admin(userinfo):
             # read user_admin.txt
             with open("Assignment2/user_admin.txt", 'r') as file:
                 file_content = file.read()
             
-            file_content += '\n' + admin[username]
+            file_content += '\n' + userinfo
             # write admin into file
             with open("Assignment2/user_admin.txt","w") as file:
                 file.write(file_content)
-        
+            print("admin created successfully") 
             
-            print("admin created successfully")    
+        create_admin(str(admin[username]))    
+           
             
             
-        create_admin(admin[username])    
+            
 
             
          
