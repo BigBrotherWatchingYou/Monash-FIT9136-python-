@@ -7,6 +7,7 @@ from Review import Review
 class Admin(User):
     def constructor():
         print("1")
+        pass
     #Admin only have attributes id(int, default value -1), username(str, default value “”)
     #and password(str, default value “”) which can be inherited from the parent class.
     
@@ -49,7 +50,7 @@ class Admin(User):
         admin ={}
         admin[username] = {"username":username , "password":password, "role": "admin"}
         
-        def create_admin(username, password, role):
+        def create_admin(userinfo):
             # read user_admin.txt
             with open("Assignment2/user_admin.txt", 'r') as file:
                 file_content = file.read()
@@ -63,7 +64,7 @@ class Admin(User):
             print("admin created successfully")    
             
             
-        create_admin(username, password, role)    
+        create_admin(admin[username])    
 
             
          
