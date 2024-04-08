@@ -14,69 +14,42 @@ class Admin(User):
     def register_admin():
         print("welcome to register, your role is: admin")
         # open and read admin.txt
-        admin_file = open("Assignment2/user_admin.txt", 'r')
-        admin_list = admin_file.read().split()
-        admin_file.close()
-     
+        try:
+            with open("Assignment2/user_admin.txt") as file:
+                admin_list = [file.strip().split(";;;")[1].strip("{}")]
+            print("admin_list:",admin_list)
+        except FileNotFoundError:
+            admin_list = []
+        
+    
         # create username and password
-        def input_username():
-            print("Enter your name")
+        while True:
+            print("Enter your name: ")
             get_username = input("Enter 'quit' to quit")
             if get_username.lower() == "quit":
-                quit
-            elif get_username in admin_list:
+                break
+            if get_username in admin_list:
                 print("username already exits")
-                return input_username()
-            else:
-                print("valid username")
-                return get_username
-
-        def input_password():
-            print("enter your password")
-            get_password = input("enter password")
-            check_password = input("enter password again")
-                # double check password
+                continue #prompt user again
+ 
+            get_password = input("enter password: ")
+            check_password = input("Confirm your password: ")
+            # double check password
             if get_password != check_password:
-                print("both password should be the same")
-                return input_password()
-            else:
-                return get_password
-            
-        
-        username = input_username()
-        password = input_password()
-        role = "admin"
-        # create admin
-        user ={}
-        user[username] = {"username":username , "password":password, "role":role}
-        def create_admin(userinfo):
-            # read user_admin.txt
-            with open("Assignment2/user_admin.txt", 'r') as file:
-                file_content = file.read()
-            
-            file_content += '\n' + userinfo
-            # write admin into file
-            with open("Assignment2/user_admin.txt","w") as file:
-                file.write(file_content)
-            print("admin created successfully") 
-            
-        create_admin(str(user[username]))    
-           
-            
-            
-            
-
-            
-         
+                print("Passwords do not match. Please try again.")
+                continue
+            userid = 
+            userinfo = f'{get_username};;;{get_password}
+     
             
     #This method checks the user_admin.txt file to find out whether the username already
         #exists or not. If not, register this admin. If it exists, do nothing.
     def extract_course_info():
         print(course)
         '''This method can get course information from the raw_data.txt. The extracted course
-info should be saved into file following the format below:
+    info should be saved into file following the format below:
 
-“course_id;;;course_title;;;image_100x100;;;headline;;;num_of_
+    “course_id;;;course_title;;;image_100x100;;;headline;;;num_of_
 subscribers;;;avg_rating;;;course_content_length”.
 For each line in the raw_data.txt file, you can copy and paste it to Json Parser Online
 to check the format. Each line contains more than one course. All the corresponding

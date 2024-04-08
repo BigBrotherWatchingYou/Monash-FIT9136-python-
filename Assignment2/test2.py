@@ -1,7 +1,7 @@
 import os
 try:
     with open("Assignment2/user_admin.txt") as f:
-        admin_data = [k.strip() for k in f]
+        admin_data = [k.strip().split(";;;")[1].strip("{}") for k in f]
 except FileExistsError:
     admin_data = []
 print(admin_data)    
