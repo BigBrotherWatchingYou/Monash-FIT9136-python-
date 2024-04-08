@@ -1,5 +1,6 @@
 import re
 import os
+import random
 from User import User
 from Course import Course
 from Review import Review
@@ -38,7 +39,7 @@ class Admin(User):
             if get_password != check_password:
                 print("Passwords do not match. Please try again.")
                 continue
-            userid = 
+            userid = random.randint(10000, 99999)
             userinfo = f'{get_username};;;{get_password}
      
             
