@@ -12,35 +12,62 @@ class Admin(User):
     #Admin only have attributes id(int, default value -1), username(str, default value “”)
     #and password(str, default value “”) which can be inherited from the parent class.
     
-    def register_admin():
+    def regis():
         print("welcome to register, your role is: admin")
         # open and read admin.txt
         try:
             with open("Assignment2/user_admin.txt") as file:
-                admin_list = [file.strip().split(";;;")[1].strip("{}")]
+                admin_list = [k.split(";;;")[1].strip("{}") for k in file if k.strip()]
+                # unable to read space lines
             print("admin_list:",admin_list)
         except FileNotFoundError:
             admin_list = []
-        
+            
+        try:
+            with open("Assignment2/user_admin.txt") as file_2:
+                id_list = [m.split(";;;")[0].strip("{}") for m in file_2 if m.strip()]
+                # unable to read space lines
+            print("userid_list:",id_list)
+        except FileNotFoundError:
+            id_list = []
     
         # create username and password
-        while True:
-            print("Enter your name: ")
-            get_username = input("Enter 'quit' to quit")
+        def input_username():
+        
+            get_username = input("Enter your name(Enter 'quit' to quit): ")
             if get_username.lower() == "quit":
-                break
+                quit
             if get_username in admin_list:
                 print("username already exits")
-                continue #prompt user again
- 
+                return input_username #prompt user again
+            else:
+                return get_username
+
+        def input_password():
             get_password = input("enter password: ")
-            check_password = input("Confirm your password: ")
+            confirm_password = input("Confirm your password: ")
             # double check password
-            if get_password != check_password:
+            if get_password != confirm_password:
                 print("Passwords do not match. Please try again.")
-                continue
-            userid = random.randint(10000, 99999)
-            userinfo = f'{get_username};;;{get_password}
+                return input_password()
+            else:
+                return get_password
+        
+        def generate_userid():
+            gen_id = random.randint(10000,99999)
+            if gen_id in id_list: # userid already exists
+                return generate_userid
+            else:
+                return gen_id
+                
+        username = input_username()    
+        password = input_password()    
+        userid = generate_userid()
+        userinfo = f"{userid};;;{username};;;{password}"
+            
+        with open("Assignment2/user_admin.txt",'a') as f:
+            f.write(f"\n{userinfo}")
+        print("Admin created successfully.")
      
             
     #This method checks the user_admin.txt file to find out whether the username already
