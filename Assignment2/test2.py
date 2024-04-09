@@ -9,12 +9,19 @@ class Admin:
         # open and read admin.txt
         try:
             with open("Assignment2/user_admin.txt") as file:
-                admin_list = [k.strip().split(";;;")[1].strip("{}") for k in file if file.strip()]
+                admin_list = [k.split(";;;")[1].strip("{}") for k in file if k.strip()]
                 # unable to read space lines
             print("admin_list:",admin_list)
         except FileNotFoundError:
             admin_list = []
-        
+            
+        try:
+            with open("Assignment2/user_admin.txt") as file_2:
+                id_list = [m.split(";;;")[0].strip("{}") for m in file_2 if m.strip()]
+                # unable to read space lines
+            print("userid_list:",id_list)
+        except FileNotFoundError:
+            id_list = []
     
         # create username and password
         def input_username():
@@ -37,10 +44,17 @@ class Admin:
                 return input_password()
             else:
                 return get_password
-            
+        
+        def generate_userid():
+            gen_id = random.randint(10000,99999)
+            if gen_id in id_list: # userid already exists
+                return generate_userid
+            else:
+                return gen_id
+                
         username = input_username()    
         password = input_password()    
-        userid = random.randint(10000, 99999)
+        userid = generate_userid()
         userinfo = f"{userid};;;{username};;;{password}"
             
         with open("Assignment2/user_admin.txt",'a') as f:
