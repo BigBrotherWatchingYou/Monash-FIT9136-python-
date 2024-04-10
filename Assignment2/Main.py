@@ -67,6 +67,7 @@ class Main:
             if user_object == "2":
                 #2.VIEW COURSES
                 print("The total number of courses is: "+ len(course))
+                print("your courses:")
             if user_object == "3":
                 # 3.VIEW USERS
                 Admin.view_users()

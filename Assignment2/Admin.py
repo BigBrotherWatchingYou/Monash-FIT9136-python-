@@ -73,7 +73,7 @@ class Admin(User):
     #This method checks the user_admin.txt file to find out whether the username already
         #exists or not. If not, register this admin. If it exists, do nothing.
     def extract_course_info():
-        print(course)
+        pass
         '''This method can get course information from the raw_data.txt. The extracted course
     info should be saved into file following the format below:
 
@@ -111,55 +111,64 @@ er_initials;;;review_id”.
 '''
     def extract_instructor_info():
         print(instructor_list)
-    '''This method extracts information from the raw_data.txt file in the course_data folder.
-Each course item contains several instructor information. The username is generated
-by converting the instructor_display_name to lowercase and replacing all the
-whitespace to underscore. The password uses the instructor id directly. The
-instructor info saving format example is:
-“id;;;username;;;password;;;display_name;;;job_title;;;image_1
-00x100;;;course_id1-course_id2-course_id3-course_id4”.
-Since each instructor can teach more than one course, before saving the instructor
-information, you need to check whether the instructor already exists in the
-user_instructor.txt file or not. 
-If it exists, the course id should be appended to the
-existing instructor string. For example, given an instructor string:
-'''# 4466306;;;colt_steele;;;***4---***6---***6---***2;;;Colt Steele;;;Developer and Bootcamp Instructor;;;
-#https://img-c.aaaaa.com/user/100x100/4466306.jpg;;;625204
-    '''If a new course id 55555 is teached by this instructor, the string will be updated as
-below:'''
-# 4466306;;;colt_steele;;;***4---***6---***6---***2;;;Colt Steele;;;Developer and Bootcamp Instructor;;;
-#https://img-c.aaaaa.com/user/100x100/4466306.jpg;;;625204--55555
-    '''
+        pass
+        '''This method extracts information from the raw_data.txt file in the course_data folder.
+            Each course item contains several instructor information. The username is generated
+        by converting the instructor_display_name to lowercase and replacing all the
+                whitespace to underscore. The password uses the instructor id directly. The
+        instructor info saving format example is:
+        “id;;;username;;;password;;;display_name;;;job_title;;;image_1
+                00x100;;;course_id1-course_id2-course_id3-course_id4”.
+        Since each instructor can teach more than one course, before saving the instructor
+        information, you need to check whether the instructor already exists in the
+        user_instructor.txt file or not. 
+        If it exists, the course id should be appended to the
+        existing instructor string. For example, given an instructor string:
+        '''# 4466306;;;colt_steele;;;***4---***6---***6---***2;;;Colt Steele;;;Developer and Bootcamp Instructor;;;
+        #https://img-c.aaaaa.com/user/100x100/4466306.jpg;;;625204
+        '''If a new course id 55555 is teached by this instructor, the string will be updated as
+        below:'''
+        # 4466306;;;colt_steele;;;***4---***6---***6---***2;;;Colt Steele;;;Developer and Bootcamp Instructor;;;
+        #https://img-c.aaaaa.com/user/100x100/4466306.jpg;;;625204--55555
+        '''
 
-The format of instructor data will be explained in the Instructor class section.
-'''        
+    The format of instructor data will be explained in the Instructor class section.
+    '''        
     def extract_info():
         pass
-    '''This method calls all the extract info methods defined before, including
-extract_course_info(), extract_instructor_info(), extract_students_info() and
-extract_review_info().
-'''        
+        '''This method calls all the extract info methods defined before, including
+        extract_course_info(), extract_instructor_info(), extract_students_info() and
+        extract_review_info().
+        '''        
     def remove_data():
         pass
-    '''This method can delete all the data in the course.txt, review.txt, user_student.txt and
-user_instructor.txt files.'''
+        '''This method can delete all the data in the course.txt, review.txt, user_student.txt and
+        user_instructor.txt files.'''
     def view_courses(args=[]):
         pass
-    '''This method will call the methods implemented in Course class to perform various
-view course methods. The variable “args” can be an empty list or must contain two
-elements. The first element is the command(can only be
-“TITLE_KEYWORD/ID/INSTRUCTOR_ID”) and the second element is the value(could
-be title keyword, course id or instructor id). For example, args=[“TITLE_KEYWORD”,
-“web”]. If the “args” is an empty list, printing out the overview of courses (using the
-course_overview method implemented in Course class). Add validations to provide
-proper output message if user input incorrect command or values.'''
+        '''This method will call the methods implemented in Course class to perform various
+        view course methods. The variable “args” can be an empty list or must contain two
+        elements. The first element is the command(can only be
+        “TITLE_KEYWORD/ID/INSTRUCTOR_ID”) and the second element is the value(could
+        be title keyword, course id or instructor id). For example, args=[“TITLE_KEYWORD”,
+        “web”]. If the “args” is an empty list, printing out the overview of courses (using the
+        course_overview method implemented in Course class). Add validations to provide
+        proper output message if user input incorrect command or values.'''
 
+        
     def view_users():
-        print("total number of admin: " + len(admin_list))
+        try:
+            with open("Assignment2/user_admin.txt") as file:
+                admin_list = file.readlines()
+            
+        except FileNotFoundError:
+            admin_list = []    
+        print("total number of Admin: " , len(admin_list))
         print("total number of instructor: " + len(instructor_list))
         print("total number of student: " + len(student_list))
-    '''This method prints out the total number of admin, instructor and students separately
-with proper description messages.'''
+
+        '''This method prints out the total number of admin, instructor and students separately
+        with proper description messages.'''
 
     
     def view_reviews(args=[]):
