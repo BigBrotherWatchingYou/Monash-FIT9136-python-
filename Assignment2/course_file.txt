@@ -1,37 +1,51 @@
-Course ID: ABC123;;;Title: Introduction to Psychology;;;Headline: Explore the Fundamentals of Psychology;;;Num_of_Subscribers: 500;;;Avg_Rating: 4.5;;;Course_Content_Length: 10 weeks
-
-Course ID: DEF456;;;Title: Principles of Economics;;;Headline: Master Economic Principles;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.2;;;Course_Content_Length: 12 weeks
-
-Course ID: GHI789;;;Title: Introduction to Computer Science;;;Headline: Dive into the World of Coding;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.8;;;Course_Content_Length: 14 weeks
-
-Course ID: MNO345;;;Title: Fundamentals of Marketing;;;Headline: Learn Marketing Essentials;;;Num_of_Subscribers: 450;;;Avg_Rating: 4.6;;;Course_Content_Length: 10 weeks
-
-Course ID: PQR678;;;Title: Introduction to Statistics;;;Headline: Grasp Statistical Concepts;;;Num_of_Subscribers: 550;;;Avg_Rating: 4.4;;;Course_Content_Length: 12 weeks
-
-Course ID: STU901;;;Title: Introduction to Philosophy;;;Headline: Explore Philosophical Inquiry;;;Num_of_Subscribers: 350;;;Avg_Rating: 4.3;;;Course_Content_Length: 10 weeks
-
-Course ID: VWX234;;;Title: Introduction to Business;;;Headline: Navigate the Business Landscape;;;Num_of_Subscribers: 700;;;Avg_Rating: 4.7;;;Course_Content_Length: 14 weeks
-
-Course ID: YZA567;;;Title: Introduction to Biology;;;Headline: Dive into the World of Biology;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.5;;;Course_Content_Length: 12 weeks
-
-Course ID: BCD890;;;Title: Introduction to Data Science;;;Headline: Master Data Science Fundamentals;;;Num_of_Subscribers: 800;;;Avg_Rating: 4.9;;;Course_Content_Length: 16 weeks
-
-Course ID: EFG123;;;Title: Introduction to Literature;;;Headline: Explore Literary Analysis;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.1;;;Course_Content_Length: 10 weeks
-
-Course ID: HIJ456;;;Title: Introduction to Finance;;;Headline: Understand Financial Principles;;;Num_of_Subscribers: 650;;;Avg_Rating: 4.6;;;Course_Content_Length: 14 weeks
-
-Course ID: KLM789;;;Title: Introduction to Chemistry;;;Headline: Discover the Wonders of Chemistry;;;Num_of_Subscribers: 500;;;Avg_Rating: 4.2;;;Course_Content_Length: 12 weeks
-
-Course ID: NOP012;;;Title: Introduction to History;;;Headline: Explore Historical Events;;;Num_of_Subscribers: 450;;;Avg_Rating: 4.4;;;Course_Content_Length: 10 weeks
-
-Course ID: QRS345;;;Title: Introduction to Public Speaking;;;Headline: Master the Art of Effective Communication;;;Num_of_Subscribers: 700;;;Avg_Rating: 4.8;;;Course_Content_Length: 12 weeks
-
-Course ID: TUV678;;;Title: Introduction to Sociology;;;Headline: Understand Social Structures;;;Num_of_Subscribers: 550;;;Avg_Rating: 4.3;;;Course_Content_Length: 10 weeks
-
-Course ID: WXY901;;;Title: Introduction to Environmental Science;;;Headline: Dive into Environmental Studies;;;Num_of_Subscribers: 600;;;Avg_Rating: 4.5;;;Course_Content_Length: 14 weeks
-
-Course ID: ZAB234;;;Title: Introduction to Political Science;;;Headline: Explore Political Systems;;;Num_of_Subscribers: 400;;;Avg_Rating: 4.0;;;Course_Content_Length: 12 weeks
-
-Course ID: BCD567;;;Title: Introduction to Linguistics;;;Headline: Discover the Study of Language;;;Num_of_Subscribers: 750;;;Avg_Rating: 4.7;;;Course_Content_Length: 10 weeks
-
-Course ID: EFG890;;;Title: Introduction to Astrophysics;;;Headline: Explore the Universe;;;Num_of_Subscribers: 900;;;Avg_Rating: 4.9;;;Course_Content_Length: 16 weeks
+30911::HTML5 APIs For Javacript - A Course For Web Developers ;;;https:"A Meb Developers buide To HTML5 APIs For JavaScript;;;7810;;;3.85;
+45678::Introduction to Machine Learning;;;https:"Master Machine Learning Concepts;;;6802;;;4.2;
+78901::Data Structures and Algorithms;;;https:"Learn Essential Data Structures and Algorithms;;;9254;;;4.6;
+12345::Digital Marketing Fundamentals;;;https:"Explore Digital Marketing Strategies;;;5318;;;4.8;
+67890::Introduction to Python Programming;;;https:"Dive into the World of Python;;;6491;;;4.5;
+23456::Graphic Design Basics;;;https:"Learn Graphic Design Principles;;;3721;;;4.0;
+56789::Financial Accounting Fundamentals;;;https:"Master Financial Accounting Basics;;;8165;;;4.3;
+90123::Photography Essentials;;;https:"Discover the Art of Photography;;;9432;;;4.7;
+34567::Introduction to Artificial Intelligence;;;https:"Explore AI Fundamentals;;;7098;;;4.9;
+78901::Web Development Bootcamp;;;https:"Become a Full Stack Developer;;;6523;;;4.4;
+23456::Introduction to Statistics;;;https:"Grasp Statistical Concepts;;;8157;;;4.6;
+45678::Mobile App Development Essentials;;;https:"Learn Mobile App Development Basics;;;6891;;;4.2;
+89012::Creative Writing Workshop;;;https:"Develop Your Creative Writing Skills;;;4759;;;4.5;
+12345::Introduction to Cybersecurity;;;https:"Understand Cybersecurity Fundamentals;;;5743;;;4.8;
+56789::Introduction to Java Programming;;;https:"Explore Java Programming Basics;;;7354;;;4.1;
+90123::UX/UI Design Fundamentals;;;https:"Master User Experience Design;;;6132;;;4.7;
+34567::Entrepreneurship Essentials;;;https:"Learn Entrepreneurship Principles;;;8712;;;4.3;
+78901::Introduction to SQL;;;https:"Master SQL Basics;;;5946;;;4.5;
+23456::Digital Illustration Basics;;;https:"Learn Digital Illustration Techniques;;;4287;;;4.0;
+45678::Introduction to Cryptocurrency;;;https:"Explore Cryptocurrency Basics;;;7392;;;4.2;
+89012::Public Speaking Mastery;;;https:"Master the Art of Public Speaking;;;5823;;;4.9;
+12345::Introduction to Big Data;;;https:"Dive into Big Data Fundamentals;;;6354;;;4.6;
+56789::Artificial Neural Networks;;;https:"Understand Neural Network Principles;;;7942;;;4.8;
+90123::Introduction to Music Production;;;https:"Explore Music Production Basics;;;4598;;;4.4;
+34567::Introduction to React.js;;;https:"Master React.js Framework;;;8271;;;4.7;
+78901::Introduction to iOS App Development;;;https:"Learn iOS App Development Basics;;;5367;;;4.3;
+23456::Video Editing Fundamentals;;;https:"Discover Video Editing Techniques;;;7123;;;4.5;
+45678::Introduction to Data Visualization;;;https:"Explore Data Visualization Concepts;;;6842;;;4.1;
+89012::Introduction to 3D Printing;;;https:"Dive into 3D Printing Basics;;;5756;;;4.6;
+12345::Economics for Beginners;;;https:"Understand Basic Economic Principles;;;6542;;;4.0;
+56789::Introduction to Angular.js;;;https:"Master Angular.js Framework;;;7842;;;4.8;
+90123::Introduction to Human Psychology;;;https:"Explore Human Psychology Basics;;;5491;;;4.2;
+34567::Introduction to Game Development;;;https:"Discover Game Development Basics;;;8563;;;4.7;
+78901::Introduction to Cloud Computing;;;https:"Understand Cloud Computing Fundamentals;;;5923;;;4.5;
+23456::Introduction to Graphic Design;;;https:"Learn Graphic Design Basics;;;7325;;;4.3;
+45678::Introduction to Cyber Forensics;;;https:"Explore Cyber Forensics Fundamentals;;;6978;;;4.6;
+89012::Introduction to Mobile Photography;;;https:"Master Mobile Photography Techniques;;;5891;;;4.1;
+12345::Introduction to Blockchain;;;https:"Dive into Blockchain Basics;;;6314;;;4.9;
+56789::Introduction to Swift Programming;;;https:"Explore Swift Programming Basics;;;7482;;;4.4;
+90123::Introduction to Digital Painting;;;https:"Discover Digital Painting Techniques;;;4731;;;4.7;
+34567::Introduction to User Research;;;https:"Master User Research Techniques;;;8123;;;4.3;
+78901::Introduction to Data Analysis;;;https:"Understand Data Analysis Fundamentals;;;5067;;;4.5;
+23456::Introduction to Virtual Reality;;;https:"Explore Virtual Reality Basics;;;7821;;;4.0;
+45678::Introduction to Network Security;;;https:"Master Network Security Basics;;;6678;;;4.8;
+89012::Introduction to Web Design;;;https:"Discover Web Design Fundamentals;;;5921;;;4.2;
+12345::Introduction to Mobile App Design;;;https:"Explore Mobile App Design Basics;;;6435;;;4.7;
+56789::Introduction to Computer Vision;;;https:"Dive into Computer Vision Fundamentals;;;7098;;;4.4;
+90123::Introduction to SEO;;;https:"Master Search Engine Optimization Basics;;;5241;;;4.6;
+34567::Introduction to Responsive Web Design;;;https:"Understand Responsive Web Design Principles;;;8371;;;4.1;
+78901::Introduction to DevOps;;;https:"Explore DevOps Fundamentals;;;5692;;;4.8;
+23456::Introduction to UI Animation;;;https:"Discover UI Animation Techniques;;;7421;;;4.5;
