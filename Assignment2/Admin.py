@@ -164,8 +164,8 @@ er_initials;;;review_id”.
         except FileNotFoundError:
             admin_list = []    
         print("total number of Admin: " , len(admin_list))
-        print("total number of instructor: " + len(instructor_list))
-        print("total number of student: " + len(student_list))
+        # print("total number of instructor: " + len(instructor_list))
+        # print("total number of student: " + len(student_list))
 
         '''This method prints out the total number of admin, instructor and students separately
         with proper description messages.'''
