@@ -1,22 +1,13 @@
-def view_courses():
-    course_id_list = [] 
-    all_course_list = []
-    course_instructor_list = []
-    
+def find_course_by_id(course_id):
     try:
-        with open("Assignment2/course_file.txt", 'r') as c:
-            # Use a list comprehension to strip whitespace from each line and iterate over them
-            all_course_list = [course.strip() for course in c.readlines()]
-            
-            # Optionally, you can convert the list comprehension to a list
-           
-            
-            # You can further process each course line as needed
-            
+        with open("Assignment2/course_file.txt",'r') as c:
+            course_file = [t.strip().split("::") for t in c]
+            for course in course_file:
+                
+                if str(course_id) == course[0]:
+                    print("find course:", course)
+                
     except FileNotFoundError:
         pass
-
-    # Print the list of courses
-    print(all_course_list)
     
-view_courses()
+find_course_by_id(34567)

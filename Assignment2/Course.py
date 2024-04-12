@@ -1,20 +1,30 @@
 class Course:
     def constructor():
         pass
-    '''The attributes of course are course_id(int, default value -1), course_title(str, default
-value “”), course_image_100x100(str, default value “”), course_headline(str, default
+        '''The attributes of course are course_id(int, default value -1), course_title(str, default
+        value “”), course_image_100x100(str, default value “”), course_headline(str, default
 
-value “”), course_num_subscribers(int, default value -1), course_avg_rating(float,
-default value -1.0), course_content_length(float, default value -1.).'''
+        value “”), course_num_subscribers(int, default value -1), course_avg_rating(float,
+        default value -1.0), course_content_length(float, default value -1.).'''
+        
     def find_course_by_title_keyword(keyword):
         pass
-    '''This method has a positional argument keyword(str). Based on the given keyword, it
-searches the course title of all courses in the course.txt file to find the result. All the
-result courses will be created as a course object and added into a result list. Finally,
-return the result list. The result list looks like [Course(), Course(), Course()….]. If not
-found, return an empty list.'''
+        '''This method has a positional argument keyword(str). Based on the given keyword, it
+        searches the course title of all courses in the course.txt file to find the result. All the
+        result courses will be created as a course object and added into a result list. Finally,
+        return the result list. The result list looks like [Course(), Course(), Course()….]. If not
+        found, return an empty list.'''
+        
     def find_course_by_id(course_id):
-        pass
+        try:
+            with open("Assignment2/course_file.txt",'r') as c:
+                course_file = [t.strip().split("::") for t in c]
+                for course in course_file:
+                    if str(course_id) == course[0]:
+                        print("find course:", course)
+                
+        except FileNotFoundError:
+            pass
     '''This method has a positional argument course id(int or str). You are required to
 search for the course according to the course id. A course object will be returned. If
 not found, return None.'''
