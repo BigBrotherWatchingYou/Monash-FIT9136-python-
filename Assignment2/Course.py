@@ -8,28 +8,59 @@ class Course:
         default value -1.0), course_content_length(float, default value -1.).'''
         
     def find_course_by_title_keyword(keyword):
-        pass
+        
         '''This method has a positional argument keyword(str). Based on the given keyword, it
         searches the course title of all courses in the course.txt file to find the result. All the
         result courses will be created as a course object and added into a result list. Finally,
         return the result list. The result list looks like [Course(), Course(), Course()….]. If not
         found, return an empty list.'''
+        try:
+            with open("Assignment2/course_file.txt",'r') as file:
+                course_list = [k.strip() for k in file.readlines()]
+                matched_course = []
+                for course in course_list:
+                    if keyword.lower() in str(course.lower()):
+                        matched_course.append(course)
+            
+        except FileNotFoundError:
+            pass
         
+        return matched_course
+    
     def find_course_by_id(course_id):
+        matched_id = []
         try:
             with open("Assignment2/course_file.txt",'r') as c:
                 course_file = [t.strip().split("::") for t in c]
                 for course in course_file:
                     if str(course_id) == course[0]:
-                        print("find course:", course)
+                        matched_id.append(course)
                 
         except FileNotFoundError:
             pass
+        
+        return matched_id
+        
     '''This method has a positional argument course id(int or str). You are required to
 search for the course according to the course id. A course object will be returned. If
 not found, return None.'''
     def find_course_by_instructor_id(instructor_id):
-        pass
+        matched_id = []
+        try:
+            with open("Assignment2/course_file.txt",'r') as c:
+                course_file = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
+                
+                for course in course_file:
+                    if str(instructor_id) == course[2]:
+                        matched_id.append(course)
+                    
+                
+        except FileNotFoundError:
+            pass
+        
+        return matched_id
+        #print("matched:", matched_id)
+    
     '''This method has a positional argument instructor id(int or str). Based on the
 instructor id, a list of course objects will be generated and returned. The result list
 looks like [Course(), Course(), Course()….]. If not found, return an empty list.'''
