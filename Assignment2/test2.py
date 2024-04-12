@@ -1,27 +1,28 @@
-import os
-import re
-def view_courses():
-       
-        try:
-            with open("Assignment2/course_file.txt", 'r') as c:
-                all_course_list =[m.strip() for m in c.readlines()]
-                #course_id_list = [k.strip().split(";;;")[0] for k in all_course_list]
-                course_instructor_list = [] 
+def search_courses(keyword):
+    try:
+        with open("Assignment2/course_file.txt", 'r') as file:
+            # Read all lines and strip any leading or trailing whitespace
+            all_courses = [course.strip() for course in file.readlines()]
+            
+            # Initialize a list to store matching courses
+            matching_courses = []
+
+            # Iterate through each course line in all_courses
+            for course in all_courses:
+                # Check if the keyword exists in the course line
+                if keyword.lower() in course.lower():
+                    matching_courses.append(course)
+
+            # If there are matching courses, print them
+            if matching_courses:
+                print("Matching courses for keyword '{}':".format(keyword))
+                for course in matching_courses:
+                    print(course)
+            else:
+                print("No matching courses found for keyword '{}'.".format(keyword))
                 
-                for course in all_course_list:
-                    part = course.split(";;;")
-                    if len(part) >= 2:
-                        course_instructor_list.append(part[3])
-                '''course_instructor_list = []
-                for m in all_course_list:
-                    list = m.split(";;;")
-                    course_instructor_list.append(list)'''
-                
-                
-        except FileNotFoundError:
-            pass
-        #for course_id in course_id_list:
-            #print( "id:---",course_id)    
-        #print("all course_list): ",all_course_list)
-        print("instructor:",course_instructor_list)
-view_courses()        
+    except FileNotFoundError:
+        print("File not found.")
+
+# Example usage:
+search_courses("intro")
