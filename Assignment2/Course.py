@@ -65,18 +65,19 @@ not found, return None.'''
 instructor id, a list of course objects will be generated and returned. The result list
 looks like [Course(), Course(), Course()….]. If not found, return an empty list.'''
     def courses_overview():
-        
+        total_number = 0    
         try:
             with open("Assignment2/course_file.txt",'r') as c:
-                course_file = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
-                total_number = len(course_file)
-                
+                courses = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
+                total_number = len(courses)                
                     
                 
         except FileNotFoundError:
-            return "File not find"
+            print("file does not exist")
         
         return total_number
+    
+print(course_num)
     '''This method returns a string that shows the total number of courses.'''
     def __str__():
         pass
