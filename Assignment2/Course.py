@@ -31,8 +31,8 @@ class Course:
         matched_id = []
         try:
             with open("Assignment2/course_file.txt",'r') as c:
-                course_file = [t.strip().split("::") for t in c]
-                for course in course_file:
+                courses = [t.strip().split("::") for t in c]
+                for course in courses:
                     if str(course_id) == course[0]:
                         matched_id.append(course)
                 
@@ -48,9 +48,9 @@ not found, return None.'''
         matched_id = []
         try:
             with open("Assignment2/course_file.txt",'r') as c:
-                course_file = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
+                courses = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
                 
-                for course in course_file:
+                for course in courses:
                     if str(instructor_id) == course[2]:
                         matched_id.append(course)
                     
