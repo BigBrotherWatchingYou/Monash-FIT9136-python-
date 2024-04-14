@@ -1,5 +1,5 @@
 def courses_overview():
-        
+    total_number = 0    
     try:
         with open("Assignment2/course_file.txt",'r') as c:
             course_file = [t.strip().split(";;;") for t in c.readlines() if t.strip()]
@@ -7,7 +7,7 @@ def courses_overview():
                     
                 
     except FileNotFoundError:
-        pass
+        print("file does not exist")
         
     return total_number
 

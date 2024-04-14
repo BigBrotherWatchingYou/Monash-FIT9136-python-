@@ -23,7 +23,7 @@ class Course:
                         matched_course.append(course)
             
         except FileNotFoundError:
-            pass
+            return "File not find"
         
         return matched_course
     
@@ -37,7 +37,7 @@ class Course:
                         matched_id.append(course)
                 
         except FileNotFoundError:
-            pass
+            return "File not find"
         
         return matched_id
         
@@ -56,7 +56,7 @@ not found, return None.'''
                     
                 
         except FileNotFoundError:
-            pass
+            return "File not find"
         
         return matched_id
         #print("matched:", matched_id)
@@ -74,7 +74,7 @@ looks like [Course(), Course(), Course()….]. If not found, return an empty lis
                     
                 
         except FileNotFoundError:
-            pass
+            return "File not find"
         
         return total_number
     '''This method returns a string that shows the total number of courses.'''
