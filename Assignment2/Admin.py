@@ -145,7 +145,15 @@ er_initials;;;review_id”.
         '''This method can delete all the data in the course.txt, review.txt, user_student.txt and
         user_instructor.txt files.'''
     def view_courses(args=[]):
-        Course.
+        id = input("enter keyword/course_id/instructor id")
+        
+        keyword = [id.split("/")[0]]
+        course_id = [id.split("/")[1]]
+        instructor_id = [id.split("/")[2]]
+        Course.find_course_by_id(keyword)
+        Course.find_course_by_instructor_id(course_id)
+        Course.find_course_by_title_keyword(instructor_id)
+        
         '''This method will call the methods implemented in Course class to perform various
         view course methods. The variable “args” can be an empty list or must contain two
         elements. The first element is the command(can only be

@@ -77,7 +77,7 @@ looks like [Course(), Course(), Course()….]. If not found, return an empty lis
         
         return total_number
     
-print(course_num)
+
     '''This method returns a string that shows the total number of courses.'''
     def __str__():
         pass
