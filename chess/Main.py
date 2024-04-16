@@ -24,7 +24,9 @@ captured_piece_black = []
 #  white turn: no selection: 1-whites turn piece selected; 2- black turn piece selected'
 turn_step = 0
 selection = 100
+valid_moves = []
 
+black_queen = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'))
 
 # part 2 : main game loop
     # event handling
