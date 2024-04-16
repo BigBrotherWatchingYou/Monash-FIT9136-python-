@@ -165,6 +165,7 @@ er_initials;;;review_id”.
 
         
     def view_users():
+        admin_list = []
         try:
             with open("Assignment2/user_admin.txt") as file:
                 admin_list = file.readlines()

@@ -62,11 +62,11 @@ class Main:
 
         if user_role == "admin":
             if user_object == "1":
-                # 1.EXTRACT DATA
+                print("all courses:", Admin.extract_course_info)
                 pass
             if user_object == "2":
                 #2.VIEW COURSES
-                print("The total number of courses is: "+ len(course))
+                print("The total number of courses is: "+ len(Admin.view_courses))
                 print("your courses:")
             if user_object == "3":
                 # 3.VIEW USERS
