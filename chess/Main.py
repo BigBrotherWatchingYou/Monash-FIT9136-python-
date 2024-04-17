@@ -26,7 +26,7 @@ turn_step = 0
 selection = 100
 valid_moves = []
 
-black_queen = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'))
+black_queen = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'),(89,80))
 
 # part 2 : main game loop
     # event handling
