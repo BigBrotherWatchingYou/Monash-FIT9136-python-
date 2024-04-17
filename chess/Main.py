@@ -27,6 +27,27 @@ selection = 100
 valid_moves = []
 
 black_queen = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'),(89,80))
+black_queen_small = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'),(45,45))
+black_bishop = pygame.image.scale(pygame.image.load('chess/assets/black bishop.png'),(89,80))
+black_bishop_small = pygame.image.scale(pygame.image.load('chess/assets/black bishop.png'),(45,45))
+black_king = pygame.image.scale(pygame.image.load('chess/assets/black king.png'),(89,80))
+black_king_small = pygame.image.scale(pygame.image.load('chess/assets/black king.png'),(45,45))
+black_pawn = pygame.image.scale(pygame.image.load('chess/assets/black pawn.png'),(89,80))
+black_pawn_small = pygame.image.scale(pygame.image.load('chess/assets/black pawn.png'),(45,45))
+black_rook = pygame.image.scale(pygame.image.load('chess/assets/black rook.png'),(89,80))
+black_rook_small = pygame.image.scale(pygame.image.load('chess/assets/black rook.png'),(45,45))
+
+white_queen = pygame.image.scale(pygame.image.load('chess/assets/white queen.png'),(89,80))
+white_queen_small = pygame.image.scale(pygame.image.load('chess/assets/white queen.png'),(45,45))
+white_bishop = pygame.image.scale(pygame.image.load('chess/assets/white bishop.png'),(89,80))
+white_bishop_small = pygame.image.scale(pygame.image.load('chess/assets/white bishop.png'),(45,45))
+white_king = pygame.image.scale(pygame.image.load('chess/assets/white king.png'),(89,80))
+white_king_small = pygame.image.scale(pygame.image.load('chess/assets/white king.png'),(45,45))
+white_pawn = pygame.image.scale(pygame.image.load('chess/assets/white pawn.png'),(89,80))
+white_pawn_small = pygame.image.scale(pygame.image.load('chess/assets/white pawn.png'),(45,45))
+white_rook = pygame.image.scale(pygame.image.load('chess/assets/white rook.png'),(89,80))
+white_rook_small = pygame.image.scale(pygame.image.load('chess/assets/white rook.png'),(45,45))
+
 
 # part 2 : main game loop
     # event handling
