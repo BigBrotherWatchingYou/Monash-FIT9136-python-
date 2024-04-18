@@ -6,7 +6,7 @@ pygame.init()
 screen = pygame.display.set_mode([800,800])
 font = pygame.font.Font('freesansbold.ttf', 20)
 pygame.display.set_caption('Chess game')
-timer = pygame.time.Clock(100)
+timer = pygame.time.Clock()
 fps = 60
   # game variables and images
 white_pieces = ['rook','knight','bishop','king','queen','bishop','knight','rook',
@@ -26,27 +26,27 @@ turn_step = 0
 selection = 100
 valid_moves = []
 
-black_queen = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'),(89,80))
-black_queen_small = pygame.image.scale(pygame.image.load('chess/assets/black queen.png'),(45,45))
-black_bishop = pygame.image.scale(pygame.image.load('chess/assets/black bishop.png'),(89,80))
-black_bishop_small = pygame.image.scale(pygame.image.load('chess/assets/black bishop.png'),(45,45))
-black_king = pygame.image.scale(pygame.image.load('chess/assets/black king.png'),(89,80))
-black_king_small = pygame.image.scale(pygame.image.load('chess/assets/black king.png'),(45,45))
-black_pawn = pygame.image.scale(pygame.image.load('chess/assets/black pawn.png'),(65,65))
-black_pawn_small = pygame.image.scale(pygame.image.load('chess/assets/black pawn.png'),(45,45))
-black_rook = pygame.image.scale(pygame.image.load('chess/assets/black rook.png'),(89,80))
-black_rook_small = pygame.image.scale(pygame.image.load('chess/assets/black rook.png'),(45,45))
+black_queen = pygame.transform.scale(pygame.image.load('chess/assets/black_queen.png'),(89,80))
+black_queen_small = pygame.transform.scale(black_queen, (45,45))
+black_bishop = pygame.transform.scale(pygame.image.load('chess/assets/black_bishop.png'),(89,80))
+black_bishop_small = pygame.transform.scale(black_bishop, (45,45))
+black_king = pygame.transform.scale(pygame.image.load('chess/assets/black_king.png'),(89,80))
+black_king_small = pygame.transform.scale(black_king, (45,45))
+black_pawn = pygame.transform.scale(pygame.image.load('chess/assets/black_pawn.png'),(65,65))
+black_pawn_small = pygame.transform.scale(black_pawn, (45,45))
+black_rook = pygame.transform.scale(pygame.image.load('chess/assets/black_rook.png'),(89,80))
+black_rook_small = pygame.transform.scale(black_rook, (45,45))
 
-white_queen = pygame.image.scale(pygame.image.load('chess/assets/white queen.png'),(89,80))
-white_queen_small = pygame.image.scale(pygame.image.load('chess/assets/white queen.png'),(45,45))
-white_bishop = pygame.image.scale(pygame.image.load('chess/assets/white bishop.png'),(89,80))
-white_bishop_small = pygame.image.scale(pygame.image.load('chess/assets/white bishop.png'),(45,45))
-white_king = pygame.image.scale(pygame.image.load('chess/assets/white king.png'),(89,80))
-white_king_small = pygame.image.scale(pygame.image.load('chess/assets/white king.png'),(45,45))
-white_pawn = pygame.image.scale(pygame.image.load('chess/assets/white pawn.png'),(65,65))
-white_pawn_small = pygame.image.scale(pygame.image.load('chess/assets/white pawn.png'),(45,45))
-white_rook = pygame.image.scale(pygame.image.load('chess/assets/white rook.png'),(89,80))
-white_rook_small = pygame.image.scale(pygame.image.load('chess/assets/white rook.png'),(45,45))
+white_queen = pygame.transform.scale(pygame.image.load('chess/assets/white_queen.png'),(89,80))
+white_queen_small = pygame.transform.scale(white_queen, (45,45))
+white_bishop = pygame.transform.scale(pygame.image.load('chess/assets/white_bishop.png'),(89,80))
+white_bishop_small = pygame.transform.scale(white_bishop, (45,45))
+white_king = pygame.transform.scale(pygame.image.load('chess/assets/white_king.png'),(89,80))
+white_king_small = pygame.transform.scale(white_king, (45,45))
+white_pawn = pygame.transform.scale(pygame.image.load('chess/assets/white_pawn.png'),(65,65))
+white_pawn_small = pygame.transform.scale(white_pawn, (45,45))
+white_rook = pygame.transform.scale(pygame.image.load('chess/assets/white_rook.png'),(89,80))
+white_rook_small = pygame.transform.scale(white_rook, (45,45))
 
 
 # part 2 : main game loop
