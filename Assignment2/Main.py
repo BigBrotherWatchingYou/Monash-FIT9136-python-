@@ -21,6 +21,7 @@ class Main:
         positional arguments if you need. Fig1 shows an example of the menu output.'''
         # the page after login successful, shows what user can do 
         if userdata[username]["role"] == "admin":
+            user_role = "admin"
             #Admin login
             print(f"Welcome ",[username],". Your role is ", userdata[username]["role"] )
             print("Please enter Admin command for further service:\n\
@@ -30,9 +31,9 @@ class Main:
             4.VIEW_REVIEWS\n\
             5.REMOVE_DATA")
             # let user take commands
-            return take_commands()
+            return take_commands(user_role)
             
-        def take_commands():
+        def take_commands(user_role):
             # get command from user
             user_object = input("take commands (enter 'Logout' to quit)")
             command = ["1","2","3","4","5"]
@@ -42,7 +43,7 @@ class Main:
                 print("invalid command")
                 return Main.show_menu()
             else:
-                return user_object
+                return Main.process_operations(user_object, user_role)
             
          
             
@@ -51,13 +52,13 @@ class Main:
             # user login
             pass
         
-        return user_role    
+           
     
     
                 
                 
             
-    def process_operations(user_object,user_role,username):
+    def process_operations(user_object,user_role):
         
 
         if user_role == "admin":
@@ -75,7 +76,7 @@ class Main:
 
             if user_object == "4":
                 #4.VIEW REVIEWS
-                pass
+                Admin.view_reviews()
             if user_object == "5":                
                 #5.REMOVE DATA
                 pass
@@ -92,7 +93,7 @@ class Main:
             if user_object == "4":
                 pass
 
-        return Main.show_menu(username)
+        return Main.show_menu(user_role)
       
     '''This method has one positional argument user_object.
 Admin can take commands “1”, “2”, “3”, “4”, “5”. For command “2” and “4”, the end
