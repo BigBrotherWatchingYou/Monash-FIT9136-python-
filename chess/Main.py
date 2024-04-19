@@ -3,7 +3,9 @@ import pygame
 
 # part 1 : set up game loops and variable images
 pygame.init()
-screen = pygame.display.set_mode([800,800])
+WIDTH = 1000
+HEIGHT = 900
+screen = pygame.display.set_mode([WIDTH,HEIGHT])
 font = pygame.font.Font('freesansbold.ttf', 20)
 pygame.display.set_caption('Chess game')
 timer = pygame.time.Clock()
@@ -54,7 +56,17 @@ black_images = [black_queen, black_bishop ,black_king, black_pawn,black_rook]
 piece_list = ['queen', 'bishop' ,'king', 'pawn','rook']
 
 # draw main game loop
-def draw_board():
+def draw_board(): 
+  for i in range(32):
+    column = i % 4
+    row = i//4
+    if row % 2 == 0:
+      pygame.draw.rect(screen, 'light gray', [(600-column*200),row*100,100,100])
+    else:
+      pygame.draw.rect(screen, 'light gray', [(700-column*200),row*100,100,100])
+    pygame.draw.rect(screen, 'gold', [0, 800, WIDTH, 800])
+    pygame.draw.rect(screen, 'gold', [0, 800, WIDTH, 800],5)
+    pygame.draw.rect(screen, 'gold', [800, 0, 200, HEIGHT],5)
 
 
 # part 2 : main game loop

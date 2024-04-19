@@ -154,7 +154,7 @@ different error message.'''
         
         
         
-if __name__ == “__main__”:
+if __name__ == "__main__":
     Main.main()
     
 '''This part is the entry point of the whole program. In code part, 1. output a message
