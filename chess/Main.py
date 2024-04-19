@@ -61,13 +61,14 @@ def draw_board():
     column = i % 4
     row = i//4
     if row % 2 == 0:
-      pygame.draw.rect(screen, 'light gray', [(600-column*200),row*100,100,100])
+      pygame.draw.rect(screen, 'light gray', [(600-column*200), row*100,100,100])
     else:
-      pygame.draw.rect(screen, 'light gray', [(700-column*200),row*100,100,100])
+      pygame.draw.rect(screen, 'light gray', [(700-column*200), row*100,100,100])
     pygame.draw.rect(screen, 'gold', [0, 800, WIDTH, 800])
     pygame.draw.rect(screen, 'gold', [0, 800, WIDTH, 800],5)
     pygame.draw.rect(screen, 'gold', [800, 0, 200, HEIGHT],5)
-
+    status_text = ['White, select a Piece to move', 'white, select a destination',
+                   'black, select a Piece to move', 'black, select a destination']
 
 # part 2 : main game loop
     # event handling
