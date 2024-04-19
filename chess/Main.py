@@ -48,14 +48,23 @@ white_pawn_small = pygame.transform.scale(white_pawn, (45,45))
 white_rook = pygame.transform.scale(pygame.image.load('chess/assets/white_rook.png'),(89,80))
 white_rook_small = pygame.transform.scale(white_rook, (45,45))
 
+white_images = [white_queen, white_bishop ,white_king, white_pawn,white_rook]
+black_images = [black_queen, black_bishop ,black_king, black_pawn,black_rook]
+
+piece_list = ['queen', 'bishop' ,'king', 'pawn','rook']
+
+# draw main game loop
+def draw_board():
+
 
 # part 2 : main game loop
     # event handling
 run = True
+
 while run:
     timer.tick(fps)
-    screen.fill('black')
-    
+    screen.fill('dark grey')
+    draw_board()
     # event handling
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
