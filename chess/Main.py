@@ -7,6 +7,7 @@ WIDTH = 1000
 HEIGHT = 900
 screen = pygame.display.set_mode([WIDTH,HEIGHT])
 font = pygame.font.Font('freesansbold.ttf', 20)
+big_font = pygame.font.Font('freeansbold.tff',50)
 pygame.display.set_caption('Chess game')
 timer = pygame.time.Clock()
 fps = 60
@@ -69,7 +70,7 @@ def draw_board():
     pygame.draw.rect(screen, 'gold', [800, 0, 200, HEIGHT],5)
     status_text = ['White, select a Piece to move', 'white, select a destination',
                    'black, select a Piece to move', 'black, select a destination']
-
+    screen.blit(big_font.render(status_text[turn_step], True, 'black'),(20,8 20))
 # part 2 : main game loop
     # event handling
 run = True
