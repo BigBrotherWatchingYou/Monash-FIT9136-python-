@@ -25,7 +25,11 @@ def load_cows(filename):
     a dictionary of cow name (string), weight (int) pairs
     """
     # TODO: Your code here
-    pass
+    cow_names = []
+    try:
+        with open("MIT 6.0002/ps1_cow_data_2.txt", 'r') as file:
+            for data in file:
+                cow_names.append(data)
 
 # Problem 2
 def greedy_cow_transport(cows,limit=10):
