@@ -25,12 +25,20 @@ def load_cows(filename):
     a dictionary of cow name (string), weight (int) pairs
     """
     # TODO: Your code here
+
     cow_names = []
+    cow_number = []
     try:
         with open("MIT 6.0002/ps1_cow_data_2.txt", 'r') as file:
-            for data in file:
-                cow_names.append(data)
-
+            for k in file.readlines():
+                cow_names.append(k.strip().split(',')[0])
+                cow_number.append(k.strip().split(',')[1])
+            
+    except FileNotFoundError:
+        print("file not find")
+    
+    return cow_names, cow_number
+    
 # Problem 2
 def greedy_cow_transport(cows,limit=10):
     """
