@@ -12,3 +12,4 @@ except FileNotFoundError:
     
 print(cow_names)
 print(cow_number)
+# watch youtube 6.0002 video learn algorithm
