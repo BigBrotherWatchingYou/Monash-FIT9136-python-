@@ -8,8 +8,8 @@ try:
             cow_number.append(k.strip().split(',')[1])
             
 except FileNotFoundError:
-    print("file not find")
+    print("file not findyet")
     
 print(cow_names)
 print(cow_number)
-# watch youtube 6.0002 video learn algorithm
+# watch youtube 6.0002 video learn algorithm00
