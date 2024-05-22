@@ -21,8 +21,19 @@ class Food(object):
               + ', ' + str(self.calories) + '>'
 
     def buildMenu(names, values, calories):
+        # init object
         menu = []
         for i in range(len(values)):
             menu.append(Food(names[i], values[i], calories[i]))
 
         return menu
+    def greedy(items, maxCost, keyFunction):
+        itemsCopy = sorted(items, key = keyFunction, reverse = True)
+        result = []
+        totalValue, totalCost = 0.0, 0.0
+
+        for i in range(len(itemsCopy)):
+            if (totalCost + Food.getCost(itemsCopy[i])) <= maxCost:
+                result.append(itemsCopy[i])
+                totalCost += (Food.getCost(itemsCopy[i]))
+                totalValue += (Food.getValue(itemsCopy[i]))
