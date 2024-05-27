@@ -1,15 +1,27 @@
-import os
-cow_names = []
-cow_number = []
-try:
-    with open("MIT 6.0002/ps1_cow_data_2.txt", 'r') as file:
-        for k in file.readlines():
-            cow_names.append(k.strip().split(',')[0])
-            cow_number.append(k.strip().split(',')[1])
-            
-except FileNotFoundError:
-    print("file not findyet")
+def load_cows(filename):
+    """
+    Read the contents of the given file.  Assumes the file contents contain
+    data in the form of comma-separated cow name, weight pairs, and return a
+    dictionary containing cow names as keys and corresponding weights as values.
+
+    Parameters:
+    filename - the name of the data file as a string
+
+    Returns:
+    a dictionary of cow name (string), weight (int) pairs
+    """
+    # TODO: Your code here
+
+    cows_dict = {}
+    try:
+        with open(str(filename), 'r') as file:
+            for line in file.readlines():
+                cow_name = (line.split(','))[0]
+                cow_weight = (line.split(','))[1]
+                cows_dict[cow_name] = int(cow_weight)
+    except FileNotFoundError:
+        print("file not find")
     
-print(cow_names)
-print(cow_number)
-# watch youtube 6.0002 video learn algorithm00
+    return cows_dict
+
+print(load_cows("MIT 6.0002/ps1_cow_data.txt"))

@@ -28,7 +28,7 @@ def load_cows(filename):
 
     cows_dict = {}
     try:
-        with open("MIT 6.0002/ps1_cow_data_2.txt", 'r') as file:
+        with open(str(filename), 'r') as file:
             for line in file.readlines():
                 cow_name = (line.split(','))[0]
                 cow_weight = (line.split(','))[1]
@@ -36,7 +36,7 @@ def load_cows(filename):
     except FileNotFoundError:
         print("file not find")
     
-    return cow_names, cow_number
+    return cows_dict
     
 # Problem 2
 def greedy_cow_transport(cows,limit=10):
