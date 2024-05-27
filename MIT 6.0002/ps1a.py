@@ -26,14 +26,13 @@ def load_cows(filename):
     """
     # TODO: Your code here
 
-    cow_names = []
-    cow_number = []
+    cows_dict = {}
     try:
         with open("MIT 6.0002/ps1_cow_data_2.txt", 'r') as file:
-            for k in file.readlines():
-                cow_names.append(k.strip().split(',')[0])
-                cow_number.append(k.strip().split(',')[1])
-            
+            for line in file.readlines():
+                cow_name = (line.split(','))[0]
+                cow_weight = (line.split(','))[1]
+                cows_dict[cow_name] = int(cow_weight)
     except FileNotFoundError:
         print("file not find")
     

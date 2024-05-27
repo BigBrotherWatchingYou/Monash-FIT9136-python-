@@ -37,3 +37,5 @@ class Food(object):
                 result.append(itemsCopy[i])
                 totalCost += (Food.getCost(itemsCopy[i]))
                 totalValue += (Food.getValue(itemsCopy[i]))
+        return (result, totalValue)
+    def testGreedy()
