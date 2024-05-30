@@ -33,13 +33,15 @@ def load_cows(filename):
                 cow_name = (line.split(','))[0]
                 cow_weight = (line.split(','))[1]
                 cows_dict[cow_name] = int(cow_weight)
+                
     except FileNotFoundError:
         print("file not find")
     
+    print('here are the cows:', cows_dict)
     return cows_dict
     
 # Problem 2
-def greedy_cow_transport(cows,limit=10):
+def greedy_cow_transport(cows,limit=100):
     """
     Uses a greedy heuristic to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
@@ -62,7 +64,19 @@ def greedy_cow_transport(cows,limit=10):
     trips
     """
     # TODO: Your code here
-    pass
+    max_weight = limit
+    total_weight = 0
+    transported_cows = {}
+    # get cows sorted
+    cows_sorted = sorted(cows.values())
+    print('sorted',cows_sorted)
+    # build a loop that calculate
+
+
+    # return the list
+    print("transportedcows: ", transported_cows)
+    return transported_cows
+    
 
 # Problem 3
 def brute_force_cow_transport(cows,limit=10):
@@ -105,3 +119,6 @@ def compare_cow_transport_algorithms():
     """
     # TODO: Your code here
     pass
+
+cows = load_cows("MIT 6.0002/ps1_cow_data.txt")
+greedy_cow_transport(cows,limit=10)
