@@ -64,18 +64,16 @@ def greedy_cow_transport(cows,limit=100):
     trips
     """
     # TODO: Your code here
-    max_weight = limit
-    total_weight = 0
-    transported_cows = {}
+    
     # get cows sorted
-    cows_sorted = sorted(cows.values())
-    print('sorted',cows_sorted)
+    cows_sorted = sorted(cows.items(), key=lambda items : items[1], reverse=True)
+    print('sorted:',cows_sorted)
     # build a loop that calculate
 
 
     # return the list
-    print("transportedcows: ", transported_cows)
-    return transported_cows
+    
+    
     
 
 # Problem 3
