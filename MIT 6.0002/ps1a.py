@@ -41,7 +41,7 @@ def load_cows(filename):
     return cows_dict
     
 # Problem 2
-def greedy_cow_transport(cows,limit=100):
+def greedy_cow_transport(cows,limit=10):
     """
     Uses a greedy heuristic to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
@@ -68,7 +68,20 @@ def greedy_cow_transport(cows,limit=100):
     # get cows sorted
     cows_sorted = sorted(cows.items(), key=lambda items : items[1], reverse=True)
     print('sorted:',cows_sorted)
+
     # build a loop that calculate
+    
+    trip = 0
+    result = {}
+    def transport(dic, limit, result):
+        for cow in dic:
+            weight = cow[1]
+            if dic[0][1] + weight < 10:
+                result.append(dic[0])
+                result.append(cow)
+                del dic[0]      
+    
+    transport(cows_sorted, 10,result)
 
 
     # return the list
