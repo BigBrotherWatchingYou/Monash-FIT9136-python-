@@ -67,23 +67,32 @@ def greedy_cow_transport(cows,limit=10):
     
     # get cows sorted
     cows_sorted = sorted(cows.items(), key=lambda items : items[1], reverse=True)
-    print('sorted:',cows_sorted)
+    
 
     # build a loop that calculate
     
-    trip = 0
-    result = {}
-    def transport(dic, limit, result):
-        for cow in dic:
-            weight = cow[1]
-            if dic[0][1] + weight < 10:
-                result.append(dic[0])
-                result.append(cow)
-                del dic[0]      
+    trip_count = []
+
+    def transport(cows, limit):
+        trip_capacity = 0
+        remained_cows = []
+        trip_cows = []
+        for cow,weight in cows:
+            if trip_capacity + weight <= limit:
+                trip_capacity += weight
+                trip_cows.append((cow,weight))
+            else:    
+                remained_cows.append((cow,weight))
     
-    transport(cows_sorted, 10,result)
+        return trip_cows,remained_cows
 
-
+    remained_cows = cows_sorted
+    i=0
+    while remained_cows:
+        trip_cows, remained_cows = transport(remained_cows,limit =10)
+        trip_count.append(trip_cows)
+        i +=1
+        print((i,trip_cows))
     # return the list
     
     
