@@ -94,7 +94,20 @@ def greedy_cow_transport(cows,limit=10):
         i +=1
         print((i,trip_cows))
     # return the list
+    # made a new function:
+    # 1. check if there are still remained cows
+    # 2. use while loop, base on the limit, when a transport is done, loop ends, and delete the transported_cows from cow
+    # 3. add a counter at the while loop
+    # 4. use recursion, when a while loop is done and there are still remaining cows, return
+    def transport_recursion(cow, limit,count=0):
+        if len(cow) <= 0:
+            return count
+        else:
+            # write the while loop here
+            count += 1
+            return transport_recursion(cow, limit,count=0)
     
+    transport_recursion(cows_sorted, limit=10, count=0)
     
     
 
@@ -147,5 +160,7 @@ def compare_cow_transport_algorithms():
         print("brute algo")
     else:
         print("both have the same efficiency")
+
+
 cows = load_cows("MIT 6.0002/ps1_cow_data.txt")
 greedy_cow_transport(cows,limit=10)
