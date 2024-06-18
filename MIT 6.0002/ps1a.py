@@ -138,7 +138,14 @@ def compare_cow_transport_algorithms():
     Does not return anything.
     """
     # TODO: Your code here
-    pass
-
+    trip_nums1 = greedy_cow_transport(cows, limit=10)
+    trip_nums_2 = brute_force_cow_transport(cows, limit=10)
+    print("this one got a higher efficiency:")
+    if trip_nums1 > trip_nums_2:
+        print("greedy algo")
+    if trip_nums_2 > trip_nums1:
+        print("brute algo")
+    else:
+        print("both have the same efficiency")
 cows = load_cows("MIT 6.0002/ps1_cow_data.txt")
 greedy_cow_transport(cows,limit=10)
