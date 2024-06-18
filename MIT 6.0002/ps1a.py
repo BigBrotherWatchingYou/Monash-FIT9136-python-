@@ -99,13 +99,15 @@ def greedy_cow_transport(cows,limit=10):
     # 2. use while loop, base on the limit, when a transport is done, loop ends, and delete the transported_cows from cow
     # 3. add a counter at the while loop
     # 4. use recursion, when a while loop is done and there are still remaining cows, return
-    def transport_recursion(cow, limit,count=0):
+    def transport_recursion(cow_input, limit,count=0):
         if len(cow) <= 0:
             return count
         else:
             # write the while loop here
+            for cows, weight in cow_input:
+                while weight[1]
             count += 1
-            return transport_recursion(cow, limit,count=0)
+            return transport_recursion(cow_input, limit,count=0)
     
     transport_recursion(cows_sorted, limit=10, count=0)
     
