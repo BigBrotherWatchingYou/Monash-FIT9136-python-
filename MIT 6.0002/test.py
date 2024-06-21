@@ -24,16 +24,15 @@ def transport(llist, limit, trip_count):
     k=0
     for index in range(len(sorted)):
     # this one is for making it into a queue
-    
-    if index == k:
-        k += 1
-        if sum + sorted[index][1] <= limit:
-            sum += sorted[index][1]
-            sorted.pop[index]
-            cow_number += 1
+        if index == k:
+            k += 1
+            if sum + sorted[index][1] <= limit:
+                sum += sorted[index][1]
+                sorted.pop[index]
+                cow_number += 1
         
-    if cow_number >= 1:
-        return trip_count+1
+        if cow_number >= 1:
+            return trip_count+1
 
     previous_sum = sum
     
