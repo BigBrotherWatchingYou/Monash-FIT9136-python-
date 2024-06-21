@@ -32,9 +32,10 @@ def transport(llist, limit, trip_count):
                 cow_number += 1
         
         if cow_number >= 1:
+            print("trip:",trip_count+1)
             return trip_count+1
 
-    previous_sum = sum
+transport(k, limit=10, trip_count=1)    
     
         
 
