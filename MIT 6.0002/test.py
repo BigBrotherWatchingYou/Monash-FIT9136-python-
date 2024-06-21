@@ -16,23 +16,23 @@ sorted= sorted(k.items(), key=lambda items:items[1], reverse=True)
 # this function is for recursion, it delete the cow when it is able to be transport
 # everytime when it runs it will try its best to transport, everytime it runs will only deal with one transportation, 
 # so need to write a recursion and record everytime it successfully transport
-def transport(llist, limit, trip_count):
+def transport(list, limit, trip_count):
     sum = 0
     previous_sum = 0
     cow_number = 0
     limit_reach = False
     k=0
-    for index in range(len(sorted)):
+    for index in range(len(list)):
     # this one is for making it into a queue
         if index == k:
             k += 1
-            if sum + sorted[index][1] <= limit:
-                sum += sorted[index][1]
-                sorted.pop[index]
+            if sum + list[index][1] <= limit:
+                sum += list[index][1]
+                list.pop([index])
                 cow_number += 1
         
         if cow_number >= 1:
-            print("trip:",trip_count+1)
+            print(list,"trip:",trip_count+1)
             return trip_count+1
 
 transport(k, limit=10, trip_count=1)    
