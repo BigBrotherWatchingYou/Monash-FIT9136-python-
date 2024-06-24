@@ -43,6 +43,7 @@ def transport(item_list, limit, trip_count):
             return transport(item_list, limit, trip_count)
 
 # the function only runs in one trip, so need to build another while loop to runs it again and again
-count = transport(k, limit=10, trip_count=0)
+
+count = transport(sorted, limit=10, trip_count=0)
 print(count)
         
