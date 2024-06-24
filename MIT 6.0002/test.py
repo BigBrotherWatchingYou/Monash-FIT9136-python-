@@ -30,6 +30,19 @@ def transport(item_list, limit, trip_count):
         else:
             i += 1 
         
+    if cow_number >= 1 :
+    # check the cows after while loop
+        if len(item_list) <= 0:
+        # all cows transported, mission done
+            return trip_count
+        else:
+            # still cows remaining
+            print("Remaining list:", item_list)
+            print("Trip:", trip_count)
+            return transport(item_list, limit, trip_count + 1)
 
+# the function only runs in one trip, so need to build another while loop to runs it again and again
+transport_list, trip_count = transport(k, limit=10, trip_count=0)
+if 
 
         
