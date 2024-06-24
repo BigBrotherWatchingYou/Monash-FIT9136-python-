@@ -69,49 +69,48 @@ def greedy_cow_transport(cows,limit=10):
     cows_sorted = sorted(cows.items(), key=lambda items : items[1], reverse=True)
     
 
-    # build a loop that calculate
-    
-    trip_count = []
+    def transport(item_list, limit, trip_count):
+        sum_result = 0
+        cow_number = 0
+        i = 0
+        # this is a 2d list, it will be added to the total_list after recursion is done
+        transport_list = []
+        # a 3d list that contains all the transport_list result
+        total_list = []
+        while i < len(item_list):
+        # Add item value if it doesn't exceed the limit
+            if sum_result + item_list[i][1] <= limit:
+                sum_result += item_list[i][1]
+                cow_number += 1
+                # add it to the list
+                transport_list.append(item_list[i])
+                item_list.pop(i)
+            else:
+                i += 1
+        # while loop ends
 
-    def transport(cows, limit):
-        trip_capacity = 0
-        remained_cows = []
-        trip_cows = []
-        for cow,weight in cows:
-            if trip_capacity + weight <= limit:
-                trip_capacity += weight
-                trip_cows.append((cow,weight))
-            else:    
-                remained_cows.append((cow,weight))
-    
-        return trip_cows,remained_cows
 
-    remained_cows = cows_sorted
-    i=0
-    while remained_cows:
-        trip_cows, remained_cows = transport(remained_cows,limit =10)
-        trip_count.append(trip_cows)
-        i +=1
-        print((i,trip_cows))
-    # return the list
-    # made a new function:
-    # 1. check if there are still remained cows
-    # 2. use while loop, base on the limit, when a transport is done, loop ends, and delete the transported_cows from cow
-    # 3. add a counter at the while loop
-    # 4. use recursion, when a while loop is done and there are still remaining cows, return
-    def transport_recursion(cow_input, limit,count=0):
-        if len(cow) <= 0:
-            return count
-        else:
-            # write the while loop here
-            for cows, weight in cow_input:
-                while weight[1]
-            count += 1
-            return transport_recursion(cow_input, limit,count=0)
-    
-    transport_recursion(cows_sorted, limit=10, count=0)
-    
-    
+        # add the transport_list to the total_list
+        total_list.append(transport_list)
+        # need to empty the transport_list after one trip is done
+        transport_list = [] 
+        
+        
+        if cow_number >= 1 :
+        # check the cows after while loop
+            if len(item_list) <= 0:
+            # all cows transported, mission done
+                print("all cows transported,total trip count = ", trip_count)
+                print("total_list, the result")
+                return total_list
+            else:
+                # still cows remaining
+                print("Remaining list:", item_list)
+                print("Trip:", trip_count)
+                trip_count += 1
+                return transport(item_list, limit, trip_count)
+            
+    transport(cows_sorted, limit, trip_count=0)
 
 # Problem 3
 def brute_force_cow_transport(cows,limit=10):
