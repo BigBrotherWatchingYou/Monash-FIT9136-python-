@@ -39,10 +39,10 @@ def transport(item_list, limit, trip_count):
             # still cows remaining
             print("Remaining list:", item_list)
             print("Trip:", trip_count)
-            return transport(item_list, limit, trip_count + 1)
+            trip_count += 1
+            return transport(item_list, limit, trip_count)
 
 # the function only runs in one trip, so need to build another while loop to runs it again and again
-transport_list, trip_count = transport(k, limit=10, trip_count=0)
-if 
-
+count = transport(k, limit=10, trip_count=0)
+print(count)
         
