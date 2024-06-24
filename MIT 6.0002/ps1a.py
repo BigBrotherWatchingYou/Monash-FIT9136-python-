@@ -69,19 +69,17 @@ def greedy_cow_transport(cows,limit=10):
     cows_sorted = sorted(cows.items(), key=lambda items : items[1], reverse=True)
     
 
-    def transport(item_list, limit, trip_count):
+    total_list = []
+    def transport(item_list, limit, trip_count, total_list):
         sum_result = 0
-        cow_number = 0
+        
         i = 0
-        # this is a 2d list, it will be added to the total_list after recursion is done
         transport_list = []
-        # a 3d list that contains all the transport_list result
-        total_list = []
         while i < len(item_list):
         # Add item value if it doesn't exceed the limit
             if sum_result + item_list[i][1] <= limit:
                 sum_result += item_list[i][1]
-                cow_number += 1
+                
                 # add it to the list
                 transport_list.append(item_list[i])
                 item_list.pop(i)
@@ -92,25 +90,23 @@ def greedy_cow_transport(cows,limit=10):
 
         # add the transport_list to the total_list
         total_list.append(transport_list)
-        # need to empty the transport_list after one trip is done
-        transport_list = [] 
-        
-        
-        if cow_number >= 1 :
-        # check the cows after while loop
-            if len(item_list) <= 0:
-            # all cows transported, mission done
-                print("all cows transported,total trip count = ", trip_count)
-                print("total_list, the result")
-                return total_list
-            else:
-                # still cows remaining
-                print("Remaining list:", item_list)
-                print("Trip:", trip_count)
-                trip_count += 1
-                return transport(item_list, limit, trip_count)
-            
-    transport(cows_sorted, limit, trip_count=0)
+    
+        if len(item_list) > 0:
+            # still cows remaining
+            trip_count += 1
+            print("transported cows:", transport_list)
+            print("Trip:", trip_count)
+                
+            return transport(item_list, limit, trip_count, total_list)
+        if len(item_list) <= 0:
+            # all transportation done
+            print(" all transportation done")
+            print(" total list: ", total_list)
+            return total_list
+
+
+    transport(sorted, limit=10, trip_count=0, total_list=total_list)
+
 
 # Problem 3
 def brute_force_cow_transport(cows,limit=10):
@@ -152,8 +148,8 @@ def compare_cow_transport_algorithms():
     Does not return anything.
     """
     # TODO: Your code here
-    trip_nums1 = greedy_cow_transport(cows, limit=10)
-    trip_nums_2 = brute_force_cow_transport(cows, limit=10)
+    trip_nums1 = len(greedy_cow_transport(cows, limit=10))
+    trip_nums_2 = len(brute_force_cow_transport(cows, limit=10))
     print("this one got a higher efficiency:")
     if trip_nums1 > trip_nums_2:
         print("greedy algo")
