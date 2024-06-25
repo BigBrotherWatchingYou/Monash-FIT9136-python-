@@ -105,7 +105,7 @@ def greedy_cow_transport(cows,limit=10):
             return total_list
 
 
-    transport(cows_sorted, limit=10, trip_count=0, total_list=total_list)
+    transport(cows_sorted, limit=limit, trip_count=0, total_list=total_list)
 
 
 # Problem 3
