@@ -1,8 +1,11 @@
 # From codereview.stackexchange.com                    
 def partitions(set_):
+    # EMPTY 
     if not set_:
         yield []
         return
+    #    //2 means not keeping the digit
+    
     for i in range(2**len(set_)//2):
         parts = [set(), set()]
         for item in set_:
