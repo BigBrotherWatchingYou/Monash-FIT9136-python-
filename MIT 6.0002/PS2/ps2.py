@@ -9,6 +9,7 @@
 #
 import unittest
 from graph import Digraph, Node, WeightedEdge
+import time
 
 #
 # Problem 2: Building up the Campus Map
