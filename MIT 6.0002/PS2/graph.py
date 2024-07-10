@@ -54,20 +54,26 @@ class Edge(object):
 
 
 class WeightedEdge(Edge):
+    # this is your mission
     def __init__(self, src, dest, total_distance, outdoor_distance):
-        pass  # TODO
+        super().__init__(src,dest)
+        self.total_distance = total_distance
+        self.outdoor_distance = outdoor_distance
+        
+
 
     def get_total_distance(self):
-        pass  # TODO
+        return self.total_distance
 
     def get_outdoor_distance(self):
-        pass  # TODO
+        return self.outdoor_distance
 
     def __str__(self):
-        pass  # TODO
+        return '{}->{} ({}, {})'.format(self.src, self.dest, self.total_distance, self.outdoor_distance)
 
 
 class Digraph(object):
+    # this is your mission
     """Represents a directed graph of Node and Edge objects"""
     def __init__(self):
         self.nodes = set([])
