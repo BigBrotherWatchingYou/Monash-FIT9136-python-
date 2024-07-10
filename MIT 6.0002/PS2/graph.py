@@ -101,7 +101,7 @@ class Digraph(object):
             # why
             self.edges[node] = []
         else:
-            return ValueError
+            raise ValueError
 
 
     def add_edge(self, edge):
