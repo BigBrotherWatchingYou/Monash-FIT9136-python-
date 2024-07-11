@@ -108,6 +108,10 @@ class Digraph(object):
         """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
         in the  graph."""
+        if (edge not in self.edges )or (edge not in (self.nodes)):
+            self.edges.add(edge)
+        else:
+            raise ValueError
         pass  # TODO
 
 
