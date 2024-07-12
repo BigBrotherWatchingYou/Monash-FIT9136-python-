@@ -46,6 +46,14 @@ def load_map(map_filename):
 
     # TODO
     print("Loading map from file...")
+    try:
+        with open (map_filename,'r') as file:
+            map_file = file.readlines()
+    except FileNotFoundError:
+        print('file not find')
+
+
+    
 
 # Problem 2c: Testing load_map
 # Include the lines used to test load_map below, but comment them out
