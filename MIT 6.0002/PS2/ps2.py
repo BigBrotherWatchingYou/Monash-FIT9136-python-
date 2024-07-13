@@ -46,18 +46,22 @@ def load_map(map_filename):
 
     # TODO
     print("Loading map from file...")
-    try:
-        with open (map_filename,'r') as file:
-            map_file = file.readlines()
+    map_file = {}
+    data_file = open(str(map_filename),'r')
+    map_file = Digraph()
+    # TODO 20240713
+        
     except FileNotFoundError:
         print('file not find')
+    
+    return map_file
 
 
     
 
 # Problem 2c: Testing load_map
 # Include the lines used to test load_map below, but comment them out
-
+print(load_map('mit_map.txt'))
 
 #
 # Problem 3: Finding the Shorest Path using Optimized Search Method
