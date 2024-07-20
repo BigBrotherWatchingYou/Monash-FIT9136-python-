@@ -48,12 +48,10 @@ def load_map(map_filename):
     print("Loading map from file...")
     map_file = {}
     data_file = open(str(map_filename),'r')
-    map_file = Digraph()
+    map_file = Digraph(data_file).__init__
     # TODO 20240713
         
-    except FileNotFoundError:
-        print('file not find')
-    
+   
     return map_file
 
 
