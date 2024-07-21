@@ -1,2 +1,5 @@
-a = 555551155555
-print(a.find(11))
+import math
+radius = float(input("Enter the radius"))
+
+
+print(f"friebee area = ", ((math.pi*(radius**2)+0.5)//1),"m\u00B2")

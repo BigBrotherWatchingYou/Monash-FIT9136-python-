@@ -11,3 +11,16 @@
 xxx.count() = return how many times it ooccurs
 xxx.isnumeric() = returns True if all characters in the string is numeric
 xxx.find(xxx) = find the first occurance of the specific value in the string and returns an index
+
+
+math.gcd(1,10) = find the biggest common divisor of the two
+math.sqrt(144) = find the square root
+math.sin(pi)= returns the sine of different numbers
+
+
+float and integer:
+print(3 ** (4 % 3 + 1) + 15 // (3.2 + 3.8) )------------it yield with float because there are float inside ,it turns all things into integer
+
+question: we know that int(114.514)=114
+how to turn it into 115?
+answer: int(114.514 + 0.5)
