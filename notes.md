@@ -24,3 +24,11 @@ print(3 ** (4 % 3 + 1) + 15 // (3.2 + 3.8) )------------it yield with float beca
 question: we know that int(114.514)=114
 how to turn it into 115?
 answer: int(114.514 + 0.5)
+
+
+# JAVA
+int - an integer number 
+double - a floating point number
+char - a single character $%^&
+boolean - a boolean value True/ False
+
