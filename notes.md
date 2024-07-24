@@ -30,5 +30,25 @@ answer: int(114.514 + 0.5)
 int - an integer number 
 double - a floating point number
 char - a single character $%^&
-boolean - a boolean value True/ False
+boolean - a boolean value ( True/ False)
+
+int total; // declaration of variable "total" of the type unit
+total = 10; // definition of variable total
+### Java is a stronly typed programming language. This means that any variables must be declared using a data type.
+#### String is a special class:  ex: String value = "Something";
+
+float: need to add F at the end like: 4.454F
+long : longer integer: 423266353L
+double: 
+byte:
+short:
+int: 
+char：
+boolean：
+
+int enrolment = 100;
+enrolment + 100 //this expression will gets 200
+
+int numberone = 100
+numberone =99//turns it into 99
 
