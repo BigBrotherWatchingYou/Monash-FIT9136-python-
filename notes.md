@@ -52,3 +52,6 @@ enrolment + 100 //this expression will gets 200
 int numberone = 100
 numberone =99//turns it into 99
 
+### difference between state and attribute
+no difference 
+for example numberone = "1" then the state is 1
