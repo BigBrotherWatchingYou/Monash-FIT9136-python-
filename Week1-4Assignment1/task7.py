@@ -5,21 +5,50 @@ string = str(input("Enter a string to type: "))
 # signal for stopping the loop should base on the count on the key
 # stop_signal = len(string)
 operation = ""
+# starts from the beginning
+start_location = 0.00
 
+def goes_to_the_key(start, end):
+    # no action if start==end
+    movement = ""
+    vertical_move = int(start) - int(end)
+    print("vertical_move", vertical_move)
+    horizontal_move = ((start%1) - (end%1))*100
+    # goes right
+    if horizontal_move < 0:
+        movement += int(-horizontal_move) * 'r'
+        #goes left
+    elif horizontal_move > 0:
+        movement += int(horizontal_move) * 'l'
+        
+    # goes down
+    if vertical_move < 0:
+        movement += int(-vertical_move) * 'd'
+        #goes up
+    elif vertical_move > 0:
+        movement += int(vertical_move) * 'u'
 
-def goes_to_the_key(input_key, operation):
+    
+        
+
     # Everytime it press the key, stop_signal -=1
-    operation += 'p'
-    return operation
+    movement += 'p'
+    return movement
 
-def search_key(input_key, dictionary):
-    return_value = 
+def search_key(the_key, dictionary):
+    the_key_location = 0
+    
     #check if it is of the first line
-    for items in input_key:
-        if items in dictionary[0]:
-        #check position of the key in the line
-            return dictionary[0][items]
-        elif input_key in dictionary[1]:
+    if the_key in dictionary[0]:
+        # this will turn the key location into 0.1, 0.2 or something like that
+        the_key_location =  (dictionary[0].index(the_key)*0.01) + 0
+    elif the_key in dictionary[1]:
+        the_key_location =  (dictionary[1].index(the_key)*0.01) + 1
+ 
+
+
+
+    return the_key_location
         
 
 
@@ -43,11 +72,11 @@ else:
     # the key is valid
     while len(string) > 0:
         current_key = string[0]
-        new_key = string[1]
-        current_location = search_key(current_key)
-        new_key_location = search_key(new_key)
+        destination = search_key(current_key, your_variable_name)
 
-        operation += goes_to_the_key(current_key_location, new_key_location)
+        operation += goes_to_the_key(start_location, destination)
+        # update start location
+        start_location = destination
         # remove the first character of string
         string = string[1:]
         

@@ -1,6 +1,7 @@
-operation = "pla00"
+operation = "0"
 check_list = ["abcdefghijklm",
  "nopqrstuvwxyz"]
 operation = operation[1:]
 
-print("awef\n" + "wefwe")
+# print(check_list[0].index("m"))
+print(0.25%1*100)
