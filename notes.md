@@ -43,7 +43,7 @@ double:
 byte:
 short:
 int: 
-char：
+char：    
 boolean：
 
 int enrolment = 100;
