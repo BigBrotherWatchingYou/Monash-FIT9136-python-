@@ -1,19 +1,24 @@
 your_variable_name = ["abcdefghijklm", "nopqrstuvwxyz"]
-
+your_variable_name_1 = ["789","456","123","0.-"]
+your_variable_name_2 = [ "chunk", "vibex", "gymps", "fjord", "waltz"]
+your_variable_name_3 = [ "bemix", "vozhd", "grypt", "clunk", "waqfs"]
 
 string = str(input("Enter a string to type: "))
 # signal for stopping the loop should base on the count on the key
 # stop_signal = len(string)
 operation = ""
 # starts from the beginning
-start_location = 0.00
+start_location_ver = 0
+start_location_hor = 0
 
-def goes_to_the_key(start, end):
+def goes_to_the_key(start_ver,start_hor, end_ver, end_hor):
     # no action if start==end
     movement = ""
-    vertical_move = int(start) - int(end)
-    print("vertical_move", vertical_move)
-    horizontal_move = ((start%1) - (end%1))*100
+    vertical_move = int(start_ver - end_ver)
+    #print("start", start_ver,".",start_hor)
+    #print("end",end_ver,".",end_hor)
+    horizontal_move = int(start_hor - end_hor)
+    #print("horizontal_move",horizontal_move)
     # goes right
     if horizontal_move < 0:
         movement += int(-horizontal_move) * 'r'
@@ -30,25 +35,30 @@ def goes_to_the_key(start, end):
 
     
         
-
+    
     # Everytime it press the key, stop_signal -=1
     movement += 'p'
+    #print("movement",movement)
+    #print("-----------------")
     return movement
 
 def search_key(the_key, dictionary):
-    the_key_location = 0
+    
     
     #check if it is of the first line
     if the_key in dictionary[0]:
+        the_key_location_ver = 0
         # this will turn the key location into 0.1, 0.2 or something like that
-        the_key_location =  (dictionary[0].index(the_key)*0.01) + 0
+        the_key_location_hor =  (dictionary[0].index(the_key))
+
     elif the_key in dictionary[1]:
-        the_key_location =  (dictionary[1].index(the_key)*0.01) + 1
+        the_key_location_ver = 1
+        the_key_location_hor =  (dictionary[1].index(the_key)) 
  
 
 
 
-    return the_key_location
+    return the_key_location_ver, the_key_location_hor
         
 
 
@@ -72,14 +82,15 @@ else:
     # the key is valid
     while len(string) > 0:
         current_key = string[0]
-        destination = search_key(current_key, your_variable_name)
+        destination_ver, destination_hor = search_key(current_key, your_variable_name)
 
-        operation += goes_to_the_key(start_location, destination)
+        operation += goes_to_the_key(start_location_ver, start_location_hor, destination_ver, destination_hor)
         # update start location
-        start_location = destination
+        start_location_ver = destination_ver
+        start_location_hor = destination_hor
         # remove the first character of string
         string = string[1:]
         
     
 
-print("The robot must perform the following operations:\n"+ operation)
+    print("The robot must perform the following operations:\n"+ operation)

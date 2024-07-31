@@ -4,4 +4,7 @@ check_list = ["abcdefghijklm",
 operation = operation[1:]
 
 # print(check_list[0].index("m"))
-print(0.25%1*100)
+print(0.01%1*100)
+
+rrrrprrdprrrrrupllllllllldprrrrrrrrrpllllllprrrrrrpup
+rrrrprrdprrrrrupllllllllldprrrrrrrrrpllllllprrrrrrpup
