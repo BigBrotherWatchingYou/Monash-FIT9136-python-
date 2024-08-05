@@ -1,7 +1,5 @@
 your_variable_name = ["abcdefghijklm", "nopqrstuvwxyz"]
-your_variable_name_1 = ["789","456","123","0.-"]
-your_variable_name_2 = [ "chunk", "vibex", "gymps", "fjord", "waltz"]
-your_variable_name_3 = [ "bemix", "vozhd", "grypt", "clunk", "waqfs"]
+
 
 string = str(input("Enter a string to type: "))
 # signal for stopping the loop should base on the count on the key
