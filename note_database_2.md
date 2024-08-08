@@ -65,5 +65,6 @@ usually need bridging entity
 # Foreign Key
 - role of foreign key is to connect
 
-
-
+![alt text](image-3.png)
+the line means maximum and minimum
+relationship must have description

@@ -14,3 +14,8 @@ memory in Cpu is called " register"
 
 
 ## LRU - least recently used
+- only need to check the input, dontchare about what's already there
+
+## non-pre-emptive scheduling algorithms:
+- e.g.First-in first-out, Shortest job first, Priority
+scheduling
