@@ -38,3 +38,17 @@ double quotes for its values.
  boolean
  String
 
+# iteration 
+the main purpose of iteration is to allow a computing system to perform tasks repeatedly until a certain condition is met.
+
+# Initialisation of a counter or flag
+We can have a counter that keeps track of the number of times the loop runs. Alternatively, if we do not have a fixed number of iterations in mind, we can initialise a boolean flag and the loop will keep running until the flag's value is changed—for example, from true to false. When executing a loop, the instruction to initialise the counter or flag is only executed once.
+
+# Boolean condition
+A boolean condition is used to decide when to stop repeating the loop and exit to the next instruction following the loop construct. We can specify compound conditions where the loop iterates until all the conditions are met. The boolean condition is evaluated with each iteration of the loop and the loop executed repeatedly until the condition has been met.
+
+# for loop
+![1723333717766](image/java_note2/1723333717766.png)
+
+# while loop
+![1723353017443](image/java_note2/1723353017443.png)

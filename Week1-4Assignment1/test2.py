@@ -1,6 +1,3 @@
-consider the following code:
-int a = 5; 
-int b=2;
-int c = 1;
-what will the following expression evaluate to?
-a++ +(c)- --b
+password_list = ["12345", "abcde", "pass1", "qwert",
+ "aaaaa", "zzzzz", "11111", "apple", "hello", "admin",]
+print(len(password_list))
