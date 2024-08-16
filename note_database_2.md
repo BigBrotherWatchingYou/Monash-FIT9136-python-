@@ -91,6 +91,8 @@ unique, in order to identify, minimum unit of super key
 as long as super include a candidate key, it becomes super key
 ### primary key
 can be only one
+### alternate key
+on candidate key is chosen to be the primary key of a relation. Remaining conadidate keys are termed alternate keys.
 
 
 # Null
@@ -124,3 +126,35 @@ WHERE project_code = '25-5A
 
 
 ## natural join
+
+# tuple
+
+# Domain
+list of possible values
+# primary key
+cust_id, order_id
+( combination of order_id & order_time could also be primary key)
+# foreign key
+foreign key exist in not only one entity, (use for identification)
+
+project (𝝿),
+
+ select (𝛔), 
+
+ join (⨝)
+ 
+![1723793951882](image/note_database_2/1723793951882.png)
+
+# keys determines each other
+if both keys are candidate keys, they can determine each other:
+e.g. TFN determins id, id determins TFN
+
+## Partial dependency
+see the graph provided above, 
+![1723794342884](image/note_database_2/1723794342884.png)
+
+## UNF to 1NF ( NF means normal Form)
+![1723794749356](image/note_database_2/1723794749356.png)
+
+![1723795114514](image/note_database_2/1723795114514.png)
+![1723795528938](image/note_database_2/1723795528938.png)
