@@ -98,3 +98,34 @@ substring(0,3)
 
 ## equals
 if ( a equals b)--------if (a==b)
+
+
+# xxx.length()
+
+# xxx.substring(start index, end index)
+returns a substring
+114514.substring(0,3) ----114
+
+# xxx.charAt(index)
+return the location at a specified location
+
+# xxx.trim()
+returns a copy  with leading and trailing whitespaces omitted.
+String a = " asf "
+a.trim() ---"asf"
+
+# xxx.toUpperCase()
+turn to uppercase
+
+# +
++ equals to join
+can be used on calculation 
+can be used on string
+
+# xxx.nextline()
+e.g. Scanner console =  new Scanner(System.in);
+xxx = console.nextline()
+
+# for loop
+for(i=0; i<1;i++)
+  new[i] = arr[i]

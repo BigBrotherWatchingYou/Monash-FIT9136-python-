@@ -136,3 +136,18 @@ shows all hardware-address , networkaddress.etc
 
 ### Total FRAME size :
 eternet header+ ip header+ TCP header+ Http header
+
+
+# Repeaters
+repeaters regenerate signals
+which allows communications across greater distance
+
+# Hube
+-are simply multi-port repeaters
+- facilitates scaling communication between additional hosts
+- everyone receives everyone else's data
+
+# Bridge 
+sit between hub-connected hosts
+bridges only have two ports
+Bridges learn which hosts are on each side
