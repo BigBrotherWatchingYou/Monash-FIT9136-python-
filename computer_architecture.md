@@ -151,3 +151,13 @@ which allows communications across greater distance
 sit between hub-connected hosts
 bridges only have two ports
 Bridges learn which hosts are on each side
+![1724023397764](image/computer_architecture/1724023397764.png)
+
+# Switches
+-combination between hubes and bridges
+- multiple ports
+- learn which hosts are on each port
+![1724043247519](image/computer_architecture/1724043247519.png)
+
+# Network
+grouping of hosts which require similar connectivity
