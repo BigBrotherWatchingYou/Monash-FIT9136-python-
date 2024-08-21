@@ -78,38 +78,48 @@ the line means maximum and minimum
 relationship must have description
 
 ## Relation Properties contidion
+
 - Tuple values are atomic---cannot be divided
----- employee(eid, ename,departno, dependants)
------not allowed: dependants(dep_name, dep_age) multivalued 
---- hence no multivalued(repeating) attributes allowed, called the first normal form rule
+  ---- employee(eid, ename,departno, dependants)
+  -----not allowed: dependants(dep_name, dep_age) multivalued
+  --- hence no multivalued(repeating) attributes allowed, called the first normal form rule
 
 # question:
 
 ### candidate key
-unique, in order to identify, minimum unit of super key
-### super key
-as long as super include a candidate key, it becomes super key
-### primary key
-can be only one
-### alternate key
-on candidate key is chosen to be the primary key of a relation. Remaining conadidate keys are termed alternate keys.
 
+unique, in order to identify, minimum unit of super key
+
+### super key
+
+as long as super include a candidate key, it becomes super key
+
+### primary key
+
+can be only one
+
+### alternate key
+
+on candidate key is chosen to be the primary key of a relation. Remaining conadidate keys are termed alternate keys.
 
 # Null
 
 # Writing Relations
+
 -relations may be represented using the following notation
 
 # Business rules
+
 - runners may form a team, the runner who registers the team is recorded as the team leader.
 - identify the FK(s):
-TEAM(team_id, team_name, team_leader)
-RUNNER(runner_id, runner_name, team_id)
-A. team_leader in Team
-B. runner_id in RUNNER
-D. Team_id in RUNNER
+  TEAM(team_id, team_name, team_leader)
+  RUNNER(runner_id, runner_name, team_id)
+  A. team_leader in Team
+  B. runner_id in RUNNER
+  D. Team_id in RUNNER
 
 # Relational DMLs
+
 ▪ Relational Calculus
 ▪ Relational Algebra
 the way to manipulate data
@@ -119,42 +129,65 @@ the way to manipulate data
 relations
 
 # SQL vs Relational ALgebra in the Database
+
 ![1723192208597](image/note_database_2/1723192208597.png)
 select project_manager
 FROM prdetail
 WHERE project_code = '25-5A
-
 
 ## natural join
 
 # tuple
 
 # Domain
+
 list of possible values
+
 # primary key
+
 cust_id, order_id
 ( combination of order_id & order_time could also be primary key)
+
 # foreign key
+
 foreign key exist in not only one entity, (use for identification)
 
 project (𝝿),
 
- select (𝛔), 
+ select (𝛔),
 
  join (⨝)
- 
+
 ![1723793951882](image/note_database_2/1723793951882.png)
 
 # keys determines each other
+
 if both keys are candidate keys, they can determine each other:
 e.g. TFN determins id, id determins TFN
 
 ## Partial dependency
-see the graph provided above, 
+
+see the graph provided above,
 ![1723794342884](image/note_database_2/1723794342884.png)
 
 ## UNF to 1NF ( NF means normal Form)
+
 ![1723794749356](image/note_database_2/1723794749356.png)
 
 ![1723795114514](image/note_database_2/1723795114514.png)
 ![1723795528938](image/note_database_2/1723795528938.png)
+
+
+
+# optimum setup 
+
+
+# normalization
+
+when you jump From UNF to 1NF you need to remove RG, and insert Primary key
+
+to jump from 1NF to 2NF you nned to remove PD
+
+From 2NF to 3NF , remove Trasnsition dependency
+
+# Repetition

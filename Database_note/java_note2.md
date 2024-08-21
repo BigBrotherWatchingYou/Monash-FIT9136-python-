@@ -161,8 +161,6 @@ xxx = console.nextline()
 for(i=0; i<1;i++)
   new[i] = arr[i]
 
-
-
 # concat()
 
 if (str1.compareTo(str2) < 0)
@@ -175,3 +173,28 @@ combine both string together
 # charAt(int index)
 
 return the char value at the specific index
+
+
+# javadoc -d ./ ***.java
+
+# javadoc -d ./docs ***.java
+
+# javac -d .docs classOne.java
+
+
+# StringBuffer 
+
+StringBuffer xx = new StringBuffer();
+
+string created by stringbuffer can be changed
+
+xxx.apend("awefwef")
+
+xxx.insert(6, "there");
+
+
+# Math.random()
+
+this creates a random number [0,1)
+
+int r = (int)(Math.rancom()*10 +1);
