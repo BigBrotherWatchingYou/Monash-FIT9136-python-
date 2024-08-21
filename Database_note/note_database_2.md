@@ -178,8 +178,20 @@ see the graph provided above,
 ![1723795528938](image/note_database_2/1723795528938.png)
 
 
+# partial dependency
 
-# optimum setup 
+**a situation in which a non-key attribute of a table depends on only a part of the primary key**
+
+key depend on only part of the primary key
+
+to remove partial dependency, we need to create a new entity
+
+# Transitive dependency
+
+non-key depending on non-key
+
+
+# optimum setup
 
 
 # normalization
@@ -191,3 +203,13 @@ to jump from 1NF to 2NF you nned to remove PD
 From 2NF to 3NF , remove Trasnsition dependency
 
 # Repetition
+
+
+# question
+
+1. a 1NF info:   Primary key could be:
+   Doctor id, appointment Date
+   patient id, appointment date
+   surgery room.no , appointment date
+
+**When working with a potentially composite attribute, you must consider how it is depicted on the form/report** . If the attribute is depicted as non-decomposed, then you should treat it as a simple attribute for the purposes of normalisation.  *However* , this decision must be informed by any further information that you have about the scenario you are modelling.
