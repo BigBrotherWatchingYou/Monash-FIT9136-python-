@@ -1,5 +1,4 @@
-alist = {1:555}
-blist = alist
-blist[0] = 1
-
-print(alist)
+x = "x"*2
+y = [1,2]
+v = x + y
+print(v)

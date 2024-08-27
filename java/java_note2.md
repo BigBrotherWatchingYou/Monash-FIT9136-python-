@@ -174,15 +174,13 @@ combine both string together
 
 return the char value at the specific index
 
-
 # javadoc -d ./ ***.java
 
 # javadoc -d ./docs ***.java
 
 # javac -d .docs classOne.java
 
-
-# StringBuffer 
+# StringBuffer
 
 StringBuffer xx = new StringBuffer();
 
@@ -192,9 +190,133 @@ xxx.apend("awefwef")
 
 xxx.insert(6, "there");
 
-
 # Math.random()
 
 this creates a random number [0,1)
 
 int r = (int)(Math.rancom()*10 +1);
+
+
+
+# GenericClass
+
+## this allow programmer to delay defining the data type to be used  until the object of type of class is instantiated
+
+public class GenericClass`<Type>`
+{
+    private Type attributeOne;
+
+    public Type getAttributeOne()
+    {
+        return attributeOne;
+    }
+
+    public String display()
+    {
+        return "" + attributeOne;
+    }
+
+    public void setAttributeOne(Type attributeOne)
+    {
+        this.attributeOne = attributeOne;
+    }
+
+    public static void main(String[] args)
+    {
+        GenericClass`<Integer>` objOne = new GenericClass`<Integer>`();
+        objOne.setAttributeOne(10);
+        System.out.println("First generic value = " + objOne.display());
+        GenericClass`<String>` objTwo = new GenericClass`<String>`();
+        objTwo.setAttributeOne("Hello");
+        System.out.println("Second generic value = " + objTwo.display());
+    }
+
+}
+
+# ArrayList
+
+import java.util.ArrayList
+
+it is not a fixed list like Array
+
+# Set & add (method)
+
+## First need to import java.util.Arraylist
+
+xxx.set(1,2) ----= replace(1,2)
+
+xxx.add(1,awef) = append(1,awef)
+
+# get(method)
+
+used for accessing an element in a list
+
+xx. get(index -1)
+
+### need to mention that need to (index-1)because the first char of it is index 0
+
+# remove(method)
+
+delete the object completely from the collection ( not replace with null)
+
+after removed, the index of the remaining objects will be decremented by 1
+
+xx.remove(index)
+
+# hashmap
+
+import java.util.HashMap
+
+### equals to dict in python but in the form of (a,b)
+
+all keys are unique
+
+xx = new HashMap<>()
+
+xx.put(id, desc)
+
+if you want to search for an item:  xxx.get(id)
+
+you can also use xxx.size()
+
+if want to make validation , use :   if (products.containsKey(id)){}
+
+# HashSet
+
+import java.util.HashSet
+
+xxx = new HashSet<>()
+
+hashset uses key to access elements
+
+if we want to add something:  xxx.add(values[0])
+
+xxx.remove()
+
+validation:
+
+if (words.contains(value))
+
+xxx.size()
+
+## question 1: whats the difference between HashMap and HashSet?
+
+# question 2:
+
+![1724737022633](image/java_note2/1724737022633.png)
+
+# Null-pointer expection
+
+## Null pointer exception
+
+## Question 4 : runtime error
+
+![1724737981486](image/java_note2/1724737981486.png)
+
+# For each Loop
+
+this doesn't need to know the exact number of item in the collection, it automatically exit when the end of the colleciton is reached
+
+### when we use For Each Loop , java handles the indexing of the elements and the iteration for us
+
+java does not allow deletion of elements duinght the iteration of For-each_loop

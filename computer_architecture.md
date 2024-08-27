@@ -161,3 +161,27 @@ Bridges learn which hosts are on each side
 
 # Network
 grouping of hosts which require similar connectivity
+
+
+# Shared vs Switched Ethernet
+
+shared usually cause collision
+switch made point to point connection, no collesion
+
+# CSMA/CD
+
+# CSMA/CA
+
+CA means collison avoidness
+、
+
+# Switch vsRouter
+
+ forwarding table uses the MAC address, routing table use the IP address
+ forwaring have only one destination per port
+ routing table only one one
+ routing tables connect different subnets
+ [forwarding does not changes while  routing tables  changes when the network changes]???
+ routing tables and forwarding are all set up automatic
+
+
