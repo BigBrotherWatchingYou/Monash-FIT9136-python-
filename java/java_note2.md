@@ -196,13 +196,11 @@ this creates a random number [0,1)
 
 int r = (int)(Math.rancom()*10 +1);
 
-
-
 # GenericClass
 
 ## this allow programmer to delay defining the data type to be used  until the object of type of class is instantiated
 
-public class GenericClass`<Type>`
+public class GenericClass `<Type>`
 {
     private Type attributeOne;
 
@@ -223,10 +221,10 @@ public class GenericClass`<Type>`
 
     public static void main(String[] args)
     {
-        GenericClass`<Integer>` objOne = new GenericClass`<Integer>`();
+        GenericClass`<Integer>` objOne = new GenericClass `<Integer>`();
         objOne.setAttributeOne(10);
         System.out.println("First generic value = " + objOne.display());
-        GenericClass`<String>` objTwo = new GenericClass`<String>`();
+        GenericClass `<String>` objTwo = new GenericClass `<String>`();
         objTwo.setAttributeOne("Hello");
         System.out.println("Second generic value = " + objTwo.display());
     }
@@ -320,3 +318,28 @@ this doesn't need to know the exact number of item in the collection, it automat
 ### when we use For Each Loop , java handles the indexing of the elements and the iteration for us
 
 java does not allow deletion of elements duinght the iteration of For-each_loop
+
+# replace
+
+# how to answer test question
+
+1.display the smallest number among a,b,c
+
+# mid-semester test(on paper)
+
+error type, loop, logic, coding standard, array
+
+e.g the difference between the pre-text loop and posttest loop
+
+
+The `<span>while</span>` and `<span>for</span>` statements are pretest loops; that is, they test the condition first and at the beginning of each pass through the loop.
+
+[]()[]()
+
+Java also provides a posttest loop: the `<span>do</span>`-`<span>while</span>` statement. This type of loop is useful when you need to run the body of the loop at least once.
+
+For example, in Section [5.7](https://books.trinket.io/thinkjava/chapter5.html#validate) we used the `<span>return</span>` statement to avoid reading invalid input from the user. We can use a `<span>do</span>`-`<span>while</span>` loop to keep reading input until it’s valid:
+
+## https://books.trinket.io/thinkjava/chapter7.html
+
+---
