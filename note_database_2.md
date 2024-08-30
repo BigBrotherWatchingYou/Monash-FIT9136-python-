@@ -230,3 +230,63 @@ totally 2 IP address,sender&receiver
 ip address is part of the VPN server
 ip address used to form a package
 encryped, and a new ip address will be formed
+
+# SQL statements 
+data definition language(DDL)
+--creating database structure,, create TABLE, ALTER TABLE, DROP TABLE
+
+data manipulation language(DML)
+--adding and manipulating database contents(rows)
+• INSERT, UPDATE, DELETE
+
+
+DAta control language(DCL)
+- set permissions on objects
+- GRANT, REVOKE
+
+# NUMBER(6,2)
+range 1000.00( range 9999, precision 0.01)
+
+# DATE/TIME(4)
+
+
+# CHAR(4)
+is a string(fixed, unchangeable)
+
+# Text: CHAR(size), VARCHAR2(size)
+- CHAR(10)---'apple'='apple     '# automatically filled up spaces
+-  VARCHAR2(10)---'apple'-->'apple     '
+
+
+# Numbers : NUMBER(precision, scale)
+-weight NUMBER(7) or NUMBER(7,0) --> weight =7777777
+- Weight NUMBER(9,2) --> weight=7777777.77
+- Weight NUMBER(8,1) --> weight = 7777777.7
+
+# Date/Time: DATE, [TIMESTAMP]
+- DATE can store a date and time(time to sec), stored as Julian date
+- TIMESTAMP can store a date and atime(up to fractions of a second)
+- TIMESTAMP WITH TIME ZONE
+
+## if you didn't named a constrain , the system will named it for you
+![1725004506493](image/note_database_2/1725004506493.png)
+
+![1725004804196](image/note_database_2/1725004804196.png)
+
+# restrictions
+- RESTRICT
+unable to delete PK if there're corresponding tuple
+
+- CASCADE
+a deletion of a tuple in the table referred by the FK will result in the 
+deletion of the corresponding tuple in the table containging the FK
+
+- NULLIFY
+a deletion of a tuple in the table reffered by the FK will result in the update of the corresponding tuples in the table containing the FK to NULL
+
+- SET NULL
+set a field into NULL
+
+
+# Manipulate constrains
+![1725006328399](image/note_database_2/1725006328399.png)
