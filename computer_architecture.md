@@ -240,13 +240,11 @@ CA means collison avoidness
  [forwarding does not changes while  routing tables  changes when the network changes]???
  routing tables and forwarding are all set up automatic
 
-
 # VLAN identifier
 
 12 byte
 
 ![1724918086521](image/computer_architecture/1724918086521.png)
-
 
 # Inter Vlan communication
 
@@ -255,3 +253,10 @@ CA means collison avoidness
 Spanning tree protocol (STP) (IEEE 802.1D) is  **predominantly used to prevent layer 2 loops and broadcast storms and is also used for network redundancy** .
 
 A switch floods a frame if it has an unknown unicast, multicast, or broadcast address in the destination address field.
+
+
+# Week 7
+
+FM encoded message
+
+![1725256266667](image/computer_architecture/1725256266667.png)
