@@ -1,189 +1,120 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
-class Player {
-    private String name;
-    private int highestScore;
+public class Connections {
+    private Player player; 
+    private Grid grid; 
+    private int attempts; 
+    private int unsuccessfulAttempts;
+    private InputClass inputClass; 
 
     // Default constructor
-    public Player() {
-        this.name = "Unknown";
-        this.highestScore = 0;
+    public Connections() {
+        this.player = new Player(); // Initializes with a default player
+        this.grid = null; // Grid will be initialized later
+        this.attempts = 5; // Player has 5 attempts to guess correctly
+        this.unsuccessfulAttempts = 0; // No unsuccessful attempts initially
+        this.inputClass = new InputClass(); // Initialize input handler
     }
 
     // Non-default constructor
-    public Player(String name) {
-        setName(name);
-        this.highestScore = 0;
+    public Connections(Player player, Grid grid) {
+        this.player = player; // Initializes with a provided player
+        this.grid = grid; // Initializes with a provided grid
+        this.attempts = 5; // Player has 5 attempts to guess correctly
+        this.unsuccessfulAttempts = 0; // No unsuccessful attempts initially
+        this.inputClass = new InputClass(); // Initialize input handler
     }
 
-    // Getter for name
-    public String getName() {
-        return name;
-    }
+    // Method to start the game
+    public void startGame() {
+        // Display welcome message
+        System.out.println("Welcome to Java Connections!");
 
-    // Setter for name with validation
-    public void setName(String name) {
-        if (name.matches("^[A-Za-z]{4,8}$")) {
-            this.name = name;
+        // Request player's name if not set
+        if (player.getName().equals("Unknown")) {
+            String playerName = inputClass.getPlayerName(); // Get a valid player name
+            player.setName(playerName); // Set the player's name
+        }
+
+        // Display the themes available in the game
+        String[] themes = WordGroup.getThemes();
+        System.out.println("Themes:");
+        for (String theme : themes) {
+            System.out.println("- " + theme);
+        }
+
+        // Generate and display the grid of words if it hasn't been set yet
+        if (grid == null) {
+            String[] gridWords = WordGroup.generateGroup(); // Generate a random set of words
+            grid = new Grid(gridWords); // Initialize the grid with these words
+        }
+        grid.displayGrid(); // Display the grid to the player
+
+        // Main game loop: continue until no attempts are left or the grid is empty
+        while (attempts > 0 && !gridIsEmpty()) {
+            playRound(); // Let the player make a guess
+        }
+
+        // Game over: Display the player's score
+        System.out.println("Game Over! Your score: " + calculateScore());
+
+
+
+        // Ask if the player wants to play another game
+        System.out.print("Do you want to play another game? (yes/no): ");
+        String answer = inputClass.getScanner().nextLine();
+        if (answer.equalsIgnoreCase("yes")) {
+            resetGame(); // Reset the game state for a new game
+            startGame(); // Start a new game
         } else {
-            throw new IllegalArgumentException("Name must be 4 to 8 alphabetic characters.");
+            // Display the player's highest score and exit the game
+            System.out.println("Your highest score was: " + player.getHighestScore());
+            System.out.println("Thanks for playing!");
         }
     }
 
-    // Getter for highestScore
-    public int getHighestScore() {
-        return highestScore;
-    }
+    // Method to handle a single round of the game
+    private void playRound() {
+        // Request the player to enter 3 connected words
+        String[] guessedWords = inputClass.getGuessedWords(grid.getWords());
 
-    // Setter for highestScore
-    public void setHighestScore(int score) {
-        if (score > highestScore) {
-            this.highestScore = score;
-        }
-    }
+        // Check if the words are connected using the WordGroup class
+        String theme = WordGroup.checkConnections(guessedWords);
 
-    // Return the state of the Player as a String
-    public String toString() {
-        return "Player: " + name + ", Highest Score: " + highestScore;
-    }
-}
-
-class Grid {
-    private String[] words;
-
-    // Constructor
-    public Grid(String[] words) {
-        this.words = words;
-    }
-
-    // Display the grid
-    public void displayGrid() {
-        for (int i = 0; i < words.length; i++) {
-            System.out.print(words[i] + "\t");
-            if ((i + 1) % 3 == 0) {
-                System.out.println();
+        if (!theme.equals("no connection")) {
+            // If the words are correctly connected
+            System.out.println("Correct! The theme is: " + theme);
+            grid.removeWords(guessedWords); // Remove the guessed words from the grid
+        } else {
+            // If the words are not connected
+            System.out.println("No connection.");
+            unsuccessfulAttempts++; // Increase the count of incorrect guesses
+            if (unsuccessfulAttempts >= 5) {
+                attempts = 0; // End the game after one unsuccessful attempt
             }
         }
+        attempts--; // Decrease the number of remaining attempts
     }
 
-    // Check if a word is in the grid
-    public boolean containsWord(String word) {
-        return Arrays.asList(words).contains(word);
+    // Method to calculate the player's score
+    private int calculateScore() {
+        // Calculate score based on correct and incorrect attempts
+        return (5 - attempts) * 2 - unsuccessfulAttempts;
     }
-}
 
-public class Connections {
-    private Player player;
-    private Grid grid;
+    // Method to check if the grid is empty
+    private boolean gridIsEmpty() {
+        // Returns true if there are no more words left in the grid
+        return grid.isEmpty();
+    }
+
+    // Method to reset the game state for a new game
+    private void resetGame() {
+        this.attempts = 5; // Reset the number of attempts
+        this.unsuccessfulAttempts = 0; // Reset the number of incorrect guesses
+        this.grid = null; // Reset the grid (a new one will be generated)
+    }
 
     // Main method to start the program
     public static void main(String[] args) {
-        Connections game = new Connections();
-        game.startGame();
-    }
-
-    // Start the game
-    public void startGame() {
-        Scanner scanner = new Scanner(System.in);
-
-        // Welcome message and player name input
-        System.out.println("Welcome to Java Connections!");
-        System.out.print("Please enter your name: ");
-        String playerName = scanner.nextLine();
-
-        try {
-            player = new Player(playerName);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return;
-        }
-
-        // Display themes and generate word grid
-        String[] themes = WordGroup.getThemes();
-        System.out.println("Themes: " + String.join(", ", themes));
-
-        String[] wordGroup = WordGroup.generateGroup();
-        grid = new Grid(wordGroup);
-        grid.displayGrid();
-
-        // Game loop
-        int attempts = 0;
-        int correctAttempts = 0;
-        boolean gameOver = false;
-
-        while (attempts < 5 && !gameOver) {
-            System.out.print("Enter 3 connected words separated by spaces: ");
-            String[] inputWords = scanner.nextLine().split(" ");
-
-            if (inputWords.length != 3 || !grid.containsWord(inputWords[0]) || !grid.containsWord(inputWords[1]) || !grid.containsWord(inputWords[2])) {
-                System.out.println("Invalid input. Please enter 3 words from the grid.");
-                continue;
-            }
-
-            String connection = WordGroup.checkConnections(inputWords);
-            if (!connection.equals("no connection")) {
-                System.out.println("Correct! The connection is: " + connection);
-                correctAttempts++;
-                // Remove the connected words from the grid and display the remaining words
-                wordGroup = Arrays.stream(wordGroup).filter(word -> !Arrays.asList(inputWords).contains(word)).toArray(String[]::new);
-                grid = new Grid(wordGroup);
-                grid.displayGrid();
-                if (wordGroup.length == 0) {
-                    gameOver = true;
-                }
-            } else {
-                System.out.println("No connection. Try again.");
-                attempts++;
-                if (attempts == 5) {
-                    System.out.println("Game Over!");
-                    gameOver = true;
-                }
-            }
-        }
-
-        int score = (correctAttempts * 2) - (attempts - correctAttempts);
-        player.setHighestScore(score);
-        System.out.println("Your score: " + score);
-        System.out.println(player.toString());
-
-        // Option to play another game
-        System.out.print("Would you like to play another game? (yes/no): ");
-        String playAgain = scanner.nextLine();
-        if (playAgain.equalsIgnoreCase("yes")) {
-            startGame();
-        } else {
-            System.out.println("Thanks for playing! Your highest score was: " + player.getHighestScore());
-        }
-
-        scanner.close();
-    }
-}
-
-// Assuming the WordGroup class is provided by your instructor or environment.
-class WordGroup {
-    // Mock implementation for testing purposes
-    public static String[] getThemes() {
-        return new String[]{"Access Modifiers", "Relational Operators", "Logical Operators", "Data Types"};
-    }
-
-    public static String[] generateGroup() {
-        return new String[]{"private", "protected", "public", "<=", ">=", "==", "&&", "||", "!", "int", "float", "double"};
-    }
-
-    public static String checkConnections(String[] words) {
-        if (Arrays.asList(words).containsAll(Arrays.asList("private", "protected", "public"))) {
-            return "Access Modifiers";
-        }
-        if (Arrays.asList(words).containsAll(Arrays.asList("<=", ">=", "=="))) {
-            return "Relational Operators";
-        }
-        if (Arrays.asList(words).containsAll(Arrays.asList("&&", "||", "!"))) {
-            return "Logical Operators";
-        }
-        if (Arrays.asList(words).containsAll(Arrays.asList("int", "float", "double"))) {
-            return "Data Types";
-        }
-        return "no connection";
+        new Connections().startGame(); // Start the game using the default constructor
     }
 }

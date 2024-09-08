@@ -331,7 +331,6 @@ error type, loop, logic, coding standard, array
 
 e.g the difference between the pre-text loop and posttest loop
 
-
 The `<span>while</span>` and `<span>for</span>` statements are pretest loops; that is, they test the condition first and at the beginning of each pass through the loop.
 
 []()[]()
@@ -342,4 +341,24 @@ For example, in Section [5.7](https://books.trinket.io/thinkjava/chapter5.html#v
 
 ## https://books.trinket.io/thinkjava/chapter7.html
 
+![1725322829647](image/java_note2/1725322829647.png)
+
+![1725322866009](image/java_note2/1725322866009.png)
+
+![1725325523765](image/java_note2/1725325523765.png)
+
+![1725336455292](image/java_note2/1725336455292.png)
+
+![1725336461755](image/java_note2/1725336461755.png)
+
 ---
+
+![1725337491310](image/java_note2/1725337491310.png)
+
+# error type
+
+syntax error
+
+logic error
+
+runtime error
