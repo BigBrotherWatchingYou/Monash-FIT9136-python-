@@ -1,1 +1,2 @@
-print(1%5)
+i = "awefw awefwww"
+print(i[0])

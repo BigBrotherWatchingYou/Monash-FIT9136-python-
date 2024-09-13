@@ -295,19 +295,15 @@ is a string(fixed, unchangeable)
 
 ![1725006328399](image/note_database_2/1725006328399.png)
 
-
-
 # Logical model
 
 logical model shouldn't contain data types--for example(NUMERIC(3,2))
 
 if we need to add something not in the Table, we need to use ALTER
 
-
 when you type(NOT NULL), it means it is mandatory
 
 each attribute should have a meaning comment
-
 
 # ALTER
 
@@ -315,13 +311,15 @@ create table and Alter all keys together
 
 format:
 
-ALTER TABLE`<table name>`
+ALTER TABLE `<table name>`
 
 Add constraint `<constraint name>`
 
 ---Primary key ()
-----
+-----------------
+
 ---
+
 ---
 
 ---
@@ -334,12 +332,19 @@ ALTER TABLE customer
             ON DELETE SET NULL;
 
 # Constraint
-check 
+
+check
 
 # bridge entity
+
 # surrogate entity
-# Table 
+
+# Table
+
 every table has a primary key
 
 # Bridge
+
 if relationship is many to many, need a bridge
+
+![1726213349907](image/note_database_2/1726213349907.png)
