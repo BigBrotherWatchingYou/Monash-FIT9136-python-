@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EB7C7879-285E-E982-F792-DE1A334AD4C9" name="MANAGER">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:52:21 UTC</createdTime>
+<comment><![CDATA[Table for storing manager details]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="manager_id" id="28DABC79-E0D8-FD65-87E8-828E4A02824C">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:52:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of manager]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager_first_name" id="EFF33D5F-8817-2B14-9F35-A7477EC9D344">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:52:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[first name of manger]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager_last_name" id="0A0B1186-F880-5C42-87CA-3449B204CB3E">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:52:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[last name of manager]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager_phone" id="09C3583F-07AE-B02A-0794-069C08F14D9B">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:52:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[contact phone of manager]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_code" id="7A882346-2363-031D-FA42-6F79ABE0ADB3">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:24:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>031C5F0A-8139-C619-95AB-79B17AB4D7A1</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>59776052-34D2-E883-9D6B-DE06F36DF358</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="006A81A8-33E9-1947-53F6-81A3835E341D" name="MANAGER PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:53:32 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>28DABC79-E0D8-FD65-87E8-828E4A02824C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

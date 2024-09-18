@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="lga_code_fk" directorySegmentName="seg_0" id="4322F180-03E9-E1B6-0138-CCC7DE88C23E">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 07:31:13 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<sourcePk>6DF8D9B6-A6B6-E82C-1C2E-5177FF36727C</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>contains</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1BD786C0-CB6D-1872-D585-56038E34AD5F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D706AEAA-4A65-C798-FB50-3B73727ABE0F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

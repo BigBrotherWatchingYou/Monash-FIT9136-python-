@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F68800EF-3002-442F-9F14-2EDF5D53825E" name="RESERVATION">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:15:24 UTC</createdTime>
+<comment><![CDATA[table of reservation]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="reservation_id" id="0D49AD2D-2D8B-1544-C36E-5E2866CAD916">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:15:44 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of a reservation]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_no" id="A5888FD3-7E26-0DF6-4220-B87F08F958E9">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:17:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's unique identifer]]></commentInRDBMS>
+<generatorID>29C6F197-55D1-9914-60BB-BEBEF41E3A9D</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>56ADC0C2-2274-498A-5FF9-62545A92E11A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="reservation_datetime" id="9A18A8EF-6590-1370-2E93-F11DEBA06207">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:15:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[date and time of the reservation was settled]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bookcopy_id" id="C08B60BD-2D6D-0AEC-34D7-7414E8C27E69">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:17:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of each book copy]]></commentInRDBMS>
+<generatorID>BCCBE606-C99A-C8DF-0507-0EB623721470</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>90288859-E997-1FDE-5013-3C3FB192D386</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_code" id="B6446311-8666-9F96-043A-B0EF0A710FF4">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 06:11:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>BCCBE606-C99A-C8DF-0507-0EB623721470</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>81DD2E6A-C349-4C84-1805-B31F3A5F9C9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A069572A-715D-B467-DEED-ABC077945930" name="RESERVATION PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 14:16:38 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>0D49AD2D-2D8B-1544-C36E-5E2866CAD916</newElementsIDs>
+<usedAttributes>
+<attributeRef>0D49AD2D-2D8B-1544-C36E-5E2866CAD916</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="B0DE6B2C-F2C3-6758-1B76-3CC55E72FAA0" name="RESERVATION_UQ">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:53:25 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<newElementsIDs>29C6F197-55D1-9914-60BB-BEBEF41E3A9D,BCCBE606-C99A-C8DF-0507-0EB623721470,0D49AD2D-2D8B-1544-C36E-5E2866CAD916,9A18A8EF-6590-1370-2E93-F11DEBA06207</newElementsIDs>
+<usedAttributes>
+<attributeRef>A5888FD3-7E26-0DF6-4220-B87F08F958E9</attributeRef>
+<attributeRef>C08B60BD-2D6D-0AEC-34D7-7414E8C27E69</attributeRef>
+<attributeRef>B6446311-8666-9F96-043A-B0EF0A710FF4</attributeRef>
+<attributeRef>0D49AD2D-2D8B-1544-C36E-5E2866CAD916</attributeRef>
+<attributeRef>9A18A8EF-6590-1370-2E93-F11DEBA06207</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

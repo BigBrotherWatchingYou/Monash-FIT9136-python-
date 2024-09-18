@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1BD786C0-CB6D-1872-D585-56038E34AD5F" name="LGA">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:40:15 UTC</createdTime>
+<comment><![CDATA[Table for storing LGA (Local Government Area) details]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="lga_code" id="698A9437-6A5C-BB21-DAC9-182F131F28C0">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:40:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary Key: Unique identifier for each LGA]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lga_name" id="4BA584D7-CC51-F996-FE7B-C59397C13442">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:42:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[customer name]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lga_size" id="133F8329-7A7D-48C5-CD53-9478B566C9D7">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:43:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[customer adress]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lga_contact_name" id="1DECA6F5-3956-1A61-B64C-F30CC5E723C5">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:44:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[customer phone]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lga_contact_phone" id="CDB5F3FF-7C43-6DD0-296B-C57195F48F18">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:44:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[contact phone of LGA]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6DF8D9B6-A6B6-E82C-1C2E-5177FF36727C" name="Entity_1 PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:42:24 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>698A9437-6A5C-BB21-DAC9-182F131F28C0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

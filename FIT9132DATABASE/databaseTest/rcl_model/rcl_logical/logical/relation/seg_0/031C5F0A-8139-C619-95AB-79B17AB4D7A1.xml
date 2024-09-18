@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="branch_code_fk" directorySegmentName="seg_0" id="031C5F0A-8139-C619-95AB-79B17AB4D7A1">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:24:46 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<sourcePk>48331979-2180-1BD9-BD93-41833980BC22</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>home branch</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D706AEAA-4A65-C798-FB50-3B73727ABE0F</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>EB7C7879-285E-E982-F792-DE1A334AD4C9</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

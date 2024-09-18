@@ -1,0 +1,189 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="70D22FA6-1D1C-E731-29F1-6EDA0DF4D6E1" name="CATALOGUE_ENTRY">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<comment><![CDATA[Table for catalogue's entry]]></comment>
+<generatorID>1D9CE28F-A28C-AF0C-FA1F-2C9D2B2F61CC</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cat_call_no" id="272F7318-9092-9F30-648B-6EA05BD57134">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's call number]]></commentInRDBMS>
+<generatorID>A7A535F1-7E28-EE8A-42BB-3427110D97B5</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_title" id="CD4C32BB-870D-5B59-0527-FD910694FD2B">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's title]]></commentInRDBMS>
+<generatorID>BD1CDD2F-E229-8887-1397-3C580767EC15</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_content_desc" id="6D070532-30AD-66AB-7FCA-D6E831367EA1">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's description]]></commentInRDBMS>
+<generatorID>68ABE299-2D0F-C980-DEDB-413474FD61B6</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_publication_year" id="F7CF4AE7-A23D-6B5E-1E96-6122AECE3B41">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's publication year]]></commentInRDBMS>
+<generatorID>B2BE187F-A2CB-0E40-4EC8-F8BA40EAAB69</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_eddition" id="F1D305F3-0DB1-626C-42C9-4FEEE35ABC74">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[eddition of the book]]></commentInRDBMS>
+<generatorID>13465117-7B2A-CDF7-BC19-D6E1367F9020</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_classification" id="D31E6F06-65D3-5E36-B983-82E4CFDCB78A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[classification of the catalogue]]></commentInRDBMS>
+<generatorID>369B782F-A848-A58F-0F88-D2B82E623F49</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_number_of_pages" id="ABCD8C2C-8B9B-4AC8-FF85-94234B8E16F9">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's number of pages]]></commentInRDBMS>
+<generatorID>B4F6AFCD-1E2D-9223-5D97-4ACFB83DCAB8</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_reading_level" id="D7055A47-ED29-A703-5121-A89ADC8D94C5">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's reading lever]]></commentInRDBMS>
+<generatorID>D2C46C3A-2DC6-B870-B590-62C55A9F0D8D</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_language" id="8BC17437-5A18-1CC8-E84E-E7DB28CB17B7">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[language of the book]]></commentInRDBMS>
+<generatorID>CFA5B19F-53ED-D63F-717C-30CBE16FAF4E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cat_note" id="8F2D651E-D5FC-D615-1111-EB215343E1AE">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[remarks of the book]]></commentInRDBMS>
+<generatorID>5D94636B-FE5A-EA67-0D25-814EADD332E4</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="publisher_id" id="57C8C286-90B5-A2B8-959E-181BAB6E0698">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of publisher]]></commentInRDBMS>
+<generatorID>DB03174D-80BC-1EF5-8764-0448EDF197EE</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="92FA335C-5DDF-1C15-53B8-6ED498776979" referredColumn="3076FE30-E0E7-694F-3283-53978163748F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DF785AE-BCDB-21CA-23B5-FE129B1A9945" name="CATALOGUE_ENTRY_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>E84B73D7-FBCB-29BB-233D-B2A113E11B8B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="272F7318-9092-9F30-648B-6EA05BD57134"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7C6B3E8E-BE18-8C3E-B64A-51A71467B4C6" name="publisher_id_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>30DB19BE-8AA0-3B44-B121-E53EE0947D67</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="57C8C286-90B5-A2B8-959E-181BAB6E0698"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

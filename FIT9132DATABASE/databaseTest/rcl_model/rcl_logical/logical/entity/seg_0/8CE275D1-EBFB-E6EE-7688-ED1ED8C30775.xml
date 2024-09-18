@@ -1,0 +1,61 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8CE275D1-EBFB-E6EE-7688-ED1ED8C30775" name="SUBJECT">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:27:38 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="subject_id" id="CD7ADA06-BA73-CE9D-EC93-3AFE47F88B81">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:31:08 UTC</createdTime>
+<commentInRDBMS><![CDATA[subject id for identifying the subject]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="subject_desc" id="405571C7-6865-A41C-65DD-78DBC6DA6480">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:27:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[description of the subject]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E7E9613A-5DCA-F815-7EF3-A497C307210B" name="SUBJECT PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:31:16 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CD7ADA06-BA73-CE9D-EC93-3AFE47F88B81</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

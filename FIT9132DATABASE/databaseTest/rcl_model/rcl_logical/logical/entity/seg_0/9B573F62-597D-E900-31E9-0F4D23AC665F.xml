@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9B573F62-597D-E900-31E9-0F4D23AC665F" name="LOAN">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:09:51 UTC</createdTime>
+<comment><![CDATA[details of each book loan]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="loan_id" id="1294D777-BB7C-96BC-2A41-F71C6E049B06">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:10:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[loan's unique identifer]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_no" id="B1C585F3-8106-E6E7-48A1-34A36B4C5898">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:41:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's unique identifer]]></commentInRDBMS>
+<generatorID>F15AD66D-3F4D-021F-A658-036A7E0160A9</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>56ADC0C2-2274-498A-5FF9-62545A92E11A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="loan_datetime" id="EE689D0C-1210-0FFA-9F93-7FEFD21608E5">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:10:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[date and time recorded of a book when it's borrowed from a loan]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="loan_due_date" id="2893A4EF-E80B-574F-C524-3DBF42EBAEE7">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:10:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[deadline date and time of returning a book]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="loan_return_datetime" id="BF05C306-4EC9-EBF7-21D3-ACF86AAF59F5">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:10:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[actual return date and time of a book when it's recorded]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bookcopy_id" id="3EF62969-24FB-8A38-6A3D-0BF16081C311">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:29:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of each book copy]]></commentInRDBMS>
+<generatorID>224F7722-3FE8-CC50-94A3-80E967652B7E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>90288859-E997-1FDE-5013-3C3FB192D386</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_code" id="436F2F5F-F01E-CD0F-DAC0-034472244C6D">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 06:11:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>224F7722-3FE8-CC50-94A3-80E967652B7E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>81DD2E6A-C349-4C84-1805-B31F3A5F9C9C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9CC39675-8989-A44E-9E1F-EC334E4973F2" name="LOAN PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:11:27 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>1294D777-BB7C-96BC-2A41-F71C6E049B06</newElementsIDs>
+<usedAttributes>
+<attributeRef>1294D777-BB7C-96BC-2A41-F71C6E049B06</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="116168D0-DDE4-E740-0D6C-0939D7D66844" name="LOAN_UQ">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:47:27 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<newElementsIDs>F15AD66D-3F4D-021F-A658-036A7E0160A9,224F7722-3FE8-CC50-94A3-80E967652B7E,EE689D0C-1210-0FFA-9F93-7FEFD21608E5</newElementsIDs>
+<usedAttributes>
+<attributeRef>B1C585F3-8106-E6E7-48A1-34A36B4C5898</attributeRef>
+<attributeRef>3EF62969-24FB-8A38-6A3D-0BF16081C311</attributeRef>
+<attributeRef>436F2F5F-F01E-CD0F-DAC0-034472244C6D</attributeRef>
+<attributeRef>EE689D0C-1210-0FFA-9F93-7FEFD21608E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E81C6E3D-9EB8-2987-E25F-7DB709C53FDE" name="PUBLISHER">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<comment><![CDATA[table for the publisher]]></comment>
+<generatorID>DEDBE048-B461-C445-F91C-395BE90976DA</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="publisher_id" id="3076FE30-E0E7-694F-3283-53978163748F">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of publisher]]></commentInRDBMS>
+<generatorID>239B1822-0AD3-A7BD-A690-A97538335522</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="publisher_name" id="2F4BF4DE-9952-E85C-C1D9-48872F6AD1BA">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[publisher's name]]></commentInRDBMS>
+<generatorID>710C95A8-6F14-C5B9-2711-5ADA9672946B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BF8815CD-EB6E-3A11-7692-A0DC72AA1737" name="PUBLISHER_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>1D03470A-BF05-F9DA-ECA3-C6208048E20D</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3076FE30-E0E7-694F-3283-53978163748F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

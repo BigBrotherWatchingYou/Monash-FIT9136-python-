@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="056200D4-D7FD-E128-A09D-D026122E01AA" name="FINE">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>E3965720-ACFE-703D-083A-7F82B1EE55EE</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="fine_id" id="FE600992-E497-D915-D809-8F96C1A31F48">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[fine id for manage the fine of loan]]></commentInRDBMS>
+<generatorID>8DF73573-9BCD-55EB-09B8-521AC0C7950A</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fine_amount" id="9E9C0B68-F25E-4780-45BE-0D95A0FDEDFA">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[the amount of the fine per loan]]></commentInRDBMS>
+<generatorID>063320E2-4FED-7ECD-A105-16EDEA246450</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fine_paydate" id="448F45D7-6B37-353A-90C1-F6EBCD15BE15">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[the date of the payment of fine]]></commentInRDBMS>
+<generatorID>17FCDE0C-F200-62F8-96FF-C5787AA76D97</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="loan_id" id="0B60D351-4AE8-E153-5514-3D13DD39DBCD">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[loan's unique identifer]]></commentInRDBMS>
+<generatorID>62030BF7-F9E3-84AE-6AFA-41F3771F22BC</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="962722FA-A239-D053-E0AC-68D08D6CD5EB" referredColumn="4D8821BD-9DB8-EDD4-E75B-F22F33C76DBB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D7BD2B6E-BCA5-58F1-8AE4-052468B74C92" name="FINE_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>36F453A0-FC49-A23A-2056-68B1AEDF0E56</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FE600992-E497-D915-D809-8F96C1A31F48"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7F6E5581-F5A0-0395-2EF3-1FE31396224F" name="FINE_UQ">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>38095AC2-370A-9685-B517-99AC88FB10E5</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B60D351-4AE8-E153-5514-3D13DD39DBCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C60692E-E2B9-6E78-628F-A4D45F4E260B" name="loan_id_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>C666F938-F9C1-38A4-01D2-E3B38CEBEC11</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B60D351-4AE8-E153-5514-3D13DD39DBCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

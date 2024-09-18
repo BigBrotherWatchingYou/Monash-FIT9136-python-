@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D706AEAA-4A65-C798-FB50-3B73727ABE0F" name="BRANCH">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:50:21 UTC</createdTime>
+<comment><![CDATA[Table for branches, each branch belongs to an LGA]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="branch_code" id="59776052-34D2-E883-9D6B-DE06F36DF358">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:50:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_name" id="333958C7-91FB-2BF9-E76B-41E785B75F07">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:50:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[ Name of the branch]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_address" id="9D53D949-B960-CBB4-31A0-CBFDC8542759">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:50:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Address of the branch]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_phone" id="E071E562-0744-56A7-8AA0-C6E4ACE647B1">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:50:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[branch_phone]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lga_code" id="9E28025B-C5D8-B374-779F-E9791855203D">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 07:31:13 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary Key: Unique identifier for each LGA]]></commentInRDBMS>
+<generatorID>4322F180-03E9-E1B6-0138-CCC7DE88C23E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>698A9437-6A5C-BB21-DAC9-182F131F28C0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="manager_id" id="FFABC107-5E77-6045-7439-7499D8B1B616">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:25:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of manager]]></commentInRDBMS>
+<generatorID>ABAB9777-F7A1-7768-6288-54CCD222BF50</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>28DABC79-E0D8-FD65-87E8-828E4A02824C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="48331979-2180-1BD9-BD93-41833980BC22" name="BRANCH PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:51:27 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>59776052-34D2-E883-9D6B-DE06F36DF358</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

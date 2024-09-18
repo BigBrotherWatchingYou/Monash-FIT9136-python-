@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="cat_call_no_fkv2" directorySegmentName="seg_0" id="8E7E5AE6-4B3B-42F2-29A8-5ED270007661">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 06:00:51 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<sourcePk>E84B73D7-FBCB-29BB-233D-B2A113E11B8B</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>has</nameOnSource>
+<nameOnTarget> </nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1D9CE28F-A28C-AF0C-FA1F-2C9D2B2F61CC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4E3B8C91-16AE-1C02-60A1-EB390250E56B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

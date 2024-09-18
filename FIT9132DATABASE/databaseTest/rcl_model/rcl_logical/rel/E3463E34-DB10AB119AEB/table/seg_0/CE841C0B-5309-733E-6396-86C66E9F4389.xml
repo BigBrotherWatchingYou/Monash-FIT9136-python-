@@ -1,0 +1,118 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CE841C0B-5309-733E-6396-86C66E9F4389" name="MANAGER">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<comment><![CDATA[Table for storing manager details]]></comment>
+<generatorID>EB7C7879-285E-E982-F792-DE1A334AD4C9</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="manager_id" id="FCFD1C35-9D75-633A-78BD-FCE159FCFE6E">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of manager]]></commentInRDBMS>
+<generatorID>28DABC79-E0D8-FD65-87E8-828E4A02824C</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="manager_first_name" id="1B99BEF1-ACA7-D934-E394-8BAFDCFF0132">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[first name of manger]]></commentInRDBMS>
+<generatorID>EFF33D5F-8817-2B14-9F35-A7477EC9D344</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="manager_last_name" id="A7B8281A-7327-DC10-A655-188C782399CA">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[last name of manager]]></commentInRDBMS>
+<generatorID>0A0B1186-F880-5C42-87CA-3449B204CB3E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="manager_phone" id="4A18337A-745F-D1DE-C18F-B6FC001BF1F1">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[contact phone of manager]]></commentInRDBMS>
+<generatorID>09C3583F-07AE-B02A-0794-069C08F14D9B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="branch_code" id="69CD578E-85D2-A41A-3986-4E4BBCEBCF6E">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>7A882346-2363-031D-FA42-6F79ABE0ADB3</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6EE7785E-5F76-6BF9-E25B-43211D813FAA" referredColumn="1C3907A7-E324-3B3B-28F5-A4F22AEC1A9B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="23A4FDA7-9B74-D413-78C4-F76F8CB18BC5" name="MANAGER_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>006A81A8-33E9-1947-53F6-81A3835E341D</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FCFD1C35-9D75-633A-78BD-FCE159FCFE6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03C44D80-5A8D-C368-26B5-35D5BD0AE822" name="MANAGER__IDX">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>031C5F0A-8139-C619-95AB-79B17AB4D7A1</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="69CD578E-85D2-A41A-3986-4E4BBCEBCF6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08FBC956-2E0A-F44F-4B21-514C9E0AFADA" name="branch_code_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>031C5F0A-8139-C619-95AB-79B17AB4D7A1</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69CD578E-85D2-A41A-3986-4E4BBCEBCF6E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,200 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="088E6B50-41EB-4938-CBF6-D563F2B5386E" name="BORROWER">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<comment><![CDATA[Table for borrowers, linked to borrower classes]]></comment>
+<generatorID>3C0D43E6-3D9B-F69D-66E0-26F3E1A461A7</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="borrower_no" id="4D200398-476D-A8F5-16E8-4EBA90984856">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's unique identifer]]></commentInRDBMS>
+<generatorID>56ADC0C2-2274-498A-5FF9-62545A92E11A</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_first_name" id="2523D778-FADD-A57D-4BC7-8F31913A6FB2">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's first name]]></commentInRDBMS>
+<generatorID>F674EEC0-665D-34DF-3533-1C1E78C17A1B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_last_name" id="1E0B84D9-B888-4135-12D2-8961EE0A9135">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's phone number]]></commentInRDBMS>
+<generatorID>8434E193-F898-82C4-B0B2-2E4D29565A96</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_address_street" id="752305D1-0AC7-52BF-5EFC-B8DD821C61C8">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of street]]></commentInRDBMS>
+<generatorID>1B700FB8-FF33-D959-9A2D-DEE6F53E2B87</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_address_town" id="B755FD6F-EF6A-4D39-D9C7-3396327CF091">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of town]]></commentInRDBMS>
+<generatorID>EEF808D4-E76A-B782-A50B-F017140FDC50</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_address_state" id="7EFB914E-DDC2-15B7-D1CE-8133CB805F7D">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of state]]></commentInRDBMS>
+<generatorID>E8B374C7-67AA-D22A-A796-6C87B9E6D454</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_address_postcode" id="E9CC87C0-8EFC-A231-EBE7-B9346376CBFE">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of postcode, the post code is an Australian post code digit 4]]></commentInRDBMS>
+<generatorID>E146D761-704B-5BC3-AD6B-D0AEC7F8C758</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_status" id="4BDA317B-6101-B4C2-E392-2AC2531E582F">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's borrowing status, Permitted or Banned]]></commentInRDBMS>
+<generatorID>EE89740C-7B5D-5727-A4D1-4310E5AF98A0</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="borrower_phone" id="2844D67D-DF92-A3C2-F18D-45FC5D839AB1">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's phone number]]></commentInRDBMS>
+<generatorID>28D1DF19-17EB-6A3F-DE05-3C55A6CD0FC7</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="branch_code" id="8458AF49-D9C5-DF96-7712-49DE0E52ADBC">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>8F87F2CB-5A71-D75E-7135-1A0F720EEAFC</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8B51462-13F5-EAA1-AD12-135AC90C3B8D" referredColumn="1C3907A7-E324-3B3B-28F5-A4F22AEC1A9B"/>
+</associations>
+</Column>
+<Column name="class_id" id="93849DC3-BED3-D860-629C-B5C87532FEC0">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>7F6CBE7E-6258-A81D-A89D-47A24A7DD5FA</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F4C948BA-3CF5-28E0-2DBB-FDBA36A852DF" referredColumn="6B75D424-1DBF-E191-17E3-430E2A42ED75"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6281F61E-CDD4-1612-E922-47D14BB33C37" name="BORROWER_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>DCD139B6-74E5-363B-46A3-D8C5CDD64BE1</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4D200398-476D-A8F5-16E8-4EBA90984856"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A84FF94-25C7-F5E9-C4E9-4B638BA28332" name="branch_code_fkv2">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>CA41442B-1842-0532-790D-79FDB1F66104</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8458AF49-D9C5-DF96-7712-49DE0E52ADBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="504E7302-48EA-8A49-1E6B-C51247C79824" name="class_id_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>BFB8C221-36FF-CC81-DCE8-11BA4983B19B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93849DC3-BED3-D860-629C-B5C87532FEC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C8761A90-04BA-E766-8356-94C78EE38B48" containerWithKeyObject="DBDF73ED-B23D-F494-1C28-725E47A80700" localFKIndex="6F8D1720-B319-419F-4DBF-13A33464A119" name="branch_code_fkv4">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>BCCBE606-C99A-C8DF-0507-0EB623721470</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<referredTableLongName>BOOKCOPY</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D7B4BC98-0920-2D10-A90E-EB120F3B3376</referredTableID>
+<keyObject>B7B6B5B7-7FB6-510C-62D0-F2EF37DE3220</keyObject>
+<referredKeyID>B7B6B5B7-7FB6-510C-62D0-F2EF37DE3220</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>bookcopy_id,branch_code</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

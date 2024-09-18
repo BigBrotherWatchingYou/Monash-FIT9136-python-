@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4E3B8C91-16AE-1C02-60A1-EB390250E56B" name="ISBN">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:13:04 UTC</createdTime>
+<comment><![CDATA[table for ISBN]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="isbn_code" id="F5AB94DB-7C7C-FFA3-79E4-8342AF90293A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:34:48 UTC</createdTime>
+<commentInRDBMS><![CDATA[isbn that consist with 13 digits]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cat_call_no " id="12F24253-F0DC-425D-C930-665BD364693A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 06:20:58 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's call number]]></commentInRDBMS>
+<generatorID>8E7E5AE6-4B3B-42F2-29A8-5ED270007661</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>A7A535F1-7E28-EE8A-42BB-3427110D97B5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="book_type_id" id="5550DCB7-B2D9-46B1-CF74-6A9D2AF6AEBB">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:36:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[bood type]]></commentInRDBMS>
+<generatorID>66EB4E4E-EB50-F475-4373-724ED2AA24FD</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>571D146C-EFAD-2D96-EACF-E9C1F1B66685</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="59E907CE-C75A-C3CF-CCE5-E470182DFFD8" name="ISBN PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:14:46 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F5AB94DB-7C7C-FFA3-79E4-8342AF90293A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

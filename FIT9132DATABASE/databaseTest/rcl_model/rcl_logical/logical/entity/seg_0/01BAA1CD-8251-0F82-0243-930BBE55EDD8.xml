@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="01BAA1CD-8251-0F82-0243-930BBE55EDD8" name="CATALOGUE_AUTHOR">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:59:53 UTC</createdTime>
+<comment><![CDATA[bridge table linking author and catalogue]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="author_id" id="A2A5B1B3-2C27-AD02-36B7-507AC04CCF7A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:37:25 UTC</createdTime>
+<commentInRDBMS><![CDATA[author's id]]></commentInRDBMS>
+<generatorID>555BA27A-CF2C-27AD-604B-E32E8211F326</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>73F896DD-B7B3-5BAB-8E3C-CAA5D6B31701</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cat_call_no " id="96BB4FE1-F2A0-6143-142D-8494E1559797">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 06:31:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[catalogue's call number]]></commentInRDBMS>
+<generatorID>695DED37-0BAD-EE44-299B-2A42EC4E91D6</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>A7A535F1-7E28-EE8A-42BB-3427110D97B5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0D0BC6A1-67D2-0137-6119-E64712D7866E" name="CTALOGUE_AUTHOR_UQ">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-16 10:19:54 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>555BA27A-CF2C-27AD-604B-E32E8211F326,695DED37-0BAD-EE44-299B-2A42EC4E91D6</newElementsIDs>
+<usedAttributes>
+<attributeRef>A2A5B1B3-2C27-AD02-36B7-507AC04CCF7A</attributeRef>
+<attributeRef>96BB4FE1-F2A0-6143-142D-8494E1559797</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

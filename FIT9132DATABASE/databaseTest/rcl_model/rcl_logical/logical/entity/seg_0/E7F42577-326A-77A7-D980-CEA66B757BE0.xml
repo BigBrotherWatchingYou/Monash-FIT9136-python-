@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E7F42577-326A-77A7-D980-CEA66B757BE0" name="AUTHOR">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:58:55 UTC</createdTime>
+<comment><![CDATA[table for author]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="author_id" id="73F896DD-B7B3-5BAB-8E3C-CAA5D6B31701">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:59:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[author's id]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="author_first_name" id="58FB4E6B-8204-7CDA-B54D-671016898CC2">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:59:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[author's first name]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="author_last_name" id="1A2DB6A2-829C-A640-F4F4-9A963C9E54F9">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:59:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[author's last name]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="07C31AB0-F4CF-F226-B556-B77A8F886888" name="AUTHOR PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 09:59:29 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>73F896DD-B7B3-5BAB-8E3C-CAA5D6B31701</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

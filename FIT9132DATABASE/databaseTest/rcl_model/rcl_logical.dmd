@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="rcl_logical" id="9E7C2667-9227-11E2-40AF-1714002558DF" version="3.5">
+<createdBy>spca0</createdBy>
+<createdTime>2024-08-28 08:10:09 UTC</createdTime>
+<ownerDesignName>custorders_oraclemodel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>9E7C2667-9227-11E2-40AF-1714002558DF</designId>
+</OSDM_Design>

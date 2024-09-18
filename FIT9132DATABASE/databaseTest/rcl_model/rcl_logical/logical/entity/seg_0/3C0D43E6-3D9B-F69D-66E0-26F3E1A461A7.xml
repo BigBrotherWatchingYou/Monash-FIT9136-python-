@@ -1,0 +1,192 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3C0D43E6-3D9B-F69D-66E0-26F3E1A461A7" name="BORROWER">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:48 UTC</createdTime>
+<comment><![CDATA[Table for borrowers, linked to borrower classes]]></comment>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="borrower_no" id="56ADC0C2-2274-498A-5FF9-62545A92E11A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's unique identifer]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_first_name" id="F674EEC0-665D-34DF-3533-1C1E78C17A1B">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's first name]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_last_name" id="8434E193-F898-82C4-B0B2-2E4D29565A96">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's phone number]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_address_street" id="1B700FB8-FF33-D959-9A2D-DEE6F53E2B87">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:55 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of street]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_address_town" id="EEF808D4-E76A-B782-A50B-F017140FDC50">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:04:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of town]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_address_state" id="E8B374C7-67AA-D22A-A796-6C87B9E6D454">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:04:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of state]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_address_postcode" id="E146D761-704B-5BC3-AD6B-D0AEC7F8C758">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 10:04:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's contact address of postcode, the post code is an Australian post code digit 4]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>4,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_status" id="EE89740C-7B5D-5727-A4D1-4310E5AF98A0">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's borrowing status, Permitted or Banned]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="borrower_phone" id="28D1DF19-17EB-6A3F-DE05-3C55A6CD0FC7">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:06:56 UTC</createdTime>
+<commentInRDBMS><![CDATA[Borrower's phone number]]></commentInRDBMS>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="branch_code" id="8F87F2CB-5A71-D75E-7135-1A0F720EEAFC">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:26:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>CA41442B-1842-0532-790D-79FDB1F66104</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>59776052-34D2-E883-9D6B-DE06F36DF358</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="class_id" id="7F6CBE7E-6258-A81D-A89D-47A24A7DD5FA">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 12:46:07 UTC</createdTime>
+<generatorID>BFB8C221-36FF-CC81-DCE8-11BA4983B19B</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<referedAttribute>FD0243F0-B70B-8417-8987-4ACD080AF2AB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DCD139B6-74E5-363B-46A3-D8C5CDD64BE1" name="BORROWER PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-15 10:12:48 UTC</createdTime>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<engineerTo>
+<item key="E3463E34-E8E4-2CE2-9AD7-DB10AB119AEB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>56ADC0C2-2274-498A-5FF9-62545A92E11A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

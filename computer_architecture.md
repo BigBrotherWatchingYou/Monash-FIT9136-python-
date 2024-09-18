@@ -254,9 +254,29 @@ Spanning tree protocol (STP) (IEEE 802.1D) is  **predominantly used to prevent l
 
 A switch floods a frame if it has an unknown unicast, multicast, or broadcast address in the destination address field.
 
-
 # Week 7
 
 FM encoded message
 
 ![1725256266667](image/computer_architecture/1725256266667.png)
+
+
+# Week9
+
+Layer5
+
+Web browser----web server       (both using http)
+
+## Layer4:
+
+TCP ---TCP
+
+3 way handshake:    tcp- syn----ack-syn-----ack -> link created
+
+
+
+Time graph showing how it works
+
+Client---------Server
+
+1.

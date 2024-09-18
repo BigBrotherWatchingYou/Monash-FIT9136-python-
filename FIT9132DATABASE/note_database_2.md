@@ -348,3 +348,71 @@ every table has a primary key
 if relationship is many to many, need a bridge
 
 ![1726213349907](image/note_database_2/1726213349907.png)
+
+### to list the rentals which have not been returned, the SQL would be:
+
+select * from drone.rental where rent_in_dt is not null;
+
+SELECT
+
+    rent_no,
+
+    rent_out_dt,
+
+    rent_in_dt
+
+FROM
+
+    drone.rental
+
+ORDERBY
+
+    rent_in_dt descnullslast;
+
+## problem: multiple manufacturer
+
+![1726216219437](image/note_database_2/1726216219437.png)
+
+as you can see there're multiple manuf_name;
+
+to solve this:
+
+(wait to be solved)
+
+this is a way to create something that combine two attributes together to form a new one
+
+![1726217415799](image/note_database_2/1726217415799.png)
+
+## format transfer:
+
+![1726217473410](image/note_database_2/1726217473410.png)
+
+![1726217639239](image/note_database_2/1726217639239.png)
+
+
+
+## **to_date** : converts from a string to a date according to a format string
+
+SELECT
+    stuid, stufname, stulname
+FROM
+    uni.student
+WHERE
+    studob < TO_DATE('30/Apr/1992', 'dd/Mon/yyyy')
+ORDER BY
+    stuid;
+
+
+# **to_char** : converts from a date to a string according to a format string
+
+## to_char is for specifying the data type, it can specify the date first, and then print
+
+SELECT
+    to_char(sysdate, 'dd/Mon/yyyy hh24:mi:ss') AS server_date
+FROM
+    dual;
+
+SELECT
+    to_char(sysdate+10/24, 'hh24:mi:ss') AS server_time_plus_10_hrs
+FROM
+    dual;

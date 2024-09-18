@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D8B51462-13F5-EAA1-AD12-135AC90C3B8D" containerWithKeyObject="088E6B50-41EB-4938-CBF6-D563F2B5386E" localFKIndex="3A84FF94-25C7-F5E9-C4E9-4B638BA28332" name="branch_code_fkv2">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>CA41442B-1842-0532-790D-79FDB1F66104</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<referredTableLongName>BRANCH</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F3A85DF8-A312-CF80-14D9-EEAE1E933C3F</referredTableID>
+<keyObject>41C85AA1-615E-3A04-8867-404E0D0BA328</keyObject>
+<referredKeyID>41C85AA1-615E-3A04-8867-404E0D0BA328</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>branch_code</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

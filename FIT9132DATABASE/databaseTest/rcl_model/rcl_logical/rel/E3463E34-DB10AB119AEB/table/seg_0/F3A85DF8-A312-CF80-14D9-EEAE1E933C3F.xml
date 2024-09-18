@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F3A85DF8-A312-CF80-14D9-EEAE1E933C3F" name="BRANCH">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<comment><![CDATA[Table for branches, each branch belongs to an LGA]]></comment>
+<generatorID>D706AEAA-4A65-C798-FB50-3B73727ABE0F</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="branch_code" id="1C3907A7-E324-3B3B-28F5-A4F22AEC1A9B">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Unique identifier for each branch]]></commentInRDBMS>
+<generatorID>59776052-34D2-E883-9D6B-DE06F36DF358</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="branch_name" id="03AF20A3-75F5-602B-9FF4-F07E0800833A">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[ Name of the branch]]></commentInRDBMS>
+<generatorID>333958C7-91FB-2BF9-E76B-41E785B75F07</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="branch_address" id="5A09AA25-6491-7496-689D-B47B500838D6">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Address of the branch]]></commentInRDBMS>
+<generatorID>9D53D949-B960-CBB4-31A0-CBFDC8542759</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="branch_phone" id="30FB3876-78C3-9DD0-FEC5-9576AE8EA3B0">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[branch_phone]]></commentInRDBMS>
+<generatorID>E071E562-0744-56A7-8AA0-C6E4ACE647B1</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lga_code" id="0073B8FA-514A-464D-E929-DB7CEC89BD81">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Primary Key: Unique identifier for each LGA]]></commentInRDBMS>
+<generatorID>9E28025B-C5D8-B374-779F-E9791855203D</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8CABEF3-378F-1E7A-3437-1E7FA2A870AA" referredColumn="50F00847-2C8D-C9FE-AE52-1CE13370C993"/>
+</associations>
+</Column>
+<Column name="manager_id" id="0A85473F-F69A-FF4F-5055-008FE7F4F9F7">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[unique identifer of manager]]></commentInRDBMS>
+<generatorID>FFABC107-5E77-6045-7439-7499D8B1B616</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>4</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C581F8A4-4C80-0C86-8408-2A2276EA5F2C" referredColumn="FCFD1C35-9D75-633A-78BD-FCE159FCFE6E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="41C85AA1-615E-3A04-8867-404E0D0BA328" name="BRANCH_PK">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>48331979-2180-1BD9-BD93-41833980BC22</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C3907A7-E324-3B3B-28F5-A4F22AEC1A9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3ACDE0DE-470A-7F29-D62E-C0888E119156" name="lga_code_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>4322F180-03E9-E1B6-0138-CCC7DE88C23E</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0073B8FA-514A-464D-E929-DB7CEC89BD81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2311312F-9F03-CA80-9895-6B1A2C834F53" name="manager_id_fk">
+<createdBy>spca0</createdBy>
+<createdTime>2024-09-17 14:19:10 UTC</createdTime>
+<generatorID>ABAB9777-F7A1-7768-6288-54CCD222BF50</generatorID>
+<ownerDesignName>rcl_logical</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A85473F-F69A-FF4F-5055-008FE7F4F9F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
