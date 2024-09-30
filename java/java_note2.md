@@ -362,3 +362,23 @@ syntax error
 logic error
 
 runtime error
+
+
+## static
+
+static is to declare a class variable
+
+
+## final
+
+using final means it can be only assigned once
+
+
+## Cohesion
+
+the degreed to which a method or class focuses on a single task
+
+
+## refactoring code
+
+to restructure the code for better design without changing its functionality

@@ -260,12 +260,13 @@ FM encoded message
 
 ![1725256266667](image/computer_architecture/1725256266667.png)
 
-
 # Week9
 
 Layer5
 
-Web browser----web server       (both using http)
+Web brow
+
+ser----web server       (both using http)
 
 ## Layer4:
 
@@ -273,10 +274,25 @@ TCP ---TCP
 
 3 way handshake:    tcp- syn----ack-syn-----ack -> link created
 
-
-
 Time graph showing how it works
 
 Client---------Server
 
-1.
+
+
+# Week 9 
+
+![1726733415019](image/computer_architecture/1726733415019.png)
+
+N2 doesnt know n3,n4,n5 so you need to give command to N2 that ip route add <n3,n4,n5> via 192.168.1.2
+
+exercise: ping all router
+
+
+![1726733787961](image/computer_architecture/1726733787961.png)
+
+.0.0.0.0 means default 
+
+s means static route
+
+c means cable  in the graph there 're 2 cables

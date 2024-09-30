@@ -389,8 +389,6 @@ this is a way to create something that combine two attributes together to form a
 
 ![1726217639239](image/note_database_2/1726217639239.png)
 
-
-
 ## **to_date** : converts from a string to a date according to a format string
 
 SELECT
@@ -401,7 +399,6 @@ WHERE
     studob < TO_DATE('30/Apr/1992', 'dd/Mon/yyyy')
 ORDER BY
     stuid;
-
 
 # **to_char** : converts from a date to a string according to a format string
 
@@ -416,3 +413,18 @@ SELECT
     to_char(sysdate+10/24, 'hh24:mi:ss') AS server_time_plus_10_hrs
 FROM
     dual;
+
+COUNT , MAX, MIN, SUM, AVG
+
+sum is for calculting the sum of a list of numbers
+
+
+
+### Group by
+
+The `GROUP BY` statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+
+Having
+
+ANY
